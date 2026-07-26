@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informasi — Yamaha Prihatin Motor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: { 50:'#DFDEE8',100:'#CCCADA',200:'#A6A1BE',300:'#7F79A1',400:'#595085',500:'#322869',600:'#292055',700:'#1F1942',800:'#16122E',900:'#0C0A1A' },
+                        secondary: { 50:'#FBDBDA',100:'#F8C5C3',200:'#F29A95',300:'#ED6E67',400:'#E7433A',500:'#E2170C',600:'#B8130A',700:'#8D0E08',800:'#630A05',900:'#380603' },
+                        blue: { 50:'#DFDEE8',100:'#CCCADA',200:'#A6A1BE',300:'#7F79A1',400:'#595085',500:'#322869',600:'#292055',700:'#1F1942',800:'#16122E',900:'#0C0A1A' },
+                        red: { 50:'#FBDBDA',100:'#F8C5C3',200:'#F29A95',300:'#ED6E67',400:'#E7433A',500:'#E2170C',600:'#B8130A',700:'#8D0E08',800:'#630A05',900:'#380603' },
+                        orange: { 300:'#F5B8A8' },
+                        cyan: { 300:'#B9B4D9' },
+                                                yamaha: {
+                            blue: '#322869', 'blue-dark': '#1F1942', 'blue-light': '#7F79A1',
+                            red: '#E2170C', 'red-dark': '#8D0E08', 'red-light': '#ED6E67',
+                            dark: '#0C0A1A', 'dark-2': '#16122E', 'dark-3': '#1F1942',
+                            gray: '#6B7280', 'gray-light': '#D9D4DB',
+                        }
+                    },
+                    fontFamily: { inter: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-white text-gray-800 overflow-x-hidden" data-page="informasi">
+
+    <div id="scrollProgress"></div>
+    <div id="toastContainer" class="fixed top-24 right-4 z-[100] flex flex-col gap-3"></div>
+
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="flex items-center justify-between h-20">
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-lg blue-accent flex items-center justify-center shadow-lg group-hover:shadow-blue-500/30 transition-shadow"><svg viewBox="0 0 24 24" class="w-6 h-6 text-white" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+                    <div class="hidden sm:block"><p class="text-sm font-bold leading-tight text-white">YAMAHA</p><p class="text-[10px] font-medium text-blue-300 tracking-widest uppercase">Prihatin Motor</p></div>
+                </a>
+                <div class="hidden lg:flex items-center gap-1">
+                    <a href="index.html" class="nav-link px-4 py-2 text-sm font-medium text-white/80 hover:text-white rounded-lg hover:bg-white/10 transition-all">Beranda</a>
+                    <a href="tentang.html" class="nav-link px-4 py-2 text-sm font-medium text-white/80 hover:text-white rounded-lg hover:bg-white/10 transition-all">Tentang Kami</a>
+                    <a href="layanan.html" class="nav-link px-4 py-2 text-sm font-medium text-white/80 hover:text-white rounded-lg hover:bg-white/10 transition-all">Layanan</a>
+                    <a href="sparepart.html" class="nav-link px-4 py-2 text-sm font-medium text-white/80 hover:text-white rounded-lg hover:bg-white/10 transition-all">Sparepart</a>
+                    <a href="galeri.html" class="nav-link px-4 py-2 text-sm font-medium text-white/80 hover:text-white rounded-lg hover:bg-white/10 transition-all">Galeri</a>
+                    <a href="info.html" class="nav-link active-link px-4 py-2 text-sm font-medium text-white/80 hover:text-white rounded-lg hover:bg-white/10 transition-all">Informasi</a>
+                    <a href="booking.html" class="nav-link px-4 py-2 text-sm font-medium text-white/80 hover:text-white rounded-lg hover:bg-white/10 transition-all">Booking</a>
+                    <a href="bantuan.html" class="nav-link px-4 py-2 text-sm font-medium text-white/80 hover:text-white rounded-lg hover:bg-white/10 transition-all">FAQ</a>
+                    <a href="hubungi.html" class="nav-link px-4 py-2 text-sm font-medium text-white/80 hover:text-white rounded-lg hover:bg-white/10 transition-all">Kontak</a>
+                </div>
+                <div class="flex items-center gap-3">
+                    <a href="booking.html" class="hidden sm:inline-flex btn-red text-white px-5 py-2.5 rounded-lg text-sm font-semibold"><span>Booking Servis</span></a>
+                    <button id="mobileToggle" class="lg:hidden w-10 h-10 flex items-center justify-center text-white rounded-lg hover:bg-white/10 transition-colors"><i data-lucide="menu" class="w-6 h-6"></i></button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="mobileMenu" class="mobile-menu fixed inset-0 z-[60] bg-yamaha-dark/98 nav-blur">
+        <div class="flex items-center justify-between p-6">
+            <div class="flex items-center gap-3"><div class="w-10 h-10 rounded-lg blue-accent flex items-center justify-center"><svg viewBox="0 0 24 24" class="w-6 h-6 text-white" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div><div><p class="text-sm font-bold text-white">YAMAHA</p><p class="text-[10px] text-blue-300 tracking-widest">PRIHATIN MOTOR</p></div></div>
+            <button id="mobileClose" class="w-10 h-10 flex items-center justify-center text-white rounded-lg hover:bg-white/10"><i data-lucide="x" class="w-6 h-6"></i></button>
+        </div>
+        <div class="flex flex-col gap-1 px-6 mt-4">
+            <a href="index.html" class="mobile-link px-4 py-3 text-lg font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">Beranda</a>
+            <a href="tentang.html" class="mobile-link px-4 py-3 text-lg font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">Tentang Kami</a>
+            <a href="layanan.html" class="mobile-link px-4 py-3 text-lg font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">Layanan</a>
+            <a href="sparepart.html" class="mobile-link px-4 py-3 text-lg font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">Sparepart</a>
+            <a href="galeri.html" class="mobile-link px-4 py-3 text-lg font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">Galeri</a>
+            <a href="info.html" class="mobile-link active-link px-4 py-3 text-lg font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">Informasi</a>
+            <a href="booking.html" class="mobile-link px-4 py-3 text-lg font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">Booking</a>
+            <a href="bantuan.html" class="mobile-link px-4 py-3 text-lg font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">FAQ</a>
+            <a href="hubungi.html" class="mobile-link px-4 py-3 text-lg font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">Kontak</a>
+            <div class="mt-4 pt-4 border-t border-white/10"><a href="booking.html" class="btn-red text-white px-5 py-3 rounded-lg text-sm font-semibold block text-center"><span>Booking Servis Sekarang</span></a></div>
+        </div>
+    </div>
+
+    <section class="page-hero pt-32 pb-20 relative">
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 text-center">
+            <p class="text-xs font-bold tracking-[0.2em] uppercase text-red-400 mb-4" style="animation: fadeInUp 0.6s ease both;">Informasi</p>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight mb-4" style="animation: fadeInUp 0.8s ease 0.1s both;">Jam Operasional dan <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Lokasi</span></h1>
+            <p class="text-white/60 font-light max-w-2xl mx-auto" style="animation: fadeInUp 0.8s ease 0.2s both;">Informasi lengkap mengenai jam buka, alamat, dan testimoni dari pelanggan kami.</p>
+        </div>
+    </section>
+
+    <section class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div class="animate-on-scroll from-left">
+                    <p class="text-xs font-bold tracking-[0.2em] uppercase text-yamaha-red mb-4">Jam Operasional</p>
+                    <h2 class="text-3xl font-black text-yamaha-dark tracking-tight mb-6">Waktu <span class="blue-gradient-text">Buka</span> Kami</h2>
+                    <div class="divider-line mb-8"></div>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between bg-yamaha-gray-light rounded-xl px-6 py-4 border border-gray-100"><span class="font-semibold text-sm text-yamaha-dark">Senin</span><span class="text-sm text-gray-600">08:00 - 17:00</span></div>
+                        <div class="flex items-center justify-between bg-yamaha-gray-light rounded-xl px-6 py-4 border border-gray-100"><span class="font-semibold text-sm text-yamaha-dark">Selasa</span><span class="text-sm text-gray-600">08:00 - 17:00</span></div>
+                        <div class="flex items-center justify-between bg-yamaha-gray-light rounded-xl px-6 py-4 border border-gray-100"><span class="font-semibold text-sm text-yamaha-dark">Rabu</span><span class="text-sm text-gray-600">08:00 - 17:00</span></div>
+                        <div class="flex items-center justify-between bg-yamaha-gray-light rounded-xl px-6 py-4 border border-gray-100"><span class="font-semibold text-sm text-yamaha-dark">Kamis</span><span class="text-sm text-gray-600">08:00 - 17:00</span></div>
+                        <div class="flex items-center justify-between bg-yamaha-gray-light rounded-xl px-6 py-4 border border-gray-100"><span class="font-semibold text-sm text-yamaha-dark">Jumat</span><span class="text-sm text-gray-600">08:00 - 17:00</span></div>
+                        <div class="flex items-center justify-between bg-yamaha-gray-light rounded-xl px-6 py-4 border border-gray-100"><span class="font-semibold text-sm text-yamaha-dark">Sabtu</span><span class="text-sm text-gray-600">08:00 - 15:00</span></div>
+                        <div class="flex items-center justify-between bg-red-50 rounded-xl px-6 py-4 border border-red-100"><span class="font-semibold text-sm text-yamaha-red">Minggu</span><span class="text-sm text-yamaha-red font-medium">Tutup</span></div>
+                    </div>
+                </div>
+                <div class="animate-on-scroll from-right">
+                    <p class="text-xs font-bold tracking-[0.2em] uppercase text-yamaha-red mb-4">Lokasi</p>
+                    <h2 class="text-3xl font-black text-yamaha-dark tracking-tight mb-6">Temukan <span class="blue-gradient-text">Kami</span></h2>
+                    <div class="divider-line mb-8"></div>
+                    <div class="rounded-2xl overflow-hidden border border-gray-200 shadow-lg mb-6">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.521260322283!2d106.8195613!3d-6.194741399999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5d2e764b12d%3A0x3d2ad6e1e0e9bcc8!2sMonas!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="w-full"></iframe>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-lg blue-accent flex items-center justify-center flex-shrink-0"><i data-lucide="map-pin" class="w-5 h-5 text-white"></i></div>
+                            <div><p class="font-semibold text-sm text-yamaha-dark">Alamat</p><p class="text-gray-500 text-sm font-light">Jl. Raya Motor No. 123, Kelurahan Contoh, Kecamatan Contoh, Jakarta 12345</p></div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-lg red-accent flex items-center justify-center flex-shrink-0"><i data-lucide="navigation" class="w-5 h-5 text-white"></i></div>
+                            <div><p class="font-semibold text-sm text-yamaha-dark">Petunjuk Arah</p><p class="text-gray-500 text-sm font-light">Dari arah Monas, belok kiri ke Jl. Raya Motor, lurus 500 meter. Bengkel ada di sebelah kanan jalan.</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-yamaha-gray-light relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-14 animate-on-scroll">
+                <p class="text-xs font-bold tracking-[0.2em] uppercase text-yamaha-red mb-4">Testimoni</p>
+                <h2 class="text-3xl sm:text-4xl font-black text-yamaha-dark tracking-tight mb-4">Apa Kata <span class="blue-gradient-text">Pelanggan</span> Kami</h2>
+                <div class="divider-line mx-auto mb-6"></div>
+                <p class="text-gray-500 font-light max-w-2xl mx-auto">Kepuasan pelanggan adalah bukti nyata kualitas layanan kami.</p>
+            </div>
+            <div class="relative">
+                <div class="overflow-hidden">
+                    <div id="testimonialTrack" class="testimonial-track">
+                        <div class="testimonial-slide"><div class="bg-white rounded-2xl p-8 border border-gray-100 h-full"><div class="flex items-center gap-1 mb-4"><i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i><i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i><i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i><i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i><i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i></div><p class="text-gray-600 text-sm font-light leading-relaxed mb-6">"Servisnya cepat dan hasilnya memuaskan. Motor saya jadi lebih halus dan tarikannya enteng. Mekaniknya juga ramah dan jelasin masalahnya dengan detail."</p><div class="flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center"><span class="text-yamaha-blue font-bold text-sm">AS</span></div><div><p class="font-semibold text-sm text-yamaha-dark">Ahmad Surya</p><p class="text-xs text-gray-500">Pemilik Yamaha NMAX</p></div></div></div></div>
+                        <div class="testimonial-slide"><div class="bg-white rounded-2xl p-8 border border-gray-100 h-full"><div class="flex items-center gap-1 mb-4"><i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i><i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i><i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i><i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i><i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i></div><p class="text-gray-600 text-sm font-light leading-relaxed mb-6">"Sudah langganan dari dulu, sparepartnya selalu original dan harganya masuk akal. Pelayanannya juga konsisten bagus. Recommended bengkel Yamaha!"</p><div class="flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center"><span class="text-yamaha-red font-bold text-sm">DR</span></div><div><p class="font-semibold text-sm text-yamaha-dark">Dina Rahayu</p><p class="text-xs text-gray-500">Pemilik Yamaha Aerox</p></div></div></div></div>
+                        <div class="testimonial-slide"><div class="bg-white rounded-2xl p-8 border border-gray-100 h-full"><div class="flex items-center gap-1 mb-4"><i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i><i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i><i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i><i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i><i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i></div><p class="text-gray-600 text-sm font-light leading-relaxed mb-6">"Mesin motor saya overheat dan mati di jalan. Di-tow ke sini, ternyata cuma masalah kecil. Diperbaiki cepat, harganya juga wajar. Terima kasih!"</p><div class="flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center"><span class="text-yamaha-blue font-bold text-sm">BW</span></div><div><p class="font-semibold text-sm text-yamaha-dark">Budi Wicaksono</p><p class="text-xs text-gray-500">Pemilik Yamaha Vixion</p></div></div></div></div>
+                        <div class="testimonial-slide"><div class="bg-white rounded-2xl p-8 border border-gray-100 h-full"><div class="flex items-center gap-1 mb-4"><i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i><i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i><i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i><i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i><i data-lucide="star" class="w-4 h-4 text-gray-300 fill-gray-300"></i></div><p class="text-gray-600 text-sm font-light leading-relaxed mb-6">"Booking online-nya sangat memudahkan, nggak perlu antri lama. Cuci motornya juga bersih banget, seperti baru lagi. Pasti balik lagi!"</p><div class="flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center"><span class="text-yamaha-red font-bold text-sm">FN</span></div><div><p class="font-semibold text-sm text-yamaha-dark">Fitri Nuraini</p><p class="text-xs text-gray-500">Pemilik Yamaha Lexi</p></div></div></div></div>
+                        <div class="testimonial-slide"><div class="bg-white rounded-2xl p-8 border border-gray-100 h-full"><div class="flex items-center gap-1 mb-4"><i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i><i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i><i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i><i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i><i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i></div><p class="text-gray-600 text-sm font-light leading-relaxed mb-6">"Turun mesin di sini hasilnya top. Piston dan ring yang dipasang presisi, motor jadi bertenaga lagi. Garansi servisnya juga bikin tenang."</p><div class="flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center"><span class="text-yamaha-blue font-bold text-sm">RH</span></div><div><p class="font-semibold text-sm text-yamaha-dark">Rizky Hidayat</p><p class="text-xs text-gray-500">Pemilik Yamaha Jupiter MX</p></div></div></div></div>
+                        <div class="testimonial-slide"><div class="bg-white rounded-2xl p-8 border border-gray-100 h-full"><div class="flex items-center gap-1 mb-4"><i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i><i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i><i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i><i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i><i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i></div><p class="text-gray-600 text-sm font-light leading-relaxed mb-6">"Konsultasi gratisnya sangat membantu. Mekanik jelasin dengan sabar apa yang perlu diperbaiki dan apa yang belum perlu. Jujur dan profesional!"</p><div class="flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center"><span class="text-yamaha-red font-bold text-sm">SA</span></div><div><p class="font-semibold text-sm text-yamaha-dark">Sari Amalia</p><p class="text-xs text-gray-500">Pemilik Yamaha FreeGo</p></div></div></div></div>
+                    </div>
+                </div>
+                <div class="flex items-center justify-center gap-4 mt-8">
+                    <button id="testimonialPrev" class="w-12 h-12 rounded-full bg-white border border-gray-200 flex items-center justify-center hover:bg-yamaha-blue hover:text-white hover:border-yamaha-blue transition-all shadow-sm"><i data-lucide="chevron-left" class="w-5 h-5"></i></button>
+                    <button id="testimonialNext" class="w-12 h-12 rounded-full bg-white border border-gray-200 flex items-center justify-center hover:bg-yamaha-blue hover:text-white hover:border-yamaha-blue transition-all shadow-sm"><i data-lucide="chevron-right" class="w-5 h-5"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-gradient text-white relative overflow-hidden">
+        <div class="yamaha-stripe h-1 w-full"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-16">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+                <div><div class="flex items-center gap-3 mb-5"><div class="w-10 h-10 rounded-lg blue-accent flex items-center justify-center"><svg viewBox="0 0 24 24" class="w-6 h-6 text-white" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div><div><p class="text-sm font-bold leading-tight">YAMAHA</p><p class="text-[10px] text-blue-300 tracking-widest uppercase">Prihatin Motor</p></div></div><p class="text-white/50 text-sm font-light leading-relaxed">Bengkel resmi Yamaha yang menyediakan layanan servis dan sparepart motor berkualitas tinggi.</p></div>
+                <div><h4 class="font-bold text-sm mb-5">Menu</h4><ul class="space-y-3"><li><a href="index.html" class="text-white/50 text-sm hover:text-white transition-colors">Beranda</a></li><li><a href="tentang.html" class="text-white/50 text-sm hover:text-white transition-colors">Tentang Kami</a></li><li><a href="layanan.html" class="text-white/50 text-sm hover:text-white transition-colors">Layanan</a></li><li><a href="sparepart.html" class="text-white/50 text-sm hover:text-white transition-colors">Sparepart</a></li><li><a href="galeri.html" class="text-white/50 text-sm hover:text-white transition-colors">Galeri</a></li></ul></div>
+                <div><h4 class="font-bold text-sm mb-5">Layanan</h4><ul class="space-y-3"><li><a href="layanan.html" class="text-white/50 text-sm hover:text-white transition-colors">Servis Berkala</a></li><li><a href="layanan.html" class="text-white/50 text-sm hover:text-white transition-colors">Overhaul Mesin</a></li><li><a href="layanan.html" class="text-white/50 text-sm hover:text-white transition-colors">Kelistrikan</a></li><li><a href="booking.html" class="text-white/50 text-sm hover:text-white transition-colors">Booking Online</a></li><li><a href="bantuan.html" class="text-white/50 text-sm hover:text-white transition-colors">FAQ</a></li></ul></div>
+                <div><h4 class="font-bold text-sm mb-5">Kontak</h4><ul class="space-y-3"><li class="flex items-start gap-2 text-white/50 text-sm"><i data-lucide="map-pin" class="w-4 h-4 mt-0.5 flex-shrink-0"></i>Jl. Raya Motor No. 123, Jakarta</li><li class="flex items-center gap-2 text-white/50 text-sm"><i data-lucide="phone" class="w-4 h-4 flex-shrink-0"></i>(021) 123-4567</li><li class="flex items-center gap-2 text-white/50 text-sm"><i data-lucide="mail" class="w-4 h-4 flex-shrink-0"></i>info@prihatinmotor.com</li><li class="flex items-center gap-2 text-white/50 text-sm"><i data-lucide="clock" class="w-4 h-4 flex-shrink-0"></i>Sen-Sab: 08.00 - 17.00</li></ul></div>
+            </div>
+        </div>
+        <div class="border-t border-white/10"><div class="max-w-7xl mx-auto px-4 sm:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4"><p class="text-white/40 text-xs">&copy; 2024 Yamaha Prihatin Motor. All rights reserved.</p><div class="flex items-center gap-4"><a href="#" class="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center hover:bg-yamaha-blue transition-colors"><i data-lucide="facebook" class="w-4 h-4"></i></a><a href="#" class="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center hover:bg-yamaha-blue transition-colors"><i data-lucide="instagram" class="w-4 h-4"></i></a><a href="#" class="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center hover:bg-yamaha-blue transition-colors"><i data-lucide="youtube" class="w-4 h-4"></i></a><a href="#" class="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center hover:bg-yamaha-blue transition-colors"><i data-lucide="twitter" class="w-4 h-4"></i></a></div></div></div>
+    </footer>
+
+    <button id="backToTop"><i data-lucide="chevron-up" class="w-5 h-5"></i></button>
+    <a id="waFloat" href="https://wa.me/6281234567890" target="_blank"><div class="wa-tooltip">Chat via WhatsApp</div><div class="wa-btn relative"><div class="wa-pulse"></div><svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div></a>
+    <script src="script.js"></script>
+</body>
+</html>
