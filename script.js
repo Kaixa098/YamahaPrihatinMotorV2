@@ -30,12 +30,9 @@ const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
     if (!navbar) return;
     if (window.scrollY > 50) {
-        navbar.style.background = 'rgba(12, 10, 26, 0.95)';
-        navbar.classList.add('nav-blur');
-        navbar.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.3)';
+        navbar.classList.add('navbar-scrolled');
     } else {
-        navbar.style.background = 'transparent';
-        navbar.style.boxShadow = 'none';
+        navbar.classList.remove('navbar-scrolled');
     }
 });
 
