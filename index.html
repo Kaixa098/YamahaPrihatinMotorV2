@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yamaha Prihatin Motor — Dealer Servis Terpercaya</title>
-    <link rel="icon" type="image/png" href="Image/iconfinal.png">
+    <link rel="icon" type="image/png" href="Image/favicon.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -112,6 +112,17 @@
         </div>
         <div class="shape-3d hidden lg:block" style="top:25%; right:25%;">
             <div class="shape-ring" style="width:40px;height:40px;border-color:rgba(230,0,18,0.08);animation-duration:10s;animation-direction:reverse;"></div>
+        </div>
+
+        <!-- Hero Image — Mobile & Tablet only (desktop image below is untouched).
+             Positioned top-right, behind the text/CTA (z-index lower than the
+             z-10 content wrapper), with the same left-to-right fade concept
+             as desktop so visual identity stays consistent on every screen. -->
+        <div class="hero-image-in hero-mobile-image-wrap lg:hidden" aria-hidden="true">
+            <div class="hero-mobile-image-fade">
+                <img src="https://picsum.photos/seed/yamaha-motor-hero/600/700.jpg" alt="" class="hero-mobile-image-img">
+                <div class="hero-mobile-image-overlay"></div>
+            </div>
         </div>
 
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full py-28 lg:py-32">

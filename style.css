@@ -862,6 +862,85 @@ textarea:focus {
     pointer-events: none;
 }
 
+/* ===== HERO IMAGE — MOBILE & TABLET ONLY =====
+   Desktop's .hero-image-in.hidden.lg\:block (and its fade mask above) is
+   completely untouched. This is a separate layer, shown only below the
+   `lg` breakpoint via the `lg:hidden` utility on .hero-mobile-image-wrap,
+   positioned top-right and placed behind the title/description/buttons
+   (z-index 2, below the content wrapper's z-10) so it never covers them.
+   The fade direction/character mirrors desktop: transparent on the left,
+   fully visible on the right. */
+.hero-mobile-image-wrap {
+    position: absolute;
+    top: 3.75rem;
+    right: 0;
+    width: clamp(150px, 46vw, 230px);
+    aspect-ratio: 6 / 7;
+    max-height: 56vh;
+    z-index: 2;
+    pointer-events: none;
+    overflow: hidden;
+    border-bottom-left-radius: 2.5rem;
+}
+
+.hero-mobile-image-fade {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        transparent 10%,
+        rgba(0, 0, 0, 0.08) 18%,
+        rgba(0, 0, 0, 0.15) 25%,
+        rgba(0, 0, 0, 0.38) 36%,
+        rgba(0, 0, 0, 0.60) 46%,
+        rgba(0, 0, 0, 0.80) 55%,
+        rgba(0, 0, 0, 0.92) 63%,
+        rgba(0, 0, 0, 0.97) 75%,
+        #000 100%
+    );
+    mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        transparent 10%,
+        rgba(0, 0, 0, 0.08) 18%,
+        rgba(0, 0, 0, 0.15) 25%,
+        rgba(0, 0, 0, 0.38) 36%,
+        rgba(0, 0, 0, 0.60) 46%,
+        rgba(0, 0, 0, 0.80) 55%,
+        rgba(0, 0, 0, 0.92) 63%,
+        rgba(0, 0, 0, 0.97) 75%,
+        #000 100%
+    );
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+}
+
+.hero-mobile-image-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 65% 30%;
+}
+
+.hero-mobile-image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(12, 10, 26, 0.45) 0%, transparent 45%, transparent 70%, rgba(12, 10, 26, 0.35) 100%);
+    pointer-events: none;
+}
+
+@media (max-width: 374px) {
+    .hero-mobile-image-wrap {
+        width: clamp(120px, 40vw, 185px);
+        top: 3.5rem;
+    }
+}
+
 
 /* 3D Service Card */
 .card-3d {
