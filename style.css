@@ -890,28 +890,28 @@ textarea:focus {
     -webkit-mask-image: linear-gradient(
         to right,
         transparent 0%,
-        transparent 10%,
-        rgba(0, 0, 0, 0.08) 18%,
-        rgba(0, 0, 0, 0.15) 25%,
-        rgba(0, 0, 0, 0.38) 36%,
-        rgba(0, 0, 0, 0.60) 46%,
-        rgba(0, 0, 0, 0.80) 55%,
-        rgba(0, 0, 0, 0.92) 63%,
-        rgba(0, 0, 0, 0.97) 75%,
-        #000 100%
+        transparent 4%,
+        rgba(0, 0, 0, 0.10) 9%,
+        rgba(0, 0, 0, 0.20) 14%,
+        rgba(0, 0, 0, 0.42) 21%,
+        rgba(0, 0, 0, 0.65) 29%,
+        rgba(0, 0, 0, 0.85) 38%,
+        rgba(0, 0, 0, 0.94) 48%,
+        rgba(0, 0, 0, 0.98) 62%,
+        #000 80%
     );
     mask-image: linear-gradient(
         to right,
         transparent 0%,
-        transparent 10%,
-        rgba(0, 0, 0, 0.08) 18%,
-        rgba(0, 0, 0, 0.15) 25%,
-        rgba(0, 0, 0, 0.38) 36%,
-        rgba(0, 0, 0, 0.60) 46%,
-        rgba(0, 0, 0, 0.80) 55%,
-        rgba(0, 0, 0, 0.92) 63%,
-        rgba(0, 0, 0, 0.97) 75%,
-        #000 100%
+        transparent 4%,
+        rgba(0, 0, 0, 0.10) 9%,
+        rgba(0, 0, 0, 0.20) 14%,
+        rgba(0, 0, 0, 0.42) 21%,
+        rgba(0, 0, 0, 0.65) 29%,
+        rgba(0, 0, 0, 0.85) 38%,
+        rgba(0, 0, 0, 0.94) 48%,
+        rgba(0, 0, 0, 0.98) 62%,
+        #000 80%
     );
     -webkit-mask-size: 100% 100%;
     mask-size: 100% 100%;
