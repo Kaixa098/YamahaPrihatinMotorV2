@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yamaha Prihatin Motor — Dealer Servis Terpercaya</title>
+    <link rel="icon" type="image/png" href="Image/iconfinal.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -55,7 +56,6 @@
                 </a>
                 <div class="hidden lg:flex items-center gap-1">
                     <a href="index.html" class="nav-link active-link px-4 py-2 text-sm font-medium text-white/80 hover:text-white rounded-lg hover:bg-white/10 transition-all">Beranda</a>
-                    <a href="tentang.html" class="nav-link px-4 py-2 text-sm font-medium text-white/80 hover:text-white rounded-lg hover:bg-white/10 transition-all">Tentang Kami</a>
                     <a href="layanan.html" class="nav-link px-4 py-2 text-sm font-medium text-white/80 hover:text-white rounded-lg hover:bg-white/10 transition-all">Layanan</a>
                     <a href="produk.html" class="nav-link px-4 py-2 text-sm font-medium text-white/80 hover:text-white rounded-lg hover:bg-white/10 transition-all">Produk</a>
                     <a href="galeri.html" class="nav-link px-4 py-2 text-sm font-medium text-white/80 hover:text-white rounded-lg hover:bg-white/10 transition-all">Galeri</a>
@@ -78,7 +78,6 @@
         </div>
         <div class="flex flex-col gap-1 px-6 mt-4">
             <a href="index.html" class="mobile-link active-link px-4 py-3 text-lg font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">Beranda</a>
-            <a href="tentang.html" class="mobile-link px-4 py-3 text-lg font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">Tentang Kami</a>
             <a href="layanan.html" class="mobile-link px-4 py-3 text-lg font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">Layanan</a>
             <a href="produk.html" class="mobile-link px-4 py-3 text-lg font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">Produk</a>
             <a href="galeri.html" class="mobile-link px-4 py-3 text-lg font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">Galeri</a>
@@ -118,14 +117,10 @@
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full py-28 lg:py-32">
             <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                 <div>
-                    <div class="hero-badge-in inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-5 py-2.5 mb-7">
-                        <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-                        <span class="text-xs font-semibold text-white/90 tracking-wide uppercase">Buka Sekarang • Melayani Sepenuh Hati</span>
-                    </div>
                     <h1 class="hero-title-in text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black text-white leading-[1.05] tracking-tight mb-7">
                         Yamaha<br>
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Prihatin</span><br>
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-300">Motor</span>
+                        <span class="text-white">Prihatin</span><br>
+                        <span class="text-white">Motor</span>
                     </h1>
                     <p class="hero-desc-in text-base sm:text-lg text-white/70 font-light leading-relaxed max-w-lg mb-10">
                         <span id="typingText"></span><span class="typing-cursor"></span>
@@ -145,26 +140,30 @@
                             <span class="hero-btn-icon"><i data-lucide="bike" class="w-5 h-5"></i></span>
                             <span class="hero-btn-label">Tipe Motor</span>
                         </a>
-                        <a href="keunggulan.html" class="hero-btn hero-btn-glass" aria-label="Lihat halaman Keunggulan">
-                            <span class="hero-btn-icon"><i data-lucide="award" class="w-5 h-5"></i></span>
-                            <span class="hero-btn-label">Keunggulan</span>
-                        </a>
                     </div>
 
                     <!-- 3D Stats -->
                     <div class="hero-stats-in stat-3d counter-group flex gap-8 mt-14 pt-9 border-t border-white/10">
                         <div class="stat-num">
                             <p class="text-3xl font-black stat-number"><span class="counter" data-target="10">0</span>+</p>
-                            <p class="text-xs text-white/50 mt-1">Tahun Pengalaman</p>
+                            <p class="text-xs text-white mt-1">Tahun Pengalaman</p>
                         </div>
                         <div class="stat-num">
                             <p class="text-3xl font-black stat-number"><span class="counter" data-target="5000">0</span>+</p>
-                            <p class="text-xs text-white/50 mt-1">Motor Ditangani</p>
+                            <p class="text-xs text-white mt-1">Motor Ditangani</p>
                         </div>
                         <div class="stat-num">
                             <p class="text-3xl font-black stat-number"><span class="counter-decimal" data-target="4.9">0</span></p>
-                            <p class="text-xs text-white/50 mt-1">Rating Pelanggan</p>
+                            <p class="text-xs text-white mt-1">Rating Pelanggan</p>
                         </div>
+                    </div>
+
+                    <!-- Tombol Keunggulan mandiri - khusus mobile, di tengah, tepat di bawah statistik -->
+                    <div class="hero-keunggulan-mobile-wrap sm:hidden">
+                        <a href="#keunggulan" class="hero-btn hero-btn-glass hero-keunggulan-mobile-btn" aria-label="Lihat Keunggulan Yamaha Prihatin Motor">
+                            <span class="hero-btn-icon"><i data-lucide="award" class="w-5 h-5"></i></span>
+                            <span class="hero-btn-label">Keunggulan</span>
+                        </a>
                     </div>
                 </div>
 
@@ -179,11 +178,60 @@
                 </div>
             </div>
         </div>
+    </section>
 
-        <div class="hero-scroll-in absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2">
-            <span class="text-white/40 text-xs tracking-widest uppercase">Jelajahi</span>
-            <div class="w-6 h-10 border-2 border-white/20 rounded-full flex items-start justify-center p-1.5">
-                <div class="w-1.5 h-3 bg-white/60 rounded-full animate-bounce"></div>
+    <!-- ==================== KEUNGGULAN ==================== -->
+    <section id="keunggulan" class="py-20 sm:py-24 bg-yamaha-gray-light relative scroll-anchor-target">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-14 animate-on-scroll">
+                <p class="text-xs font-bold tracking-[0.2em] uppercase text-yamaha-red mb-4">Kenapa Pilih Kami</p>
+                <h2 class="text-3xl sm:text-4xl font-black text-yamaha-dark tracking-tight mb-4">
+                    Keunggulan <span class="blue-gradient-text">Yamaha Prihatin Motor</span>
+                </h2>
+                <div class="divider-line mx-auto mb-6"></div>
+                <p class="text-gray-500 font-light max-w-2xl mx-auto">Delapan alasan utama kenapa motor Yamaha Anda lebih baik dipercayakan kepada kami.</p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="animate-on-scroll card-hover bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 group">
+                    <div class="w-14 h-14 rounded-2xl blue-accent flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-blue-500/20"><i data-lucide="badge-check" class="w-7 h-7 text-white"></i></div>
+                    <h3 class="text-lg font-bold text-yamaha-dark mb-3">Mekanik Bersertifikat</h3>
+                    <p class="text-gray-500 text-sm font-light leading-relaxed">Tim mekanik kami terlatih langsung dengan standar teknis resmi Yamaha, bukan sekadar montir umum.</p>
+                </div>
+                <div class="animate-on-scroll card-hover bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 group" style="transition-delay:0.1s">
+                    <div class="w-14 h-14 rounded-2xl red-accent flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-red-500/20"><i data-lucide="package-check" class="w-7 h-7 text-white"></i></div>
+                    <h3 class="text-lg font-bold text-yamaha-dark mb-3">Sparepart 100% Original</h3>
+                    <p class="text-gray-500 text-sm font-light leading-relaxed">Hanya menggunakan Yamaha Genuine Parts (YGP) agar performa dan keawetan motor Anda tetap terjaga.</p>
+                </div>
+                <div class="animate-on-scroll card-hover bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 group" style="transition-delay:0.2s">
+                    <div class="w-14 h-14 rounded-2xl blue-accent flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-blue-500/20"><i data-lucide="shield-check" class="w-7 h-7 text-white"></i></div>
+                    <h3 class="text-lg font-bold text-yamaha-dark mb-3">Garansi Servis 30 Hari</h3>
+                    <p class="text-gray-500 text-sm font-light leading-relaxed">Setiap pekerjaan servis kami bergaransi, jadi Anda tak perlu khawatir soal kualitas pengerjaan.</p>
+                </div>
+                <div class="animate-on-scroll card-hover bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 group" style="transition-delay:0.3s">
+                    <div class="w-14 h-14 rounded-2xl red-accent flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-red-500/20"><i data-lucide="cpu" class="w-7 h-7 text-white"></i></div>
+                    <h3 class="text-lg font-bold text-yamaha-dark mb-3">Peralatan & Diagnosa Modern</h3>
+                    <p class="text-gray-500 text-sm font-light leading-relaxed">Dilengkapi alat diagnosa digital untuk mendeteksi masalah motor secara cepat dan akurat.</p>
+                </div>
+                <div class="animate-on-scroll card-hover bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 group">
+                    <div class="w-14 h-14 rounded-2xl blue-accent flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-blue-500/20"><i data-lucide="banknote" class="w-7 h-7 text-white"></i></div>
+                    <h3 class="text-lg font-bold text-yamaha-dark mb-3">Harga Transparan</h3>
+                    <p class="text-gray-500 text-sm font-light leading-relaxed">Rincian biaya jasa dan sparepart disampaikan di awal, tanpa biaya tersembunyi di kemudian hari.</p>
+                </div>
+                <div class="animate-on-scroll card-hover bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 group" style="transition-delay:0.1s">
+                    <div class="w-14 h-14 rounded-2xl red-accent flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-red-500/20"><i data-lucide="timer" class="w-7 h-7 text-white"></i></div>
+                    <h3 class="text-lg font-bold text-yamaha-dark mb-3">Proses Servis Cepat</h3>
+                    <p class="text-gray-500 text-sm font-light leading-relaxed">Alur kerja yang efisien membuat motor Anda selesai diservis tanpa menunggu terlalu lama.</p>
+                </div>
+                <div class="animate-on-scroll card-hover bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 group" style="transition-delay:0.2s">
+                    <div class="w-14 h-14 rounded-2xl blue-accent flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-blue-500/20"><i data-lucide="message-circle" class="w-7 h-7 text-white"></i></div>
+                    <h3 class="text-lg font-bold text-yamaha-dark mb-3">Konsultasi Gratis</h3>
+                    <p class="text-gray-500 text-sm font-light leading-relaxed">Bingung soal keluhan motor? Konsultasikan gratis dengan mekanik kami sebelum memutuskan servis.</p>
+                </div>
+                <div class="animate-on-scroll card-hover bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 group" style="transition-delay:0.3s">
+                    <div class="w-14 h-14 rounded-2xl red-accent flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-red-500/20"><i data-lucide="map-pin" class="w-7 h-7 text-white"></i></div>
+                    <h3 class="text-lg font-bold text-yamaha-dark mb-3">Lokasi Strategis</h3>
+                    <p class="text-gray-500 text-sm font-light leading-relaxed">Berada di lokasi yang mudah dijangkau dengan area parkir luas dan ruang tunggu yang nyaman.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -201,7 +249,7 @@
                 <p class="text-gray-500 font-light max-w-2xl mx-auto">Pilih kategori di bawah ini untuk menemukan informasi yang Anda cari.</p>
             </div>
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <a href="tentang.html" class="animate-on-scroll nav-card-3d bg-yamaha-gray-light rounded-2xl p-6 sm:p-8 border border-gray-100 group block relative">
+                <a href="#tentang" class="animate-on-scroll nav-card-3d bg-yamaha-gray-light rounded-2xl p-6 sm:p-8 border border-gray-100 group block relative">
                     <div class="nav-card-3d-icon w-14 h-14 rounded-2xl blue-accent flex items-center justify-center mb-6 shadow-lg shadow-blue-500/20"><i data-lucide="building-2" class="w-7 h-7 text-white"></i></div>
                     <h3 class="text-lg font-bold text-yamaha-dark mb-2 relative z-10">Tentang Kami</h3>
                     <p class="text-gray-500 text-sm font-light leading-relaxed mb-4 relative z-10">Kenali lebih dekat Dealer Yamaha Prihatin Motor, visi misi, dan tim kami.</p>
@@ -229,13 +277,99 @@
         </div>
     </section>
 
+    <!-- ==================== ABOUT CONTENT (TENTANG KAMI) ==================== -->
+    <section id="tentang" class="py-24 bg-white relative overflow-hidden scroll-anchor-target">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-blue-50 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-72 h-72 bg-red-50 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 relative">
+            <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+                <div class="animate-on-scroll from-left relative">
+                    <div class="relative">
+                        <img src="https://picsum.photos/seed/Dealer-motor-yamaha/600/500.jpg" alt="Dealer Yamaha Prihatin Motor" class="w-full h-[450px] object-cover rounded-2xl shadow-xl">
+                        <div class="absolute -bottom-6 -right-6 w-48 h-48 yamaha-stripe rounded-2xl -z-10 opacity-80"></div>
+                        <div class="absolute -top-4 -left-4 bg-yamaha-dark text-white rounded-2xl p-5 shadow-2xl">
+                            <p class="text-4xl font-black stat-number">10+</p>
+                            <p class="text-xs text-white/60 mt-1">Tahun<br>Pengalaman</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="animate-on-scroll from-right">
+                    <p class="text-xs font-bold tracking-[0.2em] uppercase text-yamaha-red mb-4">Tentang Kami</p>
+                    <h2 class="text-3xl sm:text-4xl font-black text-yamaha-dark tracking-tight mb-4">
+                        Dealer Yamaha <br><span class="blue-gradient-text">Terpercaya</span> Pilihan Anda
+                    </h2>
+                    <div class="divider-line mb-8"></div>
+                    <p class="text-gray-600 font-light leading-relaxed mb-6">
+                        <strong class="text-gray-800">Yamaha Prihatin Motor</strong> hadir sebagai Dealer resmi yang memberikan layanan servis motor Yamaha dengan kualitas terbaik. Kami berkomitmen untuk memberikan pelayanan yang ramah, cepat, dan terpercaya.
+                    </p>
+                    <p class="text-gray-600 font-light leading-relaxed mb-8">
+                        Dengan tim mekanik bersertifikat dan peralatan modern, kami memastikan setiap motor yang ditangani mendapat perawatan terbaik. Kepuasan pelanggan adalah prioritas utama kami.
+                    </p>
+                    <div class="grid sm:grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-start gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="wrench" class="w-5 h-5 text-yamaha-blue"></i></div>
+                            <div><p class="font-semibold text-sm text-yamaha-dark">Mekanik Bersertifikat</p><p class="text-xs text-gray-500 mt-0.5">Terlatih & profesional</p></div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-red-50 flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="shield-check" class="w-5 h-5 text-yamaha-red"></i></div>
+                            <div><p class="font-semibold text-sm text-yamaha-dark">Garansi Servis</p><p class="text-xs text-gray-500 mt-0.5">Bergaransi 30 hari</p></div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="timer" class="w-5 h-5 text-yamaha-blue"></i></div>
+                            <div><p class="font-semibold text-sm text-yamaha-dark">Pengerjaan Cepat</p><p class="text-xs text-gray-500 mt-0.5">Tepat waktu</p></div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-red-50 flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="badge-indian-rupee" class="w-5 h-5 text-yamaha-red"></i></div>
+                            <div><p class="font-semibold text-sm text-yamaha-dark">Harga Transparan</p><p class="text-xs text-gray-500 mt-0.5">Tanpa biaya tersembunyi</p></div>
+                        </div>
+                    </div>
+                    <a href="hubungi.html" class="btn-primary text-white px-8 py-3.5 rounded-xl text-sm font-bold tracking-wide inline-flex items-center gap-2">
+                        <span class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4"></i> Hubungi Kami</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== VISI MISI ==================== -->
+    <section class="py-24 bg-yamaha-gray-light relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="grid lg:grid-cols-2 gap-8 lg:gap-12">
+                <div class="animate-on-scroll from-left">
+                    <div class="bg-white rounded-2xl p-6 sm:p-10 border border-gray-100 h-full">
+                        <div class="w-14 h-14 rounded-2xl blue-accent flex items-center justify-center mb-6 shadow-lg shadow-blue-500/20">
+                            <i data-lucide="eye" class="w-7 h-7 text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-black text-yamaha-dark mb-4">Visi Kami</h3>
+                        <p class="text-gray-600 font-light leading-relaxed">Menjadi Dealer motor Yamaha terpercaya dan terdepan di Indonesia yang memberikan pelayanan terbaik dengan standar kualitas tinggi, serta menjadi pilihan utama masyarakat dalam perawatan dan perbaikan motor Yamaha.</p>
+                    </div>
+                </div>
+                <div class="animate-on-scroll from-right">
+                    <div class="bg-white rounded-2xl p-6 sm:p-10 border border-gray-100 h-full">
+                        <div class="w-14 h-14 rounded-2xl red-accent flex items-center justify-center mb-6 shadow-lg shadow-red-500/20">
+                            <i data-lucide="target" class="w-7 h-7 text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-black text-yamaha-dark mb-4">Misi Kami</h3>
+                        <ul class="space-y-3 text-gray-600 font-light leading-relaxed">
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-5 h-5 text-yamaha-blue flex-shrink-0 mt-0.5"></i>Memberikan layanan servis berkualitas dengan harga terjangkau</li>
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-5 h-5 text-yamaha-blue flex-shrink-0 mt-0.5"></i>Mengutamakan kepuasan dan kepercayaan pelanggan</li>
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-5 h-5 text-yamaha-blue flex-shrink-0 mt-0.5"></i>Mengembangkan SDM mekanik yang kompeten dan bersertifikat</li>
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-5 h-5 text-yamaha-blue flex-shrink-0 mt-0.5"></i>Memberikan garansi pada setiap pekerjaan servis</li>
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-5 h-5 text-yamaha-blue flex-shrink-0 mt-0.5"></i>Menerapkan teknologi modern dalam setiap proses pengerjaan</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ==================== FOOTER ==================== -->
     <footer class="footer-gradient text-white relative overflow-hidden">
         <div class="yamaha-stripe h-1 w-full"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 py-16">
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
                 <div><div class="mb-5"><img src="Image/logofinal.png" alt="Prihatin Motor" class="h-10 w-auto"></div><p class="text-white/50 text-sm font-light leading-relaxed">Dealer resmi Yamaha yang menyediakan layanan servis motor berkualitas tinggi.</p></div>
-                <div><h4 class="font-bold text-sm mb-5">Menu</h4><ul class="space-y-3"><li><a href="index.html" class="text-white/50 text-sm hover:text-white transition-colors">Beranda</a></li><li><a href="tentang.html" class="text-white/50 text-sm hover:text-white transition-colors">Tentang Kami</a></li><li><a href="layanan.html" class="text-white/50 text-sm hover:text-white transition-colors">Layanan</a></li><li><a href="produk.html" class="text-white/50 text-sm hover:text-white transition-colors">Produk</a></li><li><a href="galeri.html" class="text-white/50 text-sm hover:text-white transition-colors">Galeri</a></li></ul></div>
+                <div><h4 class="font-bold text-sm mb-5">Menu</h4><ul class="space-y-3"><li><a href="index.html" class="text-white/50 text-sm hover:text-white transition-colors">Beranda</a></li><li><a href="layanan.html" class="text-white/50 text-sm hover:text-white transition-colors">Layanan</a></li><li><a href="produk.html" class="text-white/50 text-sm hover:text-white transition-colors">Produk</a></li><li><a href="galeri.html" class="text-white/50 text-sm hover:text-white transition-colors">Galeri</a></li></ul></div>
                 <div><h4 class="font-bold text-sm mb-5">Layanan</h4><ul class="space-y-3"><li><a href="layanan.html" class="text-white/50 text-sm hover:text-white transition-colors">Servis Berkala</a></li><li><a href="layanan.html" class="text-white/50 text-sm hover:text-white transition-colors">Overhaul Mesin</a></li><li><a href="layanan.html" class="text-white/50 text-sm hover:text-white transition-colors">Kelistrikan</a></li><li><a href="bantuan.html" class="text-white/50 text-sm hover:text-white transition-colors">FAQ</a></li></ul></div>
                 <div><h4 class="font-bold text-sm mb-5">Kontak</h4><ul class="space-y-3"><li class="flex items-start gap-2 text-white/50 text-sm"><i data-lucide="map-pin" class="w-4 h-4 mt-0.5 flex-shrink-0"></i>Jl. Raya Motor No. 123, Jakarta</li><li class="flex items-center gap-2 text-white/50 text-sm"><i data-lucide="phone" class="w-4 h-4 flex-shrink-0"></i>(021) 123-4567</li><li class="flex items-center gap-2 text-white/50 text-sm"><i data-lucide="mail" class="w-4 h-4 flex-shrink-0"></i>info@prihatinmotor.com</li><li class="flex items-center gap-2 text-white/50 text-sm"><i data-lucide="clock" class="w-4 h-4 flex-shrink-0"></i>Sen-Sab: 08.00 - 17.00</li></ul></div>
             </div>

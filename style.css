@@ -1016,6 +1016,20 @@ textarea:focus {
 }
 
 /* ===================================================================
+   HERO TYPOGRAPHY — warna teks putih solid untuk keterbacaan
+   (Task 11: hanya warna, tidak mengubah font/ukuran/posisi/jarak/layout).
+   Di-scope ke .hero-stats-in agar tidak memengaruhi .stat-number di
+   halaman lain (keunggulan.html, tentang.html) yang tetap gradient.
+=================================================================== */
+.hero-stats-in .stat-number {
+    background: none;
+    -webkit-background-clip: initial;
+    background-clip: initial;
+    -webkit-text-fill-color: #FFFFFF;
+    color: #FFFFFF;
+}
+
+/* ===================================================================
    HERO CTA BUTTONS — WhatsApp, Layanan, Tipe Motor, Keunggulan
    (Task 4: hanya styling tombol Hero, tidak mengubah rule lain)
 =================================================================== */
@@ -1028,12 +1042,39 @@ textarea:focus {
     max-width: 32rem;
 }
 
+/* Task 10: Susunan tombol Hero khusus mobile (<640px)
+   Baris 1 : WhatsApp (CTA utama, full-width, di tengah)
+   Baris 2 : Layanan | Tipe Motor (ukuran sama, sejajar)
+   Tombol Keunggulan sudah dihapus dari grid CTA (digantikan tombol Keunggulan
+   mandiri di bawah statistik untuk mobile — lihat .hero-keunggulan-mobile-wrap). */
+.hero-cta-grid .hero-btn-primary {
+    grid-column: 1 / -1;
+}
+
 @media (min-width: 640px) {
     .hero-cta-grid {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 1.1rem;
         max-width: none;
     }
+
+    /* Kembalikan perilaku grid desktop apa adanya (3 tombol sejajar) */
+    .hero-cta-grid .hero-btn-primary {
+        grid-column: auto;
+    }
+}
+
+/* Tombol Keunggulan mandiri di bawah statistik Hero — khusus mobile.
+   Ditampilkan terpisah dari grid CTA, di tengah, tepat di bawah angka statistik.
+   Otomatis disembunyikan di >=640px karena Keunggulan sudah ada di grid 4-tombol desktop. */
+.hero-keunggulan-mobile-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.25rem;
+}
+
+.hero-keunggulan-mobile-btn {
+    width: 11rem;
 }
 
 .hero-btn {
