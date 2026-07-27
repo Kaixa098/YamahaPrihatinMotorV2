@@ -381,11 +381,23 @@ html {
 }
 
 .motor-tab-btn {
+    background: #ffffff;
+    border-color: #E5E7EB;
+    color: #6B7280;
     transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease, border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .motor-tab-btn:hover {
     transform: translateY(-2px);
+    border-color: #322869;
+    color: #322869;
+}
+
+.motor-tab-btn.active {
+    background: linear-gradient(135deg, #322869, #7F79A1);
+    border-color: #322869;
+    color: #ffffff;
+    box-shadow: 0 8px 20px -6px rgba(50, 40, 105, 0.5);
 }
 
 .divider-line {
@@ -851,18 +863,6 @@ textarea:focus {
 }
 
 
-/* 3D Floating Badge */
-.float-3d {
-    transform-style: preserve-3d;
-    perspective: 800px;
-    animation: float3d 4s ease-in-out infinite;
-}
-
-@keyframes float3d {
-    0%, 100% { transform: translateY(0) rotateX(5deg) rotateY(-3deg); }
-    50% { transform: translateY(-12px) rotateX(-5deg) rotateY(3deg); }
-}
-
 /* 3D Service Card */
 .card-3d {
     transform-style: preserve-3d;
@@ -925,18 +925,6 @@ textarea:focus {
 
 .nav-card-3d:hover .nav-card-3d-icon {
     transform: translateZ(40px) scale(1.1) rotateY(10deg);
-}
-
-/* 3D Gallery Items */
-.gallery-3d {
-    transform-style: preserve-3d;
-    perspective: 800px;
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s ease;
-}
-
-.gallery-3d:hover {
-    transform: translateZ(30px) rotateY(3deg) scale(1.02);
-    box-shadow: 25px 25px 50px rgba(0, 0, 0, 0.3);
 }
 
 /* 3D Stat Number */
@@ -1027,112 +1015,6 @@ textarea:focus {
     50%      { transform: translateY(-15px) rotateX(-10deg) rotateZ(10deg); }
 }
 
-/* 3D Depth Line Separator */
-.depth-line {
-    position: relative;
-    height: 4px;
-    background: transparent;
-    overflow: visible;
-}
-
-.depth-line::before,
-.depth-line::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    height: 100%;
-    border-radius: 2px;
-}
-
-.depth-line::before {
-    left: 0;
-    width: 60px;
-    background: #322869;
-    transform: translateZ(10px);
-    box-shadow: 0 2px 10px rgba(50, 40, 105, 0.3);
-}
-
-.depth-line::after {
-    left: 70px;
-    width: 20px;
-    background: #E2170C;
-    transform: translateZ(5px);
-    box-shadow: 0 2px 8px rgba(226, 23, 12, 0.3);
-}
-
-/* 3D Button Effect */
-.btn-3d {
-    transform-style: preserve-3d;
-    perspective: 500px;
-    position: relative;
-    transform: translateZ(0);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.btn-3d:hover {
-    transform: translateZ(15px);
-}
-
-.btn-3d:active {
-    transform: translateZ(-5px);
-}
-
-/* 3D Page Hero Shape */
-.page-hero-3d {
-    transform-style: preserve-3d;
-    perspective: 1000px;
-    overflow: hidden;
-}
-
-.page-hero-3d .hero-shape-1 {
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    border: 2px solid rgba(127, 121, 161, 0.08);
-    border-radius: 50%;
-    right: 10%;
-    top: 20%;
-    animation: floatShape1 7s ease-in-out infinite;
-    transform: rotateX(60deg);
-}
-
-.page-hero-3d .hero-shape-2 {
-    position: absolute;
-    width: 120px;
-    height: 120px;
-    border: 2px solid rgba(226, 23, 12, 0.06);
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-    left: 8%;
-    bottom: 15%;
-    animation: floatShape2 9s ease-in-out infinite;
-    transform: rotateX(50deg) rotateZ(20deg);
-}
-
-@keyframes floatShape1 {
-    0%, 100% { transform: rotateX(60deg) translateY(0) rotateZ(0deg); }
-    50%      { transform: rotateX(60deg) translateY(-20px) rotateZ(30deg); }
-}
-
-@keyframes floatShape2 {
-    0%, 100% { transform: rotateX(50deg) rotateZ(20deg) translateY(0); }
-    50%      { transform: rotateX(50deg) rotateZ(-10deg) translateY(-15px); }
-}
-
-/* 3D CTA Box */
-.cta-3d {
-    transform-style: preserve-3d;
-    perspective: 1000px;
-}
-
-.cta-3d-inner {
-    transform: translateZ(0);
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.cta-3d:hover .cta-3d-inner {
-    transform: translateZ(20px);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
-}
 /* ===================================================================
    HERO CTA BUTTONS — WhatsApp, Layanan, Tipe Motor, Keunggulan
    (Task 4: hanya styling tombol Hero, tidak mengubah rule lain)
@@ -1283,24 +1165,6 @@ textarea:focus {
     scroll-margin-top: 90px;
 }
 /* ==================== HALAMAN PRODUK: TIPE MOTOR ==================== */
-.motor-tab-btn {
-    background: #ffffff;
-    border-color: #E5E7EB;
-    color: #6B7280;
-}
-
-.motor-tab-btn:hover {
-    border-color: #322869;
-    color: #322869;
-}
-
-.motor-tab-btn.active {
-    background: linear-gradient(135deg, #322869, #7F79A1);
-    border-color: #322869;
-    color: #ffffff;
-    box-shadow: 0 8px 20px -6px rgba(50, 40, 105, 0.5);
-}
-
 .produk-card {
     background: #ffffff;
     border: 1px solid #F0EFF3;
@@ -1345,6 +1209,37 @@ textarea:focus {
 .produk-badge.badge-blue {
     background: linear-gradient(135deg, #322869, #7F79A1);
 }
+/* ===== ACCESSIBILITY — consistent keyboard focus state ===== */
+/* Applies one unified, brand-colored focus ring to every interactive element
+   so keyboard users always get clear, consistent feedback. Elements that
+   already define their own :focus-visible (e.g. .hero-btn, form fields)
+   keep their existing style since a more specific rule wins. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[onclick]:focus-visible,
+[tabindex]:focus-visible {
+    outline: 2px solid #7F79A1;
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+/* On dark surfaces (navbar, footer, hero) a light outline reads better */
+#navbar a:focus-visible,
+#navbar button:focus-visible,
+.mobile-menu a:focus-visible,
+.mobile-menu button:focus-visible,
+.hero-bg a:focus-visible,
+.hero-bg button:focus-visible,
+.page-hero a:focus-visible,
+.page-hero button:focus-visible,
+.footer-gradient a:focus-visible,
+.footer-gradient button:focus-visible {
+    outline-color: rgba(255, 255, 255, 0.85);
+}
+
 /* ===== ACCESSIBILITY / PERFORMANCE — respect reduced motion preference ===== */
 @media (prefers-reduced-motion: reduce) {
     *,
