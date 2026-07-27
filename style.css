@@ -1251,3 +1251,29 @@ textarea:focus-visible,
         scroll-behavior: auto !important;
     }
 }
+
+/* ===== MOBILE OPTIMIZATION (Task 9) =====
+   Layout-safety and comfort tweaks for small screens only. Does not touch
+   colors, the Hero section, navbar, footer, or any content/structure. */
+@media (max-width: 640px) {
+    /* Safety net: embedded content (e.g. Google Maps) can never force
+       horizontal overflow on narrow screens, whatever width/height
+       attributes it was given in the HTML. */
+    iframe {
+        max-width: 100%;
+    }
+
+    /* Bring the floating WhatsApp / back-to-top buttons in line with the
+       16px edge margin already used by page content (px-4) instead of the
+       wider 24px desktop offset, so they feel consistent, not cramped
+       against the screen edge. */
+    #backToTop {
+        right: 16px;
+        bottom: 88px;
+    }
+
+    #waFloat {
+        right: 16px;
+        bottom: 20px;
+    }
+}
