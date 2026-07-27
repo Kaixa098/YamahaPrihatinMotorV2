@@ -69,6 +69,8 @@ const scrollObserver = new IntersectionObserver((entries) => {
             entry.target.classList.add('visible');
             const divider = entry.target.querySelector('.divider-line');
             if (divider) divider.classList.add('visible');
+            // Animation only ever needs to run once — stop observing to keep scroll listening light.
+            scrollObserver.unobserve(entry.target);
         }
     });
 }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });

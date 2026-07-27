@@ -296,9 +296,10 @@ html {
 
 .btn-primary {
     background: linear-gradient(135deg, #322869, #7F79A1);
-    transition: all 0.3s ease;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     position: relative;
     overflow: hidden;
+    box-shadow: 0 8px 20px -8px rgba(50, 40, 105, 0.45);
 }
 
 .btn-primary::before {
@@ -314,6 +315,15 @@ html {
     opacity: 1;
 }
 
+.btn-primary:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 16px 34px -10px rgba(50, 40, 105, 0.6);
+}
+
+.btn-primary:active {
+    transform: translateY(-1px) scale(0.99);
+}
+
 .btn-primary span {
     position: relative;
     z-index: 1;
@@ -321,9 +331,10 @@ html {
 
 .btn-red {
     background: linear-gradient(135deg, #E2170C, #ED6E67);
-    transition: all 0.3s ease;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     position: relative;
     overflow: hidden;
+    box-shadow: 0 8px 20px -8px rgba(226, 23, 12, 0.45);
 }
 
 .btn-red::before {
@@ -339,9 +350,42 @@ html {
     opacity: 1;
 }
 
+.btn-red:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 16px 34px -10px rgba(226, 23, 12, 0.6);
+}
+
+.btn-red:active {
+    transform: translateY(-1px) scale(0.99);
+}
+
 .btn-red span {
     position: relative;
     z-index: 1;
+}
+
+/* Generic interactive-button utility — adds a smooth premium hover lift
+   (scale + shadow) to buttons that don't already use .btn-primary/.btn-red/
+   .hero-btn, without touching their existing colors. */
+.btn-interactive {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease;
+}
+
+.btn-interactive:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 16px 30px -12px rgba(0, 0, 0, 0.35);
+}
+
+.btn-interactive:active {
+    transform: translateY(-1px) scale(0.99);
+}
+
+.motor-tab-btn {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease, border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.motor-tab-btn:hover {
+    transform: translateY(-2px);
 }
 
 .divider-line {
@@ -422,7 +466,7 @@ textarea:focus {
 }
 
 #backToTop:hover {
-    transform: translateY(-4px);
+    transform: translateY(-4px) scale(1.08);
     box-shadow: 0 12px 32px rgba(50, 40, 105, 0.5);
 }
 
@@ -1300,4 +1344,15 @@ textarea:focus {
 
 .produk-badge.badge-blue {
     background: linear-gradient(135deg, #322869, #7F79A1);
+}
+/* ===== ACCESSIBILITY / PERFORMANCE — respect reduced motion preference ===== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }
