@@ -210,15 +210,6 @@ html {
     box-shadow: 0 25px 50px -12px rgba(50, 40, 105, 0.25);
 }
 
-.sparepart-card {
-    transition: all 0.3s ease;
-}
-
-.sparepart-card:hover {
-    border-color: #322869;
-    box-shadow: 0 0 0 1px #322869, 0 10px 30px rgba(50, 40, 105, 0.15);
-}
-
 .nav-blur {
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -284,18 +275,6 @@ html {
 
 .divider-line.visible {
     width: 80px;
-}
-
-.status-available {
-    color: #10B981;
-}
-
-.status-limited {
-    color: #F59E0B;
-}
-
-.status-empty {
-    color: #EF4444;
 }
 
 .toast {
@@ -919,4 +898,210 @@ textarea:focus {
 .cta-3d:hover .cta-3d-inner {
     transform: translateZ(20px);
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+}
+/* ===================================================================
+   HERO CTA BUTTONS — WhatsApp, Layanan, Tipe Motor, Keunggulan
+   (Task 4: hanya styling tombol Hero, tidak mengubah rule lain)
+=================================================================== */
+
+.hero-cta-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+    width: 100%;
+    max-width: 32rem;
+}
+
+@media (min-width: 640px) {
+    .hero-cta-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 1rem;
+        max-width: none;
+    }
+}
+
+.hero-btn {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1.1rem 0.75rem;
+    border-radius: 1rem;
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: #fff;
+    overflow: hidden;
+    isolation: isolate;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                background-color 0.35s ease,
+                border-color 0.35s ease;
+}
+
+@media (min-width: 640px) {
+    .hero-btn {
+        font-size: 0.8125rem;
+        padding: 1.35rem 0.75rem;
+    }
+}
+
+.hero-btn-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 0.85rem;
+    background: rgba(255, 255, 255, 0.12);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                background-color 0.35s ease;
+}
+
+.hero-btn-label {
+    position: relative;
+    z-index: 1;
+    line-height: 1.1;
+}
+
+.hero-btn:hover {
+    transform: translateY(-6px) scale(1.03);
+}
+
+.hero-btn:active {
+    transform: translateY(-2px) scale(0.99);
+}
+
+.hero-btn:hover .hero-btn-icon {
+    transform: scale(1.1) rotate(-4deg);
+}
+
+/* Primary variant — WhatsApp (memakai warna merah brand yang sudah ada) */
+.hero-btn-primary {
+    background: linear-gradient(135deg, #E2170C, #ED6E67);
+    box-shadow: 0 10px 30px -8px rgba(226, 23, 12, 0.55);
+}
+
+.hero-btn-primary::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: linear-gradient(135deg, #ED6E67, #E2170C);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.hero-btn-primary:hover::before {
+    opacity: 1;
+}
+
+.hero-btn-primary:hover {
+    box-shadow: 0 18px 40px -8px rgba(226, 23, 12, 0.65);
+}
+
+.hero-btn-primary .hero-btn-icon {
+    background: rgba(255, 255, 255, 0.22);
+}
+
+/* Glass variant — Layanan, Tipe Motor, Keunggulan (memakai warna biru brand yang sudah ada) */
+.hero-btn-glass {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+.hero-btn-glass:hover {
+    background: rgba(50, 40, 105, 0.35);
+    border-color: rgba(127, 121, 161, 0.6);
+    box-shadow: 0 18px 40px -12px rgba(50, 40, 105, 0.5);
+}
+
+.hero-btn-glass .hero-btn-icon {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.hero-btn-glass:hover .hero-btn-icon {
+    background: linear-gradient(135deg, #322869, #7F79A1);
+}
+
+/* Anchor placeholder untuk section Tipe Motor & Keunggulan (belum ada kontennya) */
+.scroll-anchor {
+    display: block;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    scroll-margin-top: 100px;
+    visibility: hidden;
+}
+
+.scroll-anchor-target {
+    scroll-margin-top: 90px;
+}
+/* ==================== HALAMAN PRODUK: TIPE MOTOR ==================== */
+.motor-tab-btn {
+    background: #ffffff;
+    border-color: #E5E7EB;
+    color: #6B7280;
+}
+
+.motor-tab-btn:hover {
+    border-color: #322869;
+    color: #322869;
+}
+
+.motor-tab-btn.active {
+    background: linear-gradient(135deg, #322869, #7F79A1);
+    border-color: #322869;
+    color: #ffffff;
+    box-shadow: 0 8px 20px -6px rgba(50, 40, 105, 0.5);
+}
+
+.produk-card {
+    background: #ffffff;
+    border: 1px solid #F0EFF3;
+    border-radius: 1.25rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.produk-card-image {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: #EFEDF3;
+}
+
+.produk-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.produk-card:hover .produk-card-image img {
+    transform: scale(1.08);
+}
+
+.produk-badge {
+    position: absolute;
+    top: 0.9rem;
+    left: 0.9rem;
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.75rem;
+    border-radius: 999px;
+    color: #ffffff;
+    background: linear-gradient(135deg, #E2170C, #ED6E67);
+}
+
+.produk-badge.badge-blue {
+    background: linear-gradient(135deg, #322869, #7F79A1);
 }

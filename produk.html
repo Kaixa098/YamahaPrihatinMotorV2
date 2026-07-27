@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galeri — Yamaha Prihatin Motor</title>
+    <title>Produk Motor — Yamaha Prihatin Motor</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -32,7 +32,14 @@
     </script>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-white text-gray-800 overflow-x-hidden" data-page="galeri">
+<body class="bg-white text-gray-800 overflow-x-hidden" data-page="produk">
+
+<!-- CUSTOM CURSOR -->
+    <div id="cursorDot"></div>
+    <div id="cursorRing"></div>
+
+    <div id="scrollProgress"></div>
+    <div id="toastContainer" class="fixed top-24 right-4 z-[100] flex flex-col gap-3"></div>
 
     <!-- NAVBAR -->
     <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
@@ -45,8 +52,8 @@
                     <a href="index.html" class="nav-link px-4 py-2 text-sm font-medium text-white/80 hover:text-white rounded-lg hover:bg-white/10 transition-all">Beranda</a>
                     <a href="tentang.html" class="nav-link px-4 py-2 text-sm font-medium text-white/80 hover:text-white rounded-lg hover:bg-white/10 transition-all">Tentang Kami</a>
                     <a href="layanan.html" class="nav-link px-4 py-2 text-sm font-medium text-white/80 hover:text-white rounded-lg hover:bg-white/10 transition-all">Layanan</a>
-                    <a href="produk.html" class="nav-link px-4 py-2 text-sm font-medium text-white/80 hover:text-white rounded-lg hover:bg-white/10 transition-all">Produk</a>
-                    <a href="galeri.html" class="nav-link active-link px-4 py-2 text-sm font-medium text-white/80 hover:text-white rounded-lg hover:bg-white/10 transition-all">Galeri</a>
+                    <a href="produk.html" class="nav-link active-link px-4 py-2 text-sm font-medium text-white/80 hover:text-white rounded-lg hover:bg-white/10 transition-all">Produk</a>
+                    <a href="galeri.html" class="nav-link px-4 py-2 text-sm font-medium text-white/80 hover:text-white rounded-lg hover:bg-white/10 transition-all">Galeri</a>
                     <a href="info.html" class="nav-link px-4 py-2 text-sm font-medium text-white/80 hover:text-white rounded-lg hover:bg-white/10 transition-all">Informasi</a>
                     <a href="bantuan.html" class="nav-link px-4 py-2 text-sm font-medium text-white/80 hover:text-white rounded-lg hover:bg-white/10 transition-all">FAQ</a>
                     <a href="hubungi.html" class="nav-link px-4 py-2 text-sm font-medium text-white/80 hover:text-white rounded-lg hover:bg-white/10 transition-all">Kontak</a>
@@ -68,88 +75,63 @@
             <a href="index.html" class="mobile-link px-4 py-3 text-lg font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">Beranda</a>
             <a href="tentang.html" class="mobile-link px-4 py-3 text-lg font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">Tentang Kami</a>
             <a href="layanan.html" class="mobile-link px-4 py-3 text-lg font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">Layanan</a>
-            <a href="produk.html" class="mobile-link px-4 py-3 text-lg font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">Produk</a>
-            <a href="galeri.html" class="mobile-link active-link px-4 py-3 text-lg font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">Galeri</a>
+            <a href="produk.html" class="mobile-link active-link px-4 py-3 text-lg font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">Produk</a>
+            <a href="galeri.html" class="mobile-link px-4 py-3 text-lg font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">Galeri</a>
             <a href="info.html" class="mobile-link px-4 py-3 text-lg font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">Informasi</a>
             <a href="bantuan.html" class="mobile-link px-4 py-3 text-lg font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">FAQ</a>
             <a href="hubungi.html" class="mobile-link px-4 py-3 text-lg font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">Kontak</a>
         </div>
     </div>
 
-    <!-- LIGHTBOX -->
-    <div id="lightbox">
-        <button id="lightboxClose" class="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors z-10"><i data-lucide="x" class="w-6 h-6"></i></button>
-        <img id="lightboxImg" src="" alt="Gallery Image">
-    </div>
-
     <!-- PAGE HERO -->
     <section class="page-hero pt-32 pb-20 relative">
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 text-center">
-            <p class="text-xs font-bold tracking-[0.2em] uppercase text-red-400 mb-4" style="animation: fadeInUp 0.6s ease both;">Galeri</p>
+            <p class="text-xs font-bold tracking-[0.2em] uppercase text-red-400 mb-4" style="animation: fadeInUp 0.6s ease both;">Tipe Motor</p>
             <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight mb-4" style="animation: fadeInUp 0.8s ease 0.1s both;">
-                Dokumentasi <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Bengkel Kami</span>
+                Jajaran Lengkap <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Motor Yamaha</span>
             </h1>
-            <p class="text-white/60 font-light max-w-2xl mx-auto" style="animation: fadeInUp 0.8s ease 0.2s both;">Lihat suasana bengkel dan hasil pekerjaan kami. Klik gambar untuk memperbesar.</p>
+            <p class="text-white/60 font-light max-w-2xl mx-auto" style="animation: fadeInUp 0.8s ease 0.2s both;">Semua tipe motor Yamaha resmi — MAXi, Classy, Matic, Sport, Off-Road, hingga Moped — tersedia dan siap diservis di Yamaha Prihatin Motor.</p>
         </div>
     </section>
 
-    <!-- GALLERY CONTENT -->
-    <section class="py-24 bg-yamaha-gray-light relative overflow-hidden">
+    <!-- CATEGORY FILTER -->
+    <section class="pt-14 pb-6 bg-yamaha-gray-light relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
-
-            <!-- Baris 1 -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-4 animate-on-scroll">
-                <div class="gallery-item sm:col-span-2 lg:col-span-2 h-56 sm:h-72" onclick="openLightbox(this)">
-                    <img src="https://picsum.photos/seed/bengkel-suasana-1/900/500.jpg" alt="Suasana Bengkel" data-src="https://picsum.photos/seed/bengkel-suasana-1/1200/800.jpg">
-                    <div class="gallery-zoom w-12 h-12 rounded-full bg-white/90 flex items-center justify-center"><i data-lucide="maximize-2" class="w-5 h-5 text-gray-800"></i></div>
-                </div>
-                <div class="gallery-item h-56 sm:h-72" onclick="openLightbox(this)">
-                    <img src="https://picsum.photos/seed/servis-motor-2/500/500.jpg" alt="Servis Motor" data-src="https://picsum.photos/seed/servis-motor-2/1200/900.jpg">
-                    <div class="gallery-zoom w-12 h-12 rounded-full bg-white/90 flex items-center justify-center"><i data-lucide="maximize-2" class="w-5 h-5 text-gray-800"></i></div>
-                </div>
+            <div id="categoryTabs" class="flex flex-wrap justify-center gap-3 animate-on-scroll">
+                <button data-filter="all" class="motor-tab-btn active px-5 py-2.5 rounded-full text-sm font-bold border-2 transition-all">Semua Motor</button>
+                <button data-filter="maxi" class="motor-tab-btn px-5 py-2.5 rounded-full text-sm font-bold border-2 transition-all">MAXi</button>
+                <button data-filter="classy" class="motor-tab-btn px-5 py-2.5 rounded-full text-sm font-bold border-2 transition-all">Classy</button>
+                <button data-filter="matic" class="motor-tab-btn px-5 py-2.5 rounded-full text-sm font-bold border-2 transition-all">Matic</button>
+                <button data-filter="sport" class="motor-tab-btn px-5 py-2.5 rounded-full text-sm font-bold border-2 transition-all">Sport</button>
+                <button data-filter="offroad" class="motor-tab-btn px-5 py-2.5 rounded-full text-sm font-bold border-2 transition-all">Off-Road</button>
+                <button data-filter="moped" class="motor-tab-btn px-5 py-2.5 rounded-full text-sm font-bold border-2 transition-all">Moped</button>
             </div>
+        </div>
+    </section>
 
-            <!-- Baris 2 -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-4 animate-on-scroll">
-                <div class="gallery-item h-56" onclick="openLightbox(this)">
-                    <img src="https://picsum.photos/seed/peralatan-bengkel-3/500/400.jpg" alt="Peralatan Bengkel" data-src="https://picsum.photos/seed/peralatan-bengkel-3/1200/900.jpg">
-                    <div class="gallery-zoom w-12 h-12 rounded-full bg-white/90 flex items-center justify-center"><i data-lucide="maximize-2" class="w-5 h-5 text-gray-800"></i></div>
-                </div>
-                <div class="gallery-item h-56" onclick="openLightbox(this)">
-                    <img src="https://picsum.photos/seed/mekanik-kerja-4/500/400.jpg" alt="Mekanik Bekerja" data-src="https://picsum.photos/seed/mekanik-kerja-4/1200/900.jpg">
-                    <div class="gallery-zoom w-12 h-12 rounded-full bg-white/90 flex items-center justify-center"><i data-lucide="maximize-2" class="w-5 h-5 text-gray-800"></i></div>
-                </div>
-                <div class="gallery-item h-56" onclick="openLightbox(this)">
-                    <img src="https://picsum.photos/seed/hasil-servis-5/500/400.jpg" alt="Hasil Servis" data-src="https://picsum.photos/seed/hasil-servis-5/1200/900.jpg">
-                    <div class="gallery-zoom w-12 h-12 rounded-full bg-white/90 flex items-center justify-center"><i data-lucide="maximize-2" class="w-5 h-5 text-gray-800"></i></div>
-                </div>
+    <!-- PRODUCT GRID -->
+    <section class="pb-24 bg-yamaha-gray-light relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div id="produkGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+            <div id="noResults" class="hidden text-center py-16">
+                <i data-lucide="search-x" class="w-12 h-12 text-gray-300 mx-auto mb-4"></i>
+                <p class="text-gray-400 font-light">Tidak ada motor pada kategori ini.</p>
             </div>
+        </div>
+    </section>
 
-            <!-- Baris 3 -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-4 animate-on-scroll">
-                <div class="gallery-item h-56" onclick="openLightbox(this)">
-                    <img src="https://picsum.photos/seed/bengkel-depan-6/500/400.jpg" alt="Depan Bengkel" data-src="https://picsum.photos/seed/bengkel-depan-6/1200/900.jpg">
-                    <div class="gallery-zoom w-12 h-12 rounded-full bg-white/90 flex items-center justify-center"><i data-lucide="maximize-2" class="w-5 h-5 text-gray-800"></i></div>
-                </div>
-                <div class="gallery-item h-56" onclick="openLightbox(this)">
-                    <img src="https://picsum.photos/seed/ganti-oli-7/500/400.jpg" alt="Ganti Oli" data-src="https://picsum.photos/seed/ganti-oli-7/1200/900.jpg">
-                    <div class="gallery-zoom w-12 h-12 rounded-full bg-white/90 flex items-center justify-center"><i data-lucide="maximize-2" class="w-5 h-5 text-gray-800"></i></div>
-                </div>
-                <div class="gallery-item h-56" onclick="openLightbox(this)">
-                    <img src="https://picsum.photos/seed/cuci-motor-8/500/400.jpg" alt="Cuci Motor" data-src="https://picsum.photos/seed/cuci-motor-8/1200/900.jpg">
-                    <div class="gallery-zoom w-12 h-12 rounded-full bg-white/90 flex items-center justify-center"><i data-lucide="maximize-2" class="w-5 h-5 text-gray-800"></i></div>
-                </div>
-            </div>
-
-            <!-- Baris 4: 1 kecil + 2 besar -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 animate-on-scroll">
-                <div class="gallery-item h-56" onclick="openLightbox(this)">
-                    <img src="https://picsum.photos/seed/overhaul-mesin-9/500/400.jpg" alt="Overhaul Mesin" data-src="https://picsum.photos/seed/overhaul-mesin-9/1200/900.jpg">
-                    <div class="gallery-zoom w-12 h-12 rounded-full bg-white/90 flex items-center justify-center"><i data-lucide="maximize-2" class="w-5 h-5 text-gray-800"></i></div>
-                </div>
-                <div class="gallery-item sm:col-span-2 h-56 sm:h-72" onclick="openLightbox(this)">
-                    <img src="https://picsum.photos/seed/bengkel-team-10/900/500.jpg" alt="Tim Bengkel" data-src="https://picsum.photos/seed/bengkel-team-10/1200/800.jpg">
-                    <div class="gallery-zoom w-12 h-12 rounded-full bg-white/90 flex items-center justify-center"><i data-lucide="maximize-2" class="w-5 h-5 text-gray-800"></i></div>
+    <!-- CTA -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center animate-on-scroll">
+            <div class="bg-yamaha-dark rounded-3xl p-12 relative overflow-hidden">
+                <div class="absolute inset-0 opacity-20" style="background: radial-gradient(ellipse at 30% 50%, rgba(50,40,105,0.5), transparent 60%), radial-gradient(ellipse at 70% 50%, rgba(226,23,12,0.5), transparent 60%);"></div>
+                <div class="relative z-10">
+                    <h3 class="text-2xl sm:text-3xl font-black text-white mb-4">Tertarik dengan Salah Satu Tipe Motor?</h3>
+                    <p class="text-white/60 font-light mb-8 max-w-lg mx-auto">Konsultasikan pilihan motor Yamaha Anda bersama tim kami, atau jadwalkan servis untuk motor yang sudah Anda miliki.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="hubungi.html" class="btn-red text-white px-8 py-4 rounded-xl text-sm font-bold tracking-wide inline-flex items-center justify-center gap-2"><span class="flex items-center gap-2"><i data-lucide="phone-call" class="w-5 h-5"></i> Hubungi Kami</span></a>
+                        <a href="https://wa.me/6281234567890" target="_blank" class="bg-white/10 border border-white/20 text-white px-8 py-4 rounded-xl text-sm font-bold tracking-wide inline-flex items-center justify-center gap-2 hover:bg-white/20 transition-colors"><i data-lucide="message-circle" class="w-5 h-5"></i> Chat WhatsApp</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -162,7 +144,7 @@
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
                 <div><div class="mb-5"><img src="Image/logofinal.png" alt="Prihatin Motor" class="h-10 w-auto"></div><p class="text-white/50 text-sm font-light leading-relaxed">Bengkel resmi Yamaha yang menyediakan layanan servis motor berkualitas tinggi.</p></div>
                 <div><h4 class="font-bold text-sm mb-5">Menu</h4><ul class="space-y-3"><li><a href="index.html" class="text-white/50 text-sm hover:text-white transition-colors">Beranda</a></li><li><a href="tentang.html" class="text-white/50 text-sm hover:text-white transition-colors">Tentang Kami</a></li><li><a href="layanan.html" class="text-white/50 text-sm hover:text-white transition-colors">Layanan</a></li><li><a href="produk.html" class="text-white/50 text-sm hover:text-white transition-colors">Produk</a></li><li><a href="galeri.html" class="text-white/50 text-sm hover:text-white transition-colors">Galeri</a></li></ul></div>
-                <div><h4 class="font-bold text-sm mb-5">Layanan</h4><ul class="space-y-3"><li><a href="layanan.html" class="text-white/50 text-sm hover:text-white transition-colors">Servis Berkala</a></li><li><a href="layanan.html" class="text-white/50 text-sm hover:text-white transition-colors">Overhaul Mesin</a></li><li><a href="layanan.html" class="text-white/50 text-sm hover:text-white transition-colors">Kelistrikan</a></li><li><a href="faq.html" class="text-white/50 text-sm hover:text-white transition-colors">FAQ</a></li></ul></div>
+                <div><h4 class="font-bold text-sm mb-5">Layanan</h4><ul class="space-y-3"><li><a href="layanan.html" class="text-white/50 text-sm hover:text-white transition-colors">Servis Berkala</a></li><li><a href="layanan.html" class="text-white/50 text-sm hover:text-white transition-colors">Overhaul Mesin</a></li><li><a href="layanan.html" class="text-white/50 text-sm hover:text-white transition-colors">Kelistrikan</a></li><li><a href="bantuan.html" class="text-white/50 text-sm hover:text-white transition-colors">FAQ</a></li></ul></div>
                 <div><h4 class="font-bold text-sm mb-5">Kontak</h4><ul class="space-y-3"><li class="flex items-start gap-2 text-white/50 text-sm"><i data-lucide="map-pin" class="w-4 h-4 mt-0.5 flex-shrink-0"></i>Jl. Raya Motor No. 123, Jakarta</li><li class="flex items-center gap-2 text-white/50 text-sm"><i data-lucide="phone" class="w-4 h-4 flex-shrink-0"></i>(021) 123-4567</li><li class="flex items-center gap-2 text-white/50 text-sm"><i data-lucide="mail" class="w-4 h-4 flex-shrink-0"></i>info@prihatinmotor.com</li><li class="flex items-center gap-2 text-white/50 text-sm"><i data-lucide="clock" class="w-4 h-4 flex-shrink-0"></i>Sen-Sab: 08.00 - 17.00</li></ul></div>
             </div>
         </div>
