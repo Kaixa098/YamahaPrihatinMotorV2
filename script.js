@@ -252,20 +252,20 @@ document.querySelectorAll('.counter-group').forEach(group => {
 // otomatis menyesuaikan.
 const motorList = [
     // ===== MAXi =====
-    { name: 'TMAX', slug: 'tmax', category: 'maxi', categoryLabel: 'MAXi', cc: '530cc', desc: 'Premium sport scooter ikonik dari Eropa dengan mesin 2 silinder 530cc bertenaga tinggi, ABS, TCS, dan cruise control.', seed: 'yamaha-tmax', image: 'PotoMotor/TMAX.png',
+    { name: 'TMAX', slug: 'tmax', category: 'maxi', categoryLabel: 'MAXi', cc: '530cc', desc: 'Premium sport scooter ikonik dari Eropa dengan mesin 2 silinder 530cc bertenaga tinggi, ABS, TCS, dan cruise control.', seed: 'yamaha-tmax', image: 'PotoMotor/TMAX/TMAX.png',
         variants: [
-            { variant: 'TMAX Tech MAX', colors: ['Matte Black'], price: 455000000 },
-            { variant: 'TMAX Special Livery', colors: ['Special Livery'], price: 465000000 },
+            { variant: 'TMAX Tech MAX', image: 'PotoMotor/TMAX/TMAX Tech MAX.png', colors: ['Matte Black'], price: 455000000 },
+            { variant: 'TMAX Special Livery', image: 'PotoMotor/TMAX/TMAX.png', colors: ['Special Livery'], price: 475000000 },
         ] },
-    { name: 'XMAX 250', slug: 'xmax-250', category: 'maxi', categoryLabel: 'MAXi', cc: '250cc', desc: 'Skutik premium 250cc dengan kenyamanan berkendara jarak jauh dan fitur Traction Control kelas atas.', seed: 'yamaha-xmax-250', image: 'PotoMotor/XMAX 250.png',
+    { name: 'XMAX 250', slug: 'xmax-250', category: 'maxi', categoryLabel: 'MAXi', cc: '250cc', desc: 'Skutik premium 250cc dengan kenyamanan berkendara jarak jauh dan fitur Traction Control kelas atas.', seed: 'yamaha-xmax-250', image: 'PotoMotor/XMAX/XMAX 250 MAX Special Livery.png',
         variants: [
-            { variant: 'XMAX Connected', colors: ['Fabulous Matte Black', 'Fabulous White'], price: 70015000 },
-            { variant: 'XMAX Special Livery', colors: ['Radiant Red Black'], price: 70415000 },
-            { variant: 'XMAX Tech Max', colors: ['Radiant Brown Black', 'Radiant Silver Black'], price: 77410000 },
+            { variant: 'XMAX Connected', image: 'PotoMotor/XMAX/XMAX 250 CONNECTED.png', colors: ['Fabulous Matte Black', 'Fabulous White'], price: 70015000 },
+            { variant: 'XMAX Special Livery', image: 'PotoMotor/XMAX/XMAX 250 MAX Special Livery.png', colors: ['Radiant Red Black'], price: 70415000 },
+            { variant: 'XMAX Tech Max', image: 'PotoMotor/XMAX/XMAX 250 TECH MAX.png', colors: ['Radiant Brown Black', 'Radiant Silver Black'], price: 77410000 },
         ] },
-    { name: 'NMAX "Turbo"', slug: 'nmax-turbo', category: 'maxi', categoryLabel: 'MAXi', cc: '155cc', desc: 'Skutik matic premium terlaris dengan teknologi Y-ECVT dan "TURBO" Y-Shift untuk akselerasi responsif.', seed: 'yamaha-nmax-turbo', image: 'PotoMotor/NMAX.png',
+    { name: 'NMAX "Turbo"', slug: 'nmax-turbo', category: 'maxi', categoryLabel: 'MAXi', cc: '155cc', desc: 'Skutik matic premium terlaris dengan teknologi Y-ECVT dan "TURBO" Y-Shift untuk akselerasi responsif.', seed: 'yamaha-nmax-turbo', image: 'PotoMotor/NMAX/Neo S MAX Special Livery.png',
         variants: [
-            { variant: 'NMAX Neo', colors: ['Matte Blue', 'Red', 'White', 'Black', 'Dull Blue'], price: 34565000 },
+            { variant: 'NMAX Neo', image: 'PotoMotor/NMAX/Neo Version.png', colors: ['Matte Blue', 'Red', 'White', 'Black', 'Dull Blue'], price: 34565000 },
             { variant: 'NMAX Neo MAX Special Livery', colors: ['Special Livery Black'], price: 34965000 },
             { variant: 'NMAX Neo S', colors: ['Matte Blue', 'Red', 'White', 'Black', 'Dull Blue'], price: 35555000 },
             { variant: 'NMAX Neo S MAX Special Livery', colors: ['Special Livery Black'], price: 35955000 },
