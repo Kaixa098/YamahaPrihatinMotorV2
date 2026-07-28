@@ -286,7 +286,7 @@ if (currentPage === 'produk') {
                             <p class="text-[11px] text-gray-400">OTR Jakarta, mulai dari</p>
                             <p class="text-yamaha-blue font-black text-base">${m.price}</p>
                         </div>
-                        <a href="https://wa.me/6281234567890?text=${encodeURIComponent('Halo, saya ingin tanya tentang Yamaha ' + m.name)}" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl red-accent flex items-center justify-center flex-shrink-0 hover:scale-110 transition-transform" aria-label="Tanya soal ${m.name} via WhatsApp"><i data-lucide="message-circle" class="w-5 h-5 text-white"></i></a>
+                        <a href="https://wa.me/6281211117265?text=${encodeURIComponent('Halo, saya ingin tanya tentang Yamaha ' + m.name)}" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl red-accent flex items-center justify-center flex-shrink-0 hover:scale-110 transition-transform" aria-label="Tanya soal ${m.name} via WhatsApp"><i data-lucide="message-circle" class="w-5 h-5 text-white"></i></a>
                     </div>
                 </div>
             </div>
