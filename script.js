@@ -213,70 +213,204 @@ document.querySelectorAll('.counter-group').forEach(group => {
     counterObserver.observe(group);
 });
 
-// ===== PRODUK PAGE: TIPE MOTOR YAMAHA =====
+// ===== DATA MOTOR YAMAHA (dipakai bersama oleh halaman Produk & Detail Motor) =====
+// Kartu produk di halaman "Tipe Motor" TIDAK ditulis manual satu-satu di
+// produk.html — semuanya di-generate otomatis dari daftar (array) di
+// bawah ini. Halaman Produk merender ringkasan tiap model ke
+// <div id="produkGrid">, lalu saat kartu diklik pengguna diarahkan ke
+// motor-detail.html?motor=<slug> yang menampilkan seluruh varian resmi
+// model tersebut secara lengkap (foto, warna, harga).
+//
+// CARA MENGGANTI GAMBAR SETIAP MOTOR:
+// 1. Siapkan foto motor (disarankan rasio 4:3, contoh 800x600px, format
+//    .jpg/.png/.webp, ukuran file diperkecil/compress agar loading cepat).
+// 2. Taruh filenya di folder Image/produk/ (buat folder ini jika belum
+//    ada), misalnya: Image/produk/tmax.jpg
+// 3. Ganti nilai "image" pada motor yang sesuai di bawah ini menjadi
+//    path file tersebut, contoh:
+//        image: 'Image/produk/tmax.jpg'
+// 4. Simpan file ini — gambar akan otomatis muncul di card motor,
+//    halaman detail, filter kategori, karena hanya field "image" yang
+//    dibaca ulang.
+//
+// Selama field "image" belum diisi/foto belum diupload, halaman akan
+// memakai foto sementara (placeholder) dari picsum.photos supaya
+// tampilan tetap terisi dan tidak rusak.
+//
+// CARA MENAMBAH FOTO KHUSUS PER VARIAN (opsional):
+// Tambahkan field "image" di dalam objek varian terkait, misalnya:
+//   { variant: 'TMAX Special Livery', image: 'PotoMotor/TMAX-livery.png', colors: [...], price: ... }
+// Jika field ini kosong/tidak diisi, halaman detail otomatis memakai
+// foto utama model sebagai gantinya.
+//
+// "slug" dipakai sebagai alamat halaman detail (motor-detail.html?motor=slug).
+// Setiap model motor memiliki daftar "variants": varian resmi (nama
+// varian, pilihan warna resmi, harga OTR Jakarta) sesuai referensi situs
+// resmi Yamaha Indonesia (yamaha-motor.co.id). Untuk menambah/ubah
+// varian, cukup tambah/ubah objek di dalam array "variants" milik model
+// terkait — kartu di halaman Produk dan halaman detail motor akan
+// otomatis menyesuaikan.
+const motorList = [
+    // ===== MAXi =====
+    { name: 'TMAX', slug: 'tmax', category: 'maxi', categoryLabel: 'MAXi', cc: '530cc', desc: 'Premium sport scooter ikonik dari Eropa dengan mesin 2 silinder 530cc bertenaga tinggi, ABS, TCS, dan cruise control.', seed: 'yamaha-tmax', image: 'PotoMotor/TMAX.png',
+        variants: [
+            { variant: 'TMAX Tech MAX', colors: ['Matte Black'], price: 455000000 },
+            { variant: 'TMAX Special Livery', colors: ['Special Livery'], price: 465000000 },
+        ] },
+    { name: 'XMAX 250', slug: 'xmax-250', category: 'maxi', categoryLabel: 'MAXi', cc: '250cc', desc: 'Skutik premium 250cc dengan kenyamanan berkendara jarak jauh dan fitur Traction Control kelas atas.', seed: 'yamaha-xmax-250', image: 'PotoMotor/XMAX 250.png',
+        variants: [
+            { variant: 'XMAX Connected', colors: ['Fabulous Matte Black', 'Fabulous White'], price: 70015000 },
+            { variant: 'XMAX Special Livery', colors: ['Radiant Red Black'], price: 70415000 },
+            { variant: 'XMAX Tech Max', colors: ['Radiant Brown Black', 'Radiant Silver Black'], price: 77410000 },
+        ] },
+    { name: 'NMAX "Turbo"', slug: 'nmax-turbo', category: 'maxi', categoryLabel: 'MAXi', cc: '155cc', desc: 'Skutik matic premium terlaris dengan teknologi Y-ECVT dan "TURBO" Y-Shift untuk akselerasi responsif.', seed: 'yamaha-nmax-turbo', image: 'PotoMotor/NMAX.png',
+        variants: [
+            { variant: 'NMAX Neo', colors: ['Matte Blue', 'Red', 'White', 'Black', 'Dull Blue'], price: 34565000 },
+            { variant: 'NMAX Neo MAX Special Livery', colors: ['Special Livery Black'], price: 34965000 },
+            { variant: 'NMAX Neo S', colors: ['Matte Blue', 'Red', 'White', 'Black', 'Dull Blue'], price: 35555000 },
+            { variant: 'NMAX Neo S MAX Special Livery', colors: ['Special Livery Black'], price: 35955000 },
+            { variant: 'NMAX "Turbo"', colors: ['Ceramic Grey', 'Elixir Dark Silver', 'Magma Black'], price: 39465000 },
+            { variant: 'NMAX "Turbo" Tech Max', colors: ['Ceramic Grey', 'Elixir Dark Silver', 'Magma Black'], price: 44965000 },
+            { variant: 'NMAX "Turbo" Tech Max Special Livery', colors: ['Special Livery Black'], price: 45365000 },
+            { variant: 'NMAX "Turbo" Tech Max Ultimate', colors: ['Ceramic Grey', 'Elixir Dark Silver', 'Magma Black'], price: 46945000 },
+        ] },
+    { name: 'Aerox Alpha', slug: 'aerox-alpha', category: 'maxi', categoryLabel: 'MAXi', cc: '155cc', desc: 'Super sport scooter bergaya agresif dengan mesin 155cc VVA dan teknologi YECVT "TURBO".', seed: 'yamaha-aerox-alpha', image: 'PotoMotor/AEROX ALPHA.png',
+        variants: [
+            { variant: 'Aerox Alpha Standard', colors: ['Black', 'Blue', 'Red'], price: 30700000 },
+            { variant: 'Aerox Alpha Cybercity', colors: ['Matte Blue Red'], price: 31250000 },
+            { variant: 'Aerox Alpha Cybercity ABS', colors: ['Matte Purple Black', 'White Pearl Blue'], price: 34790000 },
+            { variant: 'Aerox Alpha "Turbo"', colors: ['Elixir Dark Silver'], price: 40050000 },
+            { variant: 'Aerox Alpha "Turbo" 70th Anniversary Livery', colors: ['70th Anniversary Livery'], price: 40450000 },
+            { variant: 'Aerox Alpha "Turbo" Ultimate', colors: ['Elixir Dark Silver'], price: 42230000 },
+        ] },
+    { name: 'LEXi LX 155', slug: 'lexi-lx-155', category: 'maxi', categoryLabel: 'MAXi', cc: '155cc', desc: 'Skutik ringan bergaya retro-modern dengan mesin 155cc VVA yang hemat bahan bakar.', seed: 'yamaha-lexi-lx-155', image: 'PotoMotor/LEXi LX 155.png',
+        variants: [
+            { variant: 'Lexi LX 155 Standard', colors: ['Ceramic Grey', 'Sand', 'Matte Green'], price: 27850000 },
+            { variant: 'Lexi LX 155 S Version', colors: ['Ceramic Grey', 'Sand', 'Matte Green'], price: 29650000 },
+            { variant: 'Lexi LX 155 Connected/ABS', colors: ['Ceramic Grey', 'Sand', 'Matte Green'], price: 32500000 },
+        ] },
+
+    // ===== Classy =====
+    { name: 'Grand Filano Hybrid', slug: 'grand-filano', category: 'classy', categoryLabel: 'Classy', cc: '125cc', desc: 'Skutik retro elegan dengan teknologi Blue Core Hybrid, bagasi 27 liter, dan TFT Sub Display.', seed: 'yamaha-grand-filano', image: 'PotoMotor/Grand Filano.png',
+        variants: [
+            { variant: 'Grand Filano Hybrid Neo', colors: ['Prime Gray', 'Greenish Gray', 'Pink Mauve', 'Essential White'], price: 27965000 },
+            { variant: 'Grand Filano Hybrid Lux', colors: ['Royal Iron', 'Magma Black'], price: 28445000 },
+        ] },
+    { name: 'Fazzio Hybrid', slug: 'fazzio', category: 'classy', categoryLabel: 'Classy', cc: '125cc', desc: 'Skutik retro-modern hybrid dengan smart key dan tampilan stylish anak muda urban.', seed: 'yamaha-fazzio', image: '',
+        variants: [
+            { variant: 'Fazzio Hybrid', colors: ['Blue White', 'Black Red'], price: 21920000 },
+            { variant: 'Fazzio Hybrid Neo', colors: ['Go Purple', 'Pink Mauve', 'White', 'Green'], price: 23705000 },
+            { variant: 'Fazzio Hybrid Lux', colors: ['Greenish Gray'], price: 24395000 },
+        ] },
+
+    // ===== Matic =====
+    { name: 'GEAR 125', slug: 'gear-125', category: 'matic', categoryLabel: 'Matic', cc: '125cc', desc: 'Matic ringan dan lincah dengan bagasi luas, ideal untuk pelajar dan mobilitas perkotaan.', seed: 'yamaha-gear-125', image: '',
+        variants: [
+            { variant: 'GEAR 125', colors: ['Black', 'Red', 'Blue'], price: 19395000 },
+        ] },
+    { name: 'GEAR ULTIMA', slug: 'gear-ultima', category: 'matic', categoryLabel: 'Matic', cc: '125cc', desc: 'Skutik keluarga "Motor Kuat Mantap" bermesin Blue Core Hybrid 125cc dengan bagasi 18,6 liter terluas di kelasnya.', seed: 'yamaha-gear-ultima', image: '',
+        variants: [
+            { variant: 'GEAR ULTIMA Hybrid', colors: ['Black', 'White'], price: 20240000 },
+            { variant: 'GEAR ULTIMA Hybrid Solid', colors: ['Solid Orange', 'Solid Blue'], price: 20660000 },
+            { variant: 'GEAR ULTIMA Hybrid Smart', colors: ['Magma Black', 'Matte Blue'], price: 22785000 },
+        ] },
+    { name: 'FreeGo 125', slug: 'freego-125', category: 'matic', categoryLabel: 'Matic', cc: '125cc', desc: 'Matic dengan ruang kaki lapang dan bagasi besar, nyaman untuk penggunaan sehari-hari.', seed: 'yamaha-freego-125', image: '',
+        variants: [
+            { variant: 'FreeGo 125', colors: ['Black', 'White', 'Red'], price: 22865000 },
+            { variant: 'FreeGo 125 Connected', colors: ['Matte Grey', 'Blue'], price: 24650000 },
+        ] },
+    { name: 'X-Ride 125', slug: 'xride-125', category: 'matic', categoryLabel: 'Matic', cc: '125cc', desc: 'Matic petualang dengan ground clearance tinggi untuk berbagai kondisi jalan.', seed: 'yamaha-xride-125', image: '',
+        variants: [
+            { variant: 'X-Ride 125', colors: ['Black', 'Green', 'Red'], price: 21135000 },
+        ] },
+    { name: 'Mio M3 125', slug: 'mio-m3', category: 'matic', categoryLabel: 'Matic', cc: '125cc', desc: 'Matic sporty ringan dengan mesin tangguh dan harga paling terjangkau di kelasnya.', seed: 'yamaha-mio-m3', image: '',
+        variants: [
+            { variant: 'Mio M3 125', colors: ['Black', 'Red', 'White'], price: 18805000 },
+        ] },
+    { name: 'Fino 125', slug: 'fino-125', category: 'matic', categoryLabel: 'Matic', cc: '125cc', desc: 'Matic bergaya retro klasik yang memadukan estetika vintage dengan mesin Blue Core modern.', seed: 'yamaha-fino-125', image: '',
+        variants: [
+            { variant: 'Fino Sporty', colors: ['Black', 'Red'], price: 20400000 },
+            { variant: 'Fino Premium', colors: ['White', 'Cream'], price: 20400000 },
+            { variant: 'Fino Grande', colors: ['Matte Black', 'Brown'], price: 21610000 },
+        ] },
+
+    // ===== Sport =====
+    { name: 'XSR155', slug: 'xsr155', category: 'sport', categoryLabel: 'Sport', cc: '155cc', desc: 'Neo-retro sport bike bergaya scrambler dengan mesin 155cc VVA dan enam percepatan.', seed: 'yamaha-xsr-155', image: '',
+        variants: [
+            { variant: 'XSR155', colors: ['Matte Black Elegance', 'Matte Silver Premium'], price: 40265000 },
+            { variant: 'XSR155 70th Anniversary Livery', colors: ['70th Anniversary Livery'], price: 40665000 },
+        ] },
+    { name: 'R15', slug: 'r15', category: 'sport', categoryLabel: 'Sport', cc: '155cc', desc: 'Motor sport fairing full ala MotoGP dengan rangka Deltabox dan mesin 155cc VVA.', seed: 'yamaha-r15', image: '',
+        variants: [
+            { variant: 'All New R15 Connected', colors: ['Black', 'Blue'], price: 42200000 },
+            { variant: 'R15M Connected/ABS', colors: ['Icon Performance', 'Tech Black'], price: 46950000 },
+            { variant: 'R15M Connected/ABS 70th Anniversary Livery', colors: ['70th Anniversary Livery'], price: 47100000 },
+        ] },
+    { name: 'R25', slug: 'r25', category: 'sport', categoryLabel: 'Sport', cc: '250cc', desc: 'Sport fairing 2 silinder 250cc dengan desain aerodinamis terinspirasi YZR-M1 dan rem ABS.', seed: 'yamaha-r25', image: '',
+        variants: [
+            { variant: 'R25 ABS', colors: ['Yamaha Blue', 'Matte Black'], price: 76250000 },
+        ] },
+    { name: 'MT-25', slug: 'mt-25', category: 'sport', categoryLabel: 'Sport', cc: '250cc', desc: 'Naked sport bike bermesin 250cc 2 silinder dengan karakter "Dark Side of Japan".', seed: 'yamaha-mt-25', image: '',
+        variants: [
+            { variant: 'MT-25', colors: ['Matte Black', 'Ice Fluo'], price: 66450000 },
+        ] },
+    { name: 'MT-15', slug: 'mt-15', category: 'sport', categoryLabel: 'Sport', cc: '155cc', desc: 'Naked sport agresif dengan mesin 155cc VVA dan desain khas keluarga MT series.', seed: 'yamaha-mt-15', image: '',
+        variants: [
+            { variant: 'MT-15', colors: ['Matte Black', 'Ice Fluo'], price: 41215000 },
+        ] },
+    { name: 'Vixion', slug: 'vixion', category: 'sport', categoryLabel: 'Sport', cc: '150-155cc', desc: 'Sport naked legendaris dengan mesin VVA, tangguh untuk penggunaan harian maupun turing.', seed: 'yamaha-vixion', image: '',
+        variants: [
+            { variant: 'Vixion 150', colors: ['Black', 'Red'], price: 31450000 },
+            { variant: 'Vixion R 155', colors: ['Red', 'Grey'], price: 34020000 },
+        ] },
+
+    // ===== Off-Road =====
+    { name: 'WR155R', slug: 'wr155r', category: 'offroad', categoryLabel: 'Off-Road', cc: '155cc', desc: 'Trail dual-purpose "The Real Adventure Partner" dengan suspensi long-travel dan rangka Deltabox.', seed: 'yamaha-wr155r', image: '',
+        variants: [
+            { variant: 'WR155R', colors: ['Blue', 'Black'], price: 41275000 },
+        ] },
+    { name: 'YZ125X', slug: 'yz125x', category: 'offroad', categoryLabel: 'Off-Road', cc: '125cc', desc: 'Motor enduro kompetisi berbasis YZ125, pintu masuk ideal ke dunia off-road racing.', seed: 'yamaha-yz125x', image: '',
+        variants: [
+            { variant: 'YZ125X', colors: ['Yamaha Racing Blue'], price: 99800000 },
+        ] },
+    { name: 'YZ250X', slug: 'yz250x', category: 'offroad', categoryLabel: 'Off-Road', cc: '250cc', desc: 'Motor cross-country kompetisi 250cc dengan performa tinggi untuk medan berat.', seed: 'yamaha-yz250x', image: '',
+        variants: [
+            { variant: 'YZ250X', colors: ['Yamaha Racing Blue'], price: 132000000 },
+        ] },
+    { name: 'YZ250FX', slug: 'yz250fx', category: 'offroad', categoryLabel: 'Off-Road', cc: '250cc', desc: 'Motor cross-country 4-tak 250cc kelas kompetisi dengan teknologi balap terkini.', seed: 'yamaha-yz250fx', image: '',
+        variants: [
+            { variant: 'YZ250FX', colors: ['Yamaha Racing Blue'], price: 140000000 },
+        ] },
+
+    // ===== Moped =====
+    { name: 'MX King 150', slug: 'mx-king', category: 'moped', categoryLabel: 'Moped', cc: '150cc', desc: 'Bebek super sporty dengan Light Frame Design dan tenaga yang responsif.', seed: 'yamaha-mx-king', image: '',
+        variants: [
+            { variant: 'MX King 150', colors: ['Black', 'Red'], price: 29200000 },
+            { variant: 'MX King 150 70th Anniversary Livery', colors: ['70th Anniversary Livery'], price: 29400000 },
+            { variant: 'MX King 150 Prima Pramac Livery', colors: ['Pramac Racing Livery'], price: 29900000 },
+        ] },
+    { name: 'Jupiter Z1', slug: 'jupiter-z1', category: 'moped', categoryLabel: 'Moped', cc: '115cc', desc: 'Bebek legendaris yang irit, tangguh, dan andal untuk kebutuhan harian.', seed: 'yamaha-jupiter-z1', image: '',
+        variants: [
+            { variant: 'Jupiter Z1', colors: ['Black', 'Red', 'Blue'], price: 22580000 },
+        ] },
+    { name: 'Vega Force', slug: 'vega-force', category: 'moped', categoryLabel: 'Moped', cc: '115cc', desc: 'Bebek entry-level dengan desain sporty dan harga paling ekonomis di jajaran Yamaha.', seed: 'yamaha-vega-force', image: '',
+        variants: [
+            { variant: 'Vega Force', colors: ['Black', 'Red'], price: 19900000 },
+        ] },
+];
+
+// Format angka jadi "Rp 12.345.000"
+function formatRupiah(n) {
+    return 'Rp ' + n.toLocaleString('id-ID');
+}
+
+// URL halaman detail motor berdasarkan slug
+function motorDetailUrl(slug) {
+    return 'motor-detail.html?motor=' + encodeURIComponent(slug);
+}
+
+// ===== PRODUK PAGE: DAFTAR TIPE MOTOR YAMAHA =====
 if (currentPage === 'produk') {
-    // Kartu produk di halaman "Tipe Motor" TIDAK ditulis manual satu-satu di
-    // produk.html — semuanya di-generate otomatis dari daftar (array) di
-    // bawah ini, lalu dirender ke <div id="produkGrid"> oleh fungsi
-    // renderMotor(). Ini sebabnya sebelumnya tidak ada "HTML per produk".
-    //
-    // CARA MENGGANTI GAMBAR SETIAP MOTOR:
-    // 1. Siapkan foto motor (disarankan rasio 4:3, contoh 800x600px, format
-    //    .jpg/.png/.webp, ukuran file diperkecil/compress agar loading cepat).
-    // 2. Taruh filenya di folder Image/produk/ (buat folder ini jika belum
-    //    ada), misalnya: Image/produk/tmax.jpg
-    // 3. Ganti nilai "image" pada motor yang sesuai di bawah ini menjadi
-    //    path file tersebut, contoh:
-    //        image: 'Image/produk/tmax.jpg'
-    // 4. Simpan file ini — gambar akan otomatis muncul di card motor
-    //    tersebut, filter kategori, dan lightbox tetap berfungsi seperti
-    //    biasa karena hanya field "image" yang dibaca ulang.
-    //
-    // Selama field "image" belum diisi/foto belum diupload, halaman akan
-    // memakai foto sementara (placeholder) dari picsum.photos supaya
-    // tampilan tetap terisi dan tidak rusak.
-    const motorList = [
-        // ===== MAXi =====
-        { name: 'TMAX', category: 'maxi', categoryLabel: 'MAXi', cc: '560cc', price: 'Rp 455.000.000', desc: 'Premium sport scooter ikonik dengan mesin 2 silinder 560cc bertenaga tinggi.', seed: 'yamaha-tmax', image: 'PotoMotor/TMAX.png' },
-        { name: 'XMAX 250', category: 'maxi', categoryLabel: 'MAXi', cc: '250cc', price: 'Rp 69.215.000', desc: 'Skutik premium 250cc dengan kenyamanan berkendara jarak jauh kelas atas.', seed: 'yamaha-xmax-250', image: 'PotoMotor/XMAX 250.png' },
-        { name: 'NMAX Turbo', category: 'maxi', categoryLabel: 'MAXi', cc: '155cc', price: 'Rp 34.065.000', desc: 'Skutik matic premium terlaris dengan fitur Y-ECVT dan Y-Shift untuk akselerasi responsif.', seed: 'yamaha-nmax-turbo', image: 'PotoMotor/NMAX.png' },
-        { name: 'Aerox Alpha', category: 'maxi', categoryLabel: 'MAXi', cc: '155cc', price: 'Rp 30.200.000', desc: 'Skutik sporty bergaya agresif dengan desain terbaru dan performa gesit.', seed: 'yamaha-aerox-alpha', image: 'PotoMotor/AEROX ALPHA.png' },
-        { name: 'LEXi LX 155', category: 'maxi', categoryLabel: 'MAXi', cc: '155cc', price: 'Rp 27.350.000', desc: 'Skutik ringan bergaya retro-modern dengan teknologi Blue Core hemat bahan bakar.', seed: 'yamaha-lexi-lx-155', image: 'PotoMotor/LEXi LX 155.png' },
-        { name: 'NMAX 155', category: 'maxi', categoryLabel: 'MAXi', cc: '155cc', price: 'Rp 32.175.000', desc: 'NMAX Connected dengan fitur Y-Connect dan kenyamanan berkendara terbaik di kelasnya.', seed: 'yamaha-nmax-155', image: 'PotoMotor/NMAX 155.png' },
-        { name: 'Aerox 155', category: 'maxi', categoryLabel: 'MAXi', cc: '155cc', price: 'Rp 28.880.000', desc: 'Aerox Connected dengan desain sporty dan performa mesin 155cc VVA.', seed: 'yamaha-aerox-155', image: 'PotoMotor/AEROX 155.png' },
-
-        // ===== Classy =====
-        { name: 'Grand Filano', category: 'classy', categoryLabel: 'Classy', cc: '125cc', price: 'Rp 28.315.000', desc: 'Skutik retro elegan dengan teknologi hybrid dan bagasi luas untuk kebutuhan harian.', seed: 'yamaha-grand-filano', image: 'PotoMotor/Grand Filano.png' },
-        { name: 'Fazzio', category: 'classy', categoryLabel: 'Classy', cc: '125cc', price: 'Rp 22.470.000', desc: 'Skutik retro-modern hybrid dengan smart key dan tampilan stylish anak muda urban.', seed: 'yamaha-fazzio', image: '' },
-
-        // ===== Matic =====
-        { name: 'Gear Ultima', category: 'matic', categoryLabel: 'Matic', cc: '125cc', price: 'Rp 20.140.000', desc: 'Motor matic serbaguna dengan desain sporty dan bagasi luas untuk aktivitas harian.', seed: 'yamaha-gear-ultima', image: '' },
-        { name: 'GEAR 125', category: 'matic', categoryLabel: 'Matic', cc: '125cc', price: 'Rp 19.295.000', desc: 'Matic ringan dan lincah, ideal untuk pelajar dan mobilitas perkotaan.', seed: 'yamaha-gear-125', image: '' },
-        { name: 'FreeGo 125', category: 'matic', categoryLabel: 'Matic', cc: '125cc', price: 'Rp 22.865.000', desc: 'Matic dengan ruang kaki lapang dan bagasi besar, nyaman untuk penggunaan sehari-hari.', seed: 'yamaha-freego-125', image: '' },
-        { name: 'X-Ride 125', category: 'matic', categoryLabel: 'Matic', cc: '125cc', price: 'Rp 21.135.000', desc: 'Matic petualang dengan ground clearance tinggi untuk berbagai kondisi jalan.', seed: 'yamaha-xride-125', image: '' },
-        { name: 'Mio M3 125', category: 'matic', categoryLabel: 'Matic', cc: '125cc', price: 'Rp 18.705.000', desc: 'Matic sporty ringan dengan mesin tangguh dan harga paling terjangkau di kelasnya.', seed: 'yamaha-mio-m3', image: '' },
-        { name: 'Fino 125', category: 'matic', categoryLabel: 'Matic', cc: '125cc', price: 'Rp 20.400.000', desc: 'Matic bergaya retro klasik yang memadukan estetika vintage dengan teknologi modern.', seed: 'yamaha-fino-125', image: '' },
-
-        // ===== Sport =====
-        { name: 'XSR 155', category: 'sport', categoryLabel: 'Sport', cc: '155cc', price: 'Rp 39.565.000', desc: 'Neo-retro sport bike dengan karakter klasik dan performa mesin VVA modern.', seed: 'yamaha-xsr-155', image: '' },
-        { name: 'R15', category: 'sport', categoryLabel: 'Sport', cc: '155cc', price: 'Rp 41.500.000', desc: 'Motor sport fairing full ala MotoGP dengan handling tajam dan mesin 155cc VVA.', seed: 'yamaha-r15', image: '' },
-        { name: 'R25', category: 'sport', categoryLabel: 'Sport', cc: '250cc', price: 'Rp 75.550.000', desc: 'Sport fairing 2 silinder 250cc dengan desain aerodinamis terinspirasi YZR-M1.', seed: 'yamaha-r25', image: '' },
-        { name: 'MT-25', category: 'sport', categoryLabel: 'Sport', cc: '250cc', price: 'Rp 65.750.000', desc: 'Naked sport bike bermesin 250cc 2 silinder dengan karakter Dark Side of Japan.', seed: 'yamaha-mt-25', image: '' },
-        { name: 'MT-15', category: 'sport', categoryLabel: 'Sport', cc: '155cc', price: 'Rp 40.515.000', desc: 'Naked sport agresif dengan mesin 155cc VVA dan desain khas keluarga MT series.', seed: 'yamaha-mt-15', image: '' },
-        { name: 'Vixion 155', category: 'sport', categoryLabel: 'Sport', cc: '155cc', price: 'Rp 31.050.000', desc: 'Sport naked legendaris dengan mesin 155cc VVA, tangguh untuk harian maupun turing.', seed: 'yamaha-vixion-155', image: '' },
-
-        // ===== Off-Road =====
-        { name: 'WR155R', category: 'offroad', categoryLabel: 'Off-Road', cc: '155cc', price: 'Rp 40.775.000', desc: 'Trail dual-purpose "The Real Adventure Partner" dengan suspensi long-travel.', seed: 'yamaha-wr155r', image: '' },
-        { name: 'YZ125X', category: 'offroad', categoryLabel: 'Off-Road', cc: '125cc', price: 'Rp 99.800.000', desc: 'Motor enduro kompetisi berbasis YZ125, pintu masuk ideal ke dunia off-road racing.', seed: 'yamaha-yz125x', image: '' },
-        { name: 'YZ250X', category: 'offroad', categoryLabel: 'Off-Road', cc: '250cc', price: 'Rp 132.000.000', desc: 'Motor cross-country kompetisi 250cc dengan performa tinggi untuk medan berat.', seed: 'yamaha-yz250x', image: '' },
-        { name: 'YZ250FX', category: 'offroad', categoryLabel: 'Off-Road', cc: '250cc', price: 'Rp 140.000.000', desc: 'Motor cross-country 4-tak 250cc kelas kompetisi dengan teknologi balap terkini.', seed: 'yamaha-yz250fx', image: '' },
-
-        // ===== Moped =====
-        { name: 'MX King 150', category: 'moped', categoryLabel: 'Moped', cc: '150cc', price: 'Rp 29.000.000', desc: 'Bebek super sporty dengan Light Frame Design dan tenaga yang responsif.', seed: 'yamaha-mx-king', image: '' },
-        { name: 'Jupiter Z1', category: 'moped', categoryLabel: 'Moped', cc: '115cc', price: 'Rp 22.480.000', desc: 'Bebek legendaris yang irit, tangguh, dan andal untuk kebutuhan harian.', seed: 'yamaha-jupiter-z1', image: '' },
-        { name: 'Vega Force', category: 'moped', categoryLabel: 'Moped', cc: '115cc', price: 'Rp 19.900.000', desc: 'Bebek entry-level dengan desain sporty dan harga paling ekonomis di jajaran Yamaha.', seed: 'yamaha-vega-force', image: '' },
-    ];
-
     const produkGrid = document.getElementById('produkGrid');
     const noResults = document.getElementById('noResults');
     const tabs = document.querySelectorAll('.motor-tab-btn');
@@ -289,11 +423,17 @@ if (currentPage === 'produk') {
             return;
         }
         if (noResults) noResults.classList.add('hidden');
-        produkGrid.innerHTML = items.map((m, idx) => `
-            <div class="produk-card card-hover animate-on-scroll" style="transition-delay:${(idx % 3) * 0.1}s">
+        produkGrid.innerHTML = items.map((m, idx) => {
+            const prices = m.variants.map(v => v.price);
+            const minPrice = Math.min(...prices);
+            const hasMultiple = m.variants.length > 1;
+
+            return `
+            <a href="${motorDetailUrl(m.slug)}" class="produk-card card-hover animate-on-scroll" style="transition-delay:${(idx % 3) * 0.1}s">
                 <div class="produk-card-image">
                     <img src="${m.image && m.image.trim() !== '' ? m.image : 'https://picsum.photos/seed/' + m.seed + '/500/375.jpg'}" alt="Yamaha ${m.name}" loading="lazy">
                     <span class="produk-badge ${m.category === 'maxi' || m.category === 'sport' ? '' : 'badge-blue'}">${m.categoryLabel}</span>
+                    ${hasMultiple ? `<span class="produk-variant-count">${m.variants.length} Varian</span>` : ''}
                 </div>
                 <div class="p-6 flex flex-col flex-1">
                     <div class="flex items-center justify-between mb-2">
@@ -304,13 +444,15 @@ if (currentPage === 'produk') {
                     <div class="flex items-center justify-between pt-4 border-t border-gray-100">
                         <div>
                             <p class="text-[11px] text-gray-400">OTR Jakarta, mulai dari</p>
-                            <p class="text-yamaha-blue font-black text-base">${m.price}</p>
+                            <p class="text-yamaha-blue font-black text-base">${formatRupiah(minPrice)}</p>
                         </div>
-                        <a href="https://wa.me/6281211117265?text=${encodeURIComponent('Halo, saya ingin tanya tentang Yamaha ' + m.name)}" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl red-accent flex items-center justify-center flex-shrink-0 hover:scale-110 transition-transform" aria-label="Tanya soal ${m.name} via WhatsApp"><i data-lucide="message-circle" class="w-5 h-5 text-white"></i></a>
+                        <span class="w-10 h-10 rounded-xl red-accent flex items-center justify-center flex-shrink-0" aria-hidden="true"><i data-lucide="arrow-right" class="w-5 h-5 text-white"></i></span>
                     </div>
+                    <span class="produk-detail-link">Lihat Detail &amp; Semua Varian <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i></span>
                 </div>
-            </div>
-        `).join('');
+            </a>
+        `;
+        }).join('');
         lucide.createIcons();
         document.querySelectorAll('.animate-on-scroll').forEach(el => scrollObserver.observe(el));
     }
@@ -330,6 +472,85 @@ if (currentPage === 'produk') {
     });
 
     renderMotor(motorList);
+}
+
+// ===== HALAMAN DETAIL MOTOR (motor-detail.html?motor=slug) =====
+if (currentPage === 'motor-detail') {
+    const heroEl = document.getElementById('motorDetailHero');
+    const contentEl = document.getElementById('motorDetailContent');
+    const notFoundEl = document.getElementById('motorNotFound');
+    const variantsEl = document.getElementById('motorDetailVariants');
+    const ctaWaEl = document.getElementById('motorDetailCtaWa');
+
+    const params = new URLSearchParams(window.location.search);
+    const slug = params.get('motor');
+    const motor = motorList.find(m => m.slug === slug);
+
+    if (!motor) {
+        // Slug tidak ditemukan / link rusak — tampilkan state "tidak ditemukan"
+        if (heroEl) heroEl.classList.add('hidden');
+        if (contentEl) contentEl.classList.add('hidden');
+        if (notFoundEl) notFoundEl.classList.remove('hidden');
+        lucide.createIcons();
+    } else {
+        document.title = 'Yamaha ' + motor.name + ' — Yamaha Prihatin Motor';
+
+        const heroImg = motor.image && motor.image.trim() !== '' ? motor.image : 'https://picsum.photos/seed/' + motor.seed + '/1200/750.jpg';
+        const prices = motor.variants.map(v => v.price);
+        const minPrice = Math.min(...prices);
+
+        if (heroEl) {
+            heroEl.innerHTML = `
+                <div class="motor-hero-image">
+                    <img src="${heroImg}" alt="Yamaha ${motor.name}">
+                    <div class="motor-hero-overlay"></div>
+                </div>
+                <div class="motor-hero-content">
+                    <a href="produk.html" class="motor-back-link"><i data-lucide="arrow-left" class="w-4 h-4"></i> Kembali ke Daftar Motor</a>
+                    <span class="produk-badge motor-hero-badge ${motor.category === 'maxi' || motor.category === 'sport' ? '' : 'badge-blue'}">${motor.categoryLabel}</span>
+                    <h1 class="motor-hero-title">Yamaha ${motor.name}</h1>
+                    <p class="motor-hero-desc">${motor.desc}</p>
+                    <div class="motor-hero-meta">
+                        <div class="motor-hero-meta-item"><i data-lucide="gauge" class="w-4 h-4"></i><span>${motor.cc}</span></div>
+                        <div class="motor-hero-meta-item"><i data-lucide="layers" class="w-4 h-4"></i><span>${motor.variants.length} Varian Resmi</span></div>
+                        <div class="motor-hero-meta-item"><i data-lucide="tag" class="w-4 h-4"></i><span>Mulai ${formatRupiah(minPrice)}</span></div>
+                    </div>
+                </div>
+            `;
+        }
+
+        if (variantsEl) {
+            variantsEl.innerHTML = motor.variants.map(v => {
+                const vImg = v.image && v.image.trim() !== '' ? v.image : heroImg;
+                return `
+                <div class="motor-variant-card animate-on-scroll">
+                    <div class="motor-variant-card-image">
+                        <img src="${vImg}" alt="Yamaha ${v.variant}" loading="lazy">
+                    </div>
+                    <div class="motor-variant-card-body">
+                        <h3 class="motor-variant-card-name">${v.variant}</h3>
+                        <div class="motor-variant-card-colors">
+                            ${v.colors.map(c => `<span class="produk-color-chip">${c}</span>`).join('')}
+                        </div>
+                        <div class="motor-variant-card-footer">
+                            <div>
+                                <p class="text-[11px] text-gray-400">OTR Jakarta</p>
+                                <p class="motor-variant-card-price">${formatRupiah(v.price)}</p>
+                            </div>
+                            <a href="https://wa.me/6281211117265?text=${encodeURIComponent('Halo, saya ingin tanya tentang Yamaha ' + v.variant)}" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl red-accent flex items-center justify-center flex-shrink-0 hover:scale-110 transition-transform" aria-label="Tanya soal ${v.variant} via WhatsApp"><i data-lucide="message-circle" class="w-5 h-5 text-white"></i></a>
+                        </div>
+                    </div>
+                </div>`;
+            }).join('');
+        }
+
+        if (ctaWaEl) {
+            ctaWaEl.href = 'https://wa.me/6281211117265?text=' + encodeURIComponent('Halo, saya ingin tanya tentang Yamaha ' + motor.name);
+        }
+
+        lucide.createIcons();
+        document.querySelectorAll('.animate-on-scroll').forEach(el => scrollObserver.observe(el));
+    }
 }
 
 // ===== GALLERY PAGE: LIGHTBOX =====
