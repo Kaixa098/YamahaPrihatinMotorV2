@@ -1454,3 +1454,81 @@ textarea:focus-visible,
         bottom: 20px;
     }
 }
+
+/* ===================================================================
+   FINAL MOBILE UI/UX FINE TUNING (Task 24)
+   Small, additive polish for small screens only — no structure, colors,
+   typography system, navigation, or content changes. Desktop (>640px)
+   is completely untouched by this block.
+=================================================================== */
+@media (max-width: 640px) {
+
+    /* --- Touch comfort: instant tap feedback, no gray flash / 300ms delay
+       on Android & iOS Chrome. Purely behavioral — no visual change. --- */
+    a,
+    button,
+    .hero-btn,
+    .motor-tab-btn,
+    .nav-card-3d,
+    .gallery-item,
+    .faq-header {
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+    }
+
+    /* --- Card & button press feedback on touch devices, since :hover
+       lift effects don't apply on tap. Keeps the same shadow/scale
+       language already used for :hover, just triggered on :active. --- */
+    .card-hover:active,
+    .nav-card-3d:active {
+        transform: translateY(-2px);
+        transition-duration: 0.15s;
+    }
+
+    .produk-card:active .produk-card-image img {
+        transform: scale(1.04);
+    }
+
+    /* --- Hero stat row: keep the 3 stats from feeling cramped edge-to-edge
+       on narrow phones by trimming the gap slightly (was 2rem via gap-8),
+       without changing size, order, or content. --- */
+    .hero-stats-in.flex {
+        gap: 1.25rem;
+    }
+
+    /* --- Keunggulan stat strip: same comfortable-gap treatment for the
+       2-column stat grid on very small phones. --- */
+    .counter-group.grid-cols-2 {
+        gap: 1.5rem 1rem;
+    }
+
+    /* --- Gallery grid: slightly tighter gutter between photo tiles on
+       narrow phones for a more balanced, less fragmented mosaic. --- */
+    .gallery-item {
+        border-radius: 14px;
+    }
+
+    /* --- FAQ accordion: a touch more breathing room inside the closed
+       header row so the tap target feels comfortably generous. --- */
+    .faq-header {
+        padding-top: 1.15rem;
+        padding-bottom: 1.15rem;
+    }
+
+    /* --- Comparison table (Keunggulan vs Dealer Umum): ensure the row
+       label never crowds the check/x icon columns on the narrowest
+       phones (~320–360px). --- */
+    .grid.grid-cols-3 > div:first-child {
+        line-height: 1.25;
+    }
+}
+
+/* Slightly wider band (up to tablet) for card grid rhythm: consistent,
+   comfortable spacing between stacked cards without touching the
+   desktop 3–4 column layouts (which take over via sm:/lg: prefixes). */
+@media (max-width: 767px) {
+    .produk-card + .produk-card,
+    .card-hover + .card-hover {
+        margin-top: 0;
+    }
+}
