@@ -335,11 +335,6 @@ const motorList = [
         ] },
 
     // ===== Sport =====
-    { name: 'XSR155', slug: 'xsr155', category: 'sport', categoryLabel: 'Sport', cc: '155cc', desc: 'Neo-retro sport bike bergaya scrambler dengan mesin 155cc VVA dan enam percepatan.', seed: 'yamaha-xsr-155', image: '',
-        variants: [
-            { variant: 'XSR155', colors: ['Matte Black Elegance', 'Matte Silver Premium'], price: 40265000 },
-            { variant: 'XSR155 70th Anniversary Livery', colors: ['70th Anniversary Livery'], price: 40665000 },
-        ] },
     { name: 'R15', slug: 'r15', category: 'sport', categoryLabel: 'Sport', cc: '155cc', desc: 'Motor sport fairing full ala MotoGP dengan rangka Deltabox dan mesin 155cc VVA.', seed: 'yamaha-r15', image: '',
         variants: [
             { variant: 'All New R15 Connected', colors: ['Black', 'Blue'], price: 42200000 },
@@ -364,6 +359,13 @@ const motorList = [
             { variant: 'Vixion R 155', colors: ['Red', 'Grey'], price: 34020000 },
         ] },
 
+    // ===== Sport Heritage =====
+    { name: 'XSR155', slug: 'xsr155', category: 'sport-heritage', categoryLabel: 'Sport Heritage', cc: '155cc', desc: 'Neo-retro sport bike bergaya scrambler dengan mesin 155cc VVA dan enam percepatan.', seed: 'yamaha-xsr-155', image: '',
+        variants: [
+            { variant: 'XSR155', colors: ['Matte Black Elegance', 'Matte Silver Premium'], price: 40265000 },
+            { variant: 'XSR155 70th Anniversary Livery', colors: ['70th Anniversary Livery'], price: 40665000 },
+        ] },
+
     // ===== Off-Road =====
     { name: 'WR155R', slug: 'wr155r', category: 'offroad', categoryLabel: 'Off-Road', cc: '155cc', desc: 'Trail dual-purpose "The Real Adventure Partner" dengan suspensi long-travel dan rangka Deltabox.', seed: 'yamaha-wr155r', image: '',
         variants: [
@@ -382,22 +384,48 @@ const motorList = [
             { variant: 'YZ250FX', colors: ['Yamaha Racing Blue'], price: 140000000 },
         ] },
 
-    // ===== Moped =====
-    { name: 'MX King 150', slug: 'mx-king', category: 'moped', categoryLabel: 'Moped', cc: '150cc', desc: 'Bebek super sporty dengan Light Frame Design dan tenaga yang responsif.', seed: 'yamaha-mx-king', image: '',
+    // ===== Cub =====
+    { name: 'MX King 150', slug: 'mx-king', category: 'cub', categoryLabel: 'Cub', cc: '150cc', desc: 'Bebek super sporty dengan Light Frame Design dan tenaga yang responsif.', seed: 'yamaha-mx-king', image: '',
         variants: [
             { variant: 'MX King 150', colors: ['Black', 'Red'], price: 29200000 },
             { variant: 'MX King 150 70th Anniversary Livery', colors: ['70th Anniversary Livery'], price: 29400000 },
             { variant: 'MX King 150 Prima Pramac Livery', colors: ['Pramac Racing Livery'], price: 29900000 },
         ] },
-    { name: 'Jupiter Z1', slug: 'jupiter-z1', category: 'moped', categoryLabel: 'Moped', cc: '115cc', desc: 'Bebek legendaris yang irit, tangguh, dan andal untuk kebutuhan harian.', seed: 'yamaha-jupiter-z1', image: '',
+    { name: 'Jupiter Z1', slug: 'jupiter-z1', category: 'cub', categoryLabel: 'Cub', cc: '115cc', desc: 'Bebek legendaris yang irit, tangguh, dan andal untuk kebutuhan harian.', seed: 'yamaha-jupiter-z1', image: '',
         variants: [
             { variant: 'Jupiter Z1', colors: ['Black', 'Red', 'Blue'], price: 22580000 },
         ] },
-    { name: 'Vega Force', slug: 'vega-force', category: 'moped', categoryLabel: 'Moped', cc: '115cc', desc: 'Bebek entry-level dengan desain sporty dan harga paling ekonomis di jajaran Yamaha.', seed: 'yamaha-vega-force', image: '',
+    { name: 'Vega Force', slug: 'vega-force', category: 'cub', categoryLabel: 'Cub', cc: '115cc', desc: 'Bebek entry-level dengan desain sporty dan harga paling ekonomis di jajaran Yamaha.', seed: 'yamaha-vega-force', image: '',
         variants: [
             { variant: 'Vega Force', colors: ['Black', 'Red'], price: 19900000 },
         ] },
 ];
+
+// ===== KATEGORI MOTOR (mengikuti struktur navigasi Yamaha Indonesia) =====
+// Alur: Kategori -> Model Motor -> Halaman Detail Motor -> Varian -> Warna -> Harga.
+// Tambah/ubah kategori cukup di array ini; jumlah model & gambar sampul
+// kategori otomatis dihitung dari "motorList" di atas (lihat categoryCover()).
+const categoryList = [
+    { slug: 'maxi', label: 'MAXi', icon: 'gauge-circle', tagline: 'Skutik premium bertenaga besar dengan teknologi dan fitur kelas atas.' },
+    { slug: 'classy', label: 'Classy', icon: 'sparkles', tagline: 'Skutik retro elegan dengan sentuhan gaya klasik yang stylish.' },
+    { slug: 'matic', label: 'Matic', icon: 'circle-dot', tagline: 'Skutik harian serba bisa, ringan, dan nyaman untuk mobilitas kota.' },
+    { slug: 'sport', label: 'Sport', icon: 'flame', tagline: 'Performa tinggi dan adrenalin balap untuk jiwa muda yang menantang.' },
+    { slug: 'sport-heritage', label: 'Sport Heritage', icon: 'history', tagline: 'Gaya neo-retro modern yang memadukan desain klasik dan performa masa kini.' },
+    { slug: 'offroad', label: 'Off-Road', icon: 'mountain', tagline: 'Tangguh di segala medan, dirancang untuk para petualang sejati.' },
+    { slug: 'cub', label: 'Cub', icon: 'bike', tagline: 'Motor bebek irit, tangguh, dan andal untuk kebutuhan harian.' },
+];
+
+// Kategori "hangat" (merah) vs "sejuk" (biru) — dipakai untuk warna badge kartu produk & detail motor
+function isWarmCategory(cat) {
+    return cat === 'maxi' || cat === 'sport' || cat === 'sport-heritage';
+}
+
+// Foto sampul kategori = foto motor pertama pada kategori tsb yang sudah punya gambar
+function categoryCover(slug) {
+    const withImage = motorList.find(m => m.category === slug && m.image && m.image.trim() !== '');
+    if (withImage) return withImage.image;
+    return 'https://picsum.photos/seed/yamaha-kategori-' + slug + '/500/375.jpg';
+}
 
 // Format angka jadi "Rp 12.345.000"
 function formatRupiah(n) {
@@ -409,11 +437,96 @@ function motorDetailUrl(slug) {
     return 'motor-detail.html?motor=' + encodeURIComponent(slug);
 }
 
-// ===== PRODUK PAGE: DAFTAR TIPE MOTOR YAMAHA =====
+// ===== PRODUK PAGE: KATEGORI -> MODEL MOTOR (alur seperti yamaha-motor.co.id) =====
+// Langkah 1: pengguna melihat seluruh kategori (#categoryView).
+// Langkah 2: setelah memilih kategori, tampil daftar model di kategori itu (#modelView).
+// Langkah 3: mengklik model membuka halaman terpisah motor-detail.html?motor=slug.
+// Kategori aktif disimpan di URL sebagai ?kategori=slug supaya bisa di-bookmark,
+// dibagikan, dan tombol back/forward browser tetap berfungsi wajar.
 if (currentPage === 'produk') {
+    const categoryView = document.getElementById('categoryView');
+    const modelView = document.getElementById('modelView');
+    const categoryGrid = document.getElementById('categoryGrid');
     const produkGrid = document.getElementById('produkGrid');
     const noResults = document.getElementById('noResults');
-    const tabs = document.querySelectorAll('.motor-tab-btn');
+    const backToCategoryBtn = document.getElementById('backToCategoryBtn');
+    const modelViewCategoryLabel = document.getElementById('modelViewCategoryLabel');
+    const modelViewTitle = document.getElementById('modelViewTitle');
+    const modelViewDesc = document.getElementById('modelViewDesc');
+
+    function renderCategoryGrid() {
+        if (!categoryGrid) return;
+        categoryGrid.innerHTML = categoryList.map((c, idx) => {
+            const count = motorList.filter(m => m.category === c.slug).length;
+            return `
+            <a href="produk.html?kategori=${c.slug}" data-category="${c.slug}" class="category-card card-hover animate-on-scroll block rounded-2xl overflow-hidden bg-white border border-gray-100" style="transition-delay:${(idx % 3) * 0.1}s">
+                <div class="relative aspect-[4/3] overflow-hidden bg-yamaha-gray-light">
+                    <img src="${categoryCover(c.slug)}" alt="Kategori ${c.label}" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 category-card-img">
+                    <div class="absolute inset-0" style="background: linear-gradient(180deg, rgba(12,10,26,0.05) 0%, rgba(12,10,26,0.75) 100%);"></div>
+                    <span class="absolute top-3 left-3 w-10 h-10 rounded-xl bg-white/15 backdrop-blur flex items-center justify-center"><i data-lucide="${c.icon}" class="w-5 h-5 text-white"></i></span>
+                    <span class="absolute top-3 right-3 text-[11px] font-bold text-white/85 bg-black/30 backdrop-blur px-2.5 py-1 rounded-full">${count} Model</span>
+                    <span class="absolute bottom-3 left-4 text-white font-black text-xl tracking-tight">${c.label}</span>
+                </div>
+                <div class="p-5">
+                    <p class="text-gray-500 text-sm font-light leading-relaxed">${c.tagline}</p>
+                    <span class="produk-detail-link">Lihat Model ${c.label} <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i></span>
+                </div>
+            </a>`;
+        }).join('');
+        lucide.createIcons();
+        document.querySelectorAll('#categoryGrid .animate-on-scroll').forEach(el => scrollObserver.observe(el));
+
+        categoryGrid.querySelectorAll('[data-category]').forEach(card => {
+            card.addEventListener('click', (e) => {
+                e.preventDefault();
+                showCategory(card.dataset.category, true);
+            });
+        });
+    }
+
+    function showCategoryGrid(updateHistory) {
+        if (categoryView) categoryView.classList.remove('hidden');
+        if (modelView) modelView.classList.add('hidden');
+        document.title = 'Produk Motor — Yamaha Prihatin Motor';
+        if (updateHistory) {
+            history.pushState({ view: 'category' }, '', 'produk.html');
+        }
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function showCategory(slug, updateHistory) {
+        const cat = categoryList.find(c => c.slug === slug);
+        if (!cat) { showCategoryGrid(updateHistory); return; }
+
+        if (categoryView) categoryView.classList.add('hidden');
+        if (modelView) modelView.classList.remove('hidden');
+
+        if (modelViewCategoryLabel) modelViewCategoryLabel.textContent = cat.label;
+        if (modelViewTitle) modelViewTitle.textContent = 'Model Motor ' + cat.label;
+        if (modelViewDesc) modelViewDesc.textContent = cat.tagline;
+        document.title = 'Motor ' + cat.label + ' — Yamaha Prihatin Motor';
+
+        renderMotor(motorList.filter(m => m.category === slug));
+
+        if (updateHistory) {
+            history.pushState({ view: 'model', kategori: slug }, '', 'produk.html?kategori=' + slug);
+        }
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    if (backToCategoryBtn) {
+        backToCategoryBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            showCategoryGrid(true);
+        });
+    }
+
+    window.addEventListener('popstate', () => {
+        const params = new URLSearchParams(window.location.search);
+        const kategori = params.get('kategori');
+        if (kategori) showCategory(kategori, false);
+        else showCategoryGrid(false);
+    });
 
     function renderMotor(items) {
         if (!produkGrid) return;
@@ -432,7 +545,7 @@ if (currentPage === 'produk') {
             <a href="${motorDetailUrl(m.slug)}" class="produk-card card-hover animate-on-scroll" style="transition-delay:${(idx % 3) * 0.1}s">
                 <div class="produk-card-image">
                     <img src="${m.image && m.image.trim() !== '' ? m.image : 'https://picsum.photos/seed/' + m.seed + '/500/375.jpg'}" alt="Yamaha ${m.name}" loading="lazy">
-                    <span class="produk-badge ${m.category === 'maxi' || m.category === 'sport' ? '' : 'badge-blue'}">${m.categoryLabel}</span>
+                    <span class="produk-badge ${isWarmCategory(m.category) ? '' : 'badge-blue'}">${m.categoryLabel}</span>
                     ${hasMultiple ? `<span class="produk-variant-count">${m.variants.length} Varian</span>` : ''}
                 </div>
                 <div class="p-6 flex flex-col flex-1">
@@ -457,21 +570,16 @@ if (currentPage === 'produk') {
         document.querySelectorAll('.animate-on-scroll').forEach(el => scrollObserver.observe(el));
     }
 
-    function filterMotor(cat) {
-        const filtered = cat === 'all' ? motorList : motorList.filter(m => m.category === cat);
-        renderMotor(filtered);
+    // Render kartu kategori sekali di awal, lalu tentukan tampilan awal
+    // berdasarkan parameter ?kategori= di URL (mendukung link langsung/bookmark).
+    renderCategoryGrid();
+    const initialParams = new URLSearchParams(window.location.search);
+    const initialKategori = initialParams.get('kategori');
+    if (initialKategori) {
+        showCategory(initialKategori, false);
+    } else {
+        showCategoryGrid(false);
     }
-
-    tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-pressed', 'false'); });
-            tab.classList.add('active');
-            tab.setAttribute('aria-pressed', 'true');
-            filterMotor(tab.dataset.filter);
-        });
-    });
-
-    renderMotor(motorList);
 }
 
 // ===== HALAMAN DETAIL MOTOR (motor-detail.html?motor=slug) =====
@@ -482,9 +590,19 @@ if (currentPage === 'motor-detail') {
     const variantsEl = document.getElementById('motorDetailVariants');
     const ctaWaEl = document.getElementById('motorDetailCtaWa');
 
+    const specsEl = document.getElementById('motorDetailSpecs');
+
     const params = new URLSearchParams(window.location.search);
     const slug = params.get('motor');
     const motor = motorList.find(m => m.slug === slug);
+
+    // Transmisi disimpulkan dari kategori (semua motor pada kategori yang sama
+    // di jajaran Yamaha memakai jenis transmisi yang sama)
+    function transmisiForCategory(cat) {
+        if (cat === 'maxi' || cat === 'classy' || cat === 'matic') return 'Otomatis (CVT)';
+        if (cat === 'cub') return 'Rotary (Tanpa Kopling Tangan)';
+        return 'Manual';
+    }
 
     if (!motor) {
         // Slug tidak ditemukan / link rusak — tampilkan state "tidak ditemukan"
@@ -506,8 +624,15 @@ if (currentPage === 'motor-detail') {
                     <div class="motor-hero-overlay"></div>
                 </div>
                 <div class="motor-hero-content">
-                    <a href="produk.html" class="motor-back-link"><i data-lucide="arrow-left" class="w-4 h-4"></i> Kembali ke Daftar Motor</a>
-                    <span class="produk-badge motor-hero-badge ${motor.category === 'maxi' || motor.category === 'sport' ? '' : 'badge-blue'}">${motor.categoryLabel}</span>
+                    <nav class="motor-breadcrumb" aria-label="Breadcrumb">
+                        <a href="produk.html">Tipe Motor</a>
+                        <span aria-hidden="true">/</span>
+                        <a href="produk.html?kategori=${motor.category}">${motor.categoryLabel}</a>
+                        <span aria-hidden="true">/</span>
+                        <span class="motor-breadcrumb-current">${motor.name}</span>
+                    </nav>
+                    <a href="produk.html?kategori=${motor.category}" class="motor-back-link"><i data-lucide="arrow-left" class="w-4 h-4"></i> Kembali ke Model ${motor.categoryLabel}</a>
+                    <span class="produk-badge motor-hero-badge ${isWarmCategory(motor.category) ? '' : 'badge-blue'}">${motor.categoryLabel}</span>
                     <h1 class="motor-hero-title">Yamaha ${motor.name}</h1>
                     <p class="motor-hero-desc">${motor.desc}</p>
                     <div class="motor-hero-meta">
@@ -517,6 +642,24 @@ if (currentPage === 'motor-detail') {
                     </div>
                 </div>
             `;
+        }
+
+        if (specsEl) {
+            const specItems = [
+                { icon: 'shapes', label: 'Kategori', value: motor.categoryLabel },
+                { icon: 'gauge', label: 'Kapasitas Mesin', value: motor.cc },
+                { icon: 'cog', label: 'Transmisi', value: transmisiForCategory(motor.category) },
+                { icon: 'layers', label: 'Varian Resmi', value: motor.variants.length + ' Varian' },
+                { icon: 'tag', label: 'Harga Mulai', value: formatRupiah(minPrice) + ' (OTR Jakarta)' },
+            ];
+            specsEl.innerHTML = specItems.map(s => `
+                <div class="motor-spec-item">
+                    <span class="motor-spec-icon"><i data-lucide="${s.icon}" class="w-4 h-4"></i></span>
+                    <div>
+                        <p class="motor-spec-label">${s.label}</p>
+                        <p class="motor-spec-value">${s.value}</p>
+                    </div>
+                </div>`).join('');
         }
 
         if (variantsEl) {
