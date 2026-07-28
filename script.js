@@ -45,6 +45,7 @@ if (mobileToggle) {
     mobileToggle.addEventListener('click', () => {
         mobileMenu.classList.add('open');
         document.body.style.overflow = 'hidden';
+        mobileToggle.setAttribute('aria-expanded', 'true');
     });
 }
 
@@ -52,6 +53,7 @@ if (mobileClose) {
     mobileClose.addEventListener('click', () => {
         mobileMenu.classList.remove('open');
         document.body.style.overflow = '';
+        if (mobileToggle) mobileToggle.setAttribute('aria-expanded', 'false');
     });
 }
 
@@ -59,6 +61,7 @@ document.querySelectorAll('.mobile-link').forEach(link => {
     link.addEventListener('click', () => {
         mobileMenu.classList.remove('open');
         document.body.style.overflow = '';
+        if (mobileToggle) mobileToggle.setAttribute('aria-expanded', 'false');
     });
 });
 
@@ -207,75 +210,6 @@ document.querySelectorAll('.counter-group').forEach(group => {
     counterObserver.observe(group);
 });
 
-// ===== SPAREPART PAGE =====
-if (currentPage === 'sparepart') {
-    const spareparts = [
-        { name: 'Oli Mesin Yamaha 10W-40', category: 'oli', price: 'Rp 65.000', status: 'available', statusText: 'Tersedia' },
-        { name: 'Oli Gardan Yamaha', category: 'oli', price: 'Rp 45.000', status: 'available', statusText: 'Tersedia' },
-        { name: 'Filter Oli Yamaha', category: 'mesin', price: 'Rp 35.000', status: 'available', statusText: 'Tersedia' },
-        { name: 'Kampas Rem Depan', category: 'rem', price: 'Rp 85.000', status: 'available', statusText: 'Tersedia' },
-        { name: 'Kampas Rem Belakang', category: 'rem', price: 'Rp 75.000', status: 'limited', statusText: 'Terbatas' },
-        { name: 'Busi NGK Yamaha', category: 'mesin', price: 'Rp 28.000', status: 'available', statusText: 'Tersedia' },
-        { name: 'Lampu LED Depan', category: 'listrik', price: 'Rp 150.000', status: 'available', statusText: 'Tersedia' },
-        { name: 'Lampu Sein LED', category: 'listrik', price: 'Rp 45.000', status: 'available', statusText: 'Tersedia' },
-        { name: 'CDI Yamaha', category: 'listrik', price: 'Rp 350.000', status: 'limited', statusText: 'Terbatas' },
-        { name: 'Kanvas Kopling', category: 'mesin', price: 'Rp 120.000', status: 'available', statusText: 'Tersedia' },
-        { name: 'Boshing Stir', category: 'rem', price: 'Rp 55.000', status: 'available', statusText: 'Tersedia' },
-        { name: 'Spion Yamaha Original', category: 'body', price: 'Rp 95.000', status: 'available', statusText: 'Tersedia' },
-        { name: 'Cover Body Depan', category: 'body', price: 'Rp 250.000', status: 'limited', statusText: 'Terbatas' },
-        { name: 'Cover Body Belakang', category: 'body', price: 'Rp 275.000', status: 'empty', statusText: 'Habis' },
-        { name: 'Jok Motor Original', category: 'body', price: 'Rp 450.000', status: 'available', statusText: 'Tersedia' },
-        { name: 'Shock Absorber Depan', category: 'rem', price: 'Rp 320.000', status: 'available', statusText: 'Tersedia' },
-    ];
-
-    const grid = document.getElementById('sparepartGrid');
-    const searchInput = document.getElementById('sparepartSearch');
-    const filterSelect = document.getElementById('sparepartFilter');
-    const noResults = document.getElementById('noResults');
-
-    function renderSpareparts(items) {
-        if (items.length === 0) {
-            grid.innerHTML = '';
-            noResults.classList.remove('hidden');
-            lucide.createIcons();
-            return;
-        }
-        noResults.classList.add('hidden');
-        grid.innerHTML = items.map(sp => `
-            <div class="sparepart-card bg-white border border-gray-200 rounded-2xl p-5">
-                <div class="w-12 h-12 rounded-xl ${sp.category === 'mesin' || sp.category === 'oli' ? 'blue-accent' : 'red-accent'} flex items-center justify-center mb-4">
-                    <i data-lucide="${sp.category === 'mesin' ? 'settings' : sp.category === 'oli' ? 'droplets' : sp.category === 'listrik' ? 'zap' : sp.category === 'rem' ? 'disc' : 'car'}" class="w-6 h-6 text-white"></i>
-                </div>
-                <h4 class="font-bold text-sm text-yamaha-dark mb-2 leading-snug">${sp.name}</h4>
-                <p class="text-yamaha-blue font-black text-base mb-3">${sp.price}</p>
-                <div class="flex items-center justify-between">
-                    <span class="status-${sp.status} text-xs font-semibold flex items-center gap-1.5">
-                        <span class="w-1.5 h-1.5 rounded-full bg-current"></span>
-                        ${sp.statusText}
-                    </span>
-                    <button onclick="showToast('Stok ${sp.name}: ${sp.statusText}', '${sp.status === "available" ? "success" : sp.status === "limited" ? "info" : "error"}')" class="text-xs text-yamaha-blue font-semibold hover:underline">Detail</button>
-                </div>
-            </div>
-        `).join('');
-        lucide.createIcons();
-    }
-
-    function filterSpareparts() {
-        const query = searchInput.value.toLowerCase();
-        const cat = filterSelect.value;
-        let filtered = spareparts.filter(sp => {
-            const matchSearch = sp.name.toLowerCase().includes(query);
-            const matchCat = cat === 'all' || sp.category === cat;
-            return matchSearch && matchCat;
-        });
-        renderSpareparts(filtered);
-    }
-
-    searchInput.addEventListener('input', filterSpareparts);
-    filterSelect.addEventListener('change', filterSpareparts);
-    renderSpareparts(spareparts);
-}
-
 // ===== PRODUK PAGE: TIPE MOTOR YAMAHA =====
 if (currentPage === 'produk') {
     const motorList = [
@@ -349,7 +283,7 @@ if (currentPage === 'produk') {
                             <p class="text-[11px] text-gray-400">OTR Jakarta, mulai dari</p>
                             <p class="text-yamaha-blue font-black text-base">${m.price}</p>
                         </div>
-                        <a href="https://wa.me/6281234567890?text=${encodeURIComponent('Halo, saya ingin tanya tentang Yamaha ' + m.name)}" target="_blank" class="w-10 h-10 rounded-xl red-accent flex items-center justify-center flex-shrink-0 hover:scale-110 transition-transform" aria-label="Tanya soal ${m.name} via WhatsApp"><i data-lucide="message-circle" class="w-5 h-5 text-white"></i></a>
+                        <a href="https://wa.me/6281234567890?text=${encodeURIComponent('Halo, saya ingin tanya tentang Yamaha ' + m.name)}" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl red-accent flex items-center justify-center flex-shrink-0 hover:scale-110 transition-transform" aria-label="Tanya soal ${m.name} via WhatsApp"><i data-lucide="message-circle" class="w-5 h-5 text-white"></i></a>
                     </div>
                 </div>
             </div>
@@ -365,8 +299,9 @@ if (currentPage === 'produk') {
 
     tabs.forEach(tab => {
         tab.addEventListener('click', () => {
-            tabs.forEach(t => t.classList.remove('active'));
+            tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-pressed', 'false'); });
             tab.classList.add('active');
+            tab.setAttribute('aria-pressed', 'true');
             filterMotor(tab.dataset.filter);
         });
     });
@@ -388,6 +323,15 @@ if (currentPage === 'galeri') {
             document.body.style.overflow = 'hidden';
         }
     };
+
+    document.querySelectorAll('.gallery-item').forEach(item => {
+        item.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                window.openLightbox(item);
+            }
+        });
+    });
 
     if (lightboxClose) {
         lightboxClose.addEventListener('click', () => {
@@ -459,43 +403,32 @@ if (currentPage === 'informasi') {
 
 // ===== FAQ PAGE: ACCORDION =====
 if (currentPage === 'faq') {
+    function toggleFaqItem(item) {
+        const isActive = item.classList.contains('active');
+        document.querySelectorAll('.faq-item').forEach(i => {
+            i.classList.remove('active');
+            const h = i.querySelector('.faq-header');
+            if (h) h.setAttribute('aria-expanded', 'false');
+        });
+        if (!isActive) {
+            item.classList.add('active');
+            const header = item.querySelector('.faq-header');
+            if (header) header.setAttribute('aria-expanded', 'true');
+        }
+    }
+
     document.querySelectorAll('.faq-item').forEach(item => {
         const header = item.querySelector('.faq-header');
         if (header) {
-            header.addEventListener('click', () => {
-                const isActive = item.classList.contains('active');
-                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-                if (!isActive) item.classList.add('active');
+            header.addEventListener('click', () => toggleFaqItem(item));
+            header.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    toggleFaqItem(item);
+                }
             });
         }
     });
-}
-
-// ===== BOOKING PAGE: FORM =====
-if (currentPage === 'booking') {
-    const form = document.getElementById('bookingForm');
-    if (form) {
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const nama = form.querySelector('#bookNama').value.trim();
-            const hp = form.querySelector('#bookHp').value.trim();
-            const motor = form.querySelector('#bookMotor').value;
-            const layanan = form.querySelector('#bookLayanan').value;
-            const tanggal = form.querySelector('#bookTanggal').value;
-            const waktu = form.querySelector('#bookWaktu').value;
-
-            if (!nama || !hp || !motor || !layanan || !tanggal || !waktu) {
-                showToast('Harap lengkapi semua field yang wajib diisi!', 'error');
-                return;
-            }
-
-            const waText = encodeURIComponent(
-                `Halo Yamaha Prihatin Motor,\n\nSaya ingin booking servis:\n\nNama: ${nama}\nNo HP: ${hp}\nTipe Motor: ${motor}\nJenis Layanan: ${layanan}\nTanggal: ${tanggal}\nWaktu: ${waktu}\n\nMohon konfirmasi, terima kasih!`
-            );
-            window.open(`https://wa.me/6281234567890?text=${waText}`, '_blank');
-            showToast('Booking berhasil! Anda akan diarahkan ke WhatsApp.', 'success');
-        });
-    }
 }
 
 // ===== KONTAK PAGE: FORM =====

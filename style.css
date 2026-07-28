@@ -4,6 +4,13 @@
 
 html {
     scroll-behavior: smooth;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -193,6 +200,9 @@ html {
 /* ===== HERO ===== */
 .hero-bg {
     background: linear-gradient(135deg, #0C0A1A 0%, #1F1942 40%, #322869 60%, #0C0A1A 100%);
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
 }
 
 .hero-bg::before {
@@ -421,6 +431,9 @@ html {
 }
 
 .mobile-menu {
+    position: fixed;
+    inset: 0;
+    max-width: 100%;
     transform: translateX(100%);
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -680,6 +693,11 @@ textarea:focus {
 
 /* ===== NAVBAR — premium scroll behavior ===== */
 #navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    max-width: 100%;
     background: rgba(12, 10, 26, 0.28);
     box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
     transition: background-color 0.5s cubic-bezier(0.16, 1, 0.3, 1),
