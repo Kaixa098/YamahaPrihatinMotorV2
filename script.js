@@ -281,7 +281,7 @@ const motorList = [
             { variant: 'Aerox Alpha Cybercity ABS', image: 'PotoMotor/AEROX ALPHA/CyberCity ABS.png', colors: ['Matte Purple Black', 'White Pearl Blue'], price: 34790000 },
             { variant: 'Aerox Alpha "Turbo"', image: 'PotoMotor/AEROX ALPHA/Turbo.png', colors: ['Elixir Dark Silver'], price: 40050000 },
             { variant: 'Aerox Alpha "Turbo" 70th Anniversary Livery', image: 'PotoMotor/AEROX ALPHA/Turbo 70th Livery.png', colors: ['70th Anniversary Livery'], price: 40450000 },
-            { variant: 'Aerox Alpha "Turbo" Ultimate', colors: ['Elixir Dark Silver'], price: 42230000 },
+            { variant: 'Aerox Alpha "Turbo" Ultimate', image: 'PotoMotor/AEROX ALPHA/Turbo ULTIMATE.png', colors: ['Elixir Dark Silver'], price: 42230000 },
         ] },
     { name: 'LEXi LX 155', slug: 'lexi-lx-155', category: 'maxi', categoryLabel: 'MAXi', cc: '155cc', desc: 'Skutik ringan bergaya retro-modern dengan mesin 155cc VVA yang hemat bahan bakar.', seed: 'yamaha-lexi-lx-155', image: 'PotoMotor/LEXi/ConnectedABS.png',
         variants: [
