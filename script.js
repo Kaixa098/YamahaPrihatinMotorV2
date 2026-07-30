@@ -815,6 +815,17 @@ if (currentPage === 'faq') {
 if (currentPage === 'kontak') {
     const form = document.getElementById('contactForm');
     if (form) {
+        // Nomor WhatsApp owner (sama dengan nomor yang dipakai tombol WA lain di situs ini)
+        const CONTACT_WA_NUMBER = '6281211117265';
+
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const submitBtnDefaultHTML = submitBtn ? submitBtn.innerHTML : '';
+
+        // Validasi format email sederhana
+        function isValidEmail(value) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+        }
+
         form.addEventListener('submit', (e) => {
             e.preventDefault();
             const nama = form.querySelector('#contactNama').value.trim();
@@ -827,8 +838,37 @@ if (currentPage === 'kontak') {
                 return;
             }
 
-            showToast('Pesan Anda berhasil terkirim! Kami akan segera menghubungi Anda.', 'success');
-            form.reset();
+            if (!isValidEmail(email)) {
+                showToast('Format email tidak valid!', 'error');
+                return;
+            }
+
+            // Susun isi form menjadi pesan WhatsApp yang rapi untuk owner
+            const waMessage =
+                `Halo Yamaha Prihatin Motor, saya ingin mengirim pesan melalui website:\n\n` +
+                `*Nama:* ${nama}\n` +
+                `*Email:* ${email}\n` +
+                `*Subjek:* ${subjek}\n` +
+                `*Pesan:*\n${pesan}`;
+
+            const waUrl = `https://wa.me/${CONTACT_WA_NUMBER}?text=${encodeURIComponent(waMessage)}`;
+
+            // Feedback visual singkat sebelum membuka WhatsApp
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<span class="flex items-center gap-2">Membuka WhatsApp...</span>';
+            }
+
+            showToast('Mengalihkan ke WhatsApp untuk mengirim pesan Anda...', 'success');
+
+            setTimeout(() => {
+                window.open(waUrl, '_blank', 'noopener,noreferrer');
+                form.reset();
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = submitBtnDefaultHTML;
+                }
+            }, 600);
         });
     }
 }
