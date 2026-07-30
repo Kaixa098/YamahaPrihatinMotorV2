@@ -689,6 +689,55 @@ if (currentPage === 'motor-detail') {
     }
 }
 
+// ===== TENTANG KAMI PAGE: LIGHTBOX SERTIFIKAT =====
+if (currentPage === 'tentang') {
+    const certLightbox = document.getElementById('lightbox');
+    const certLightboxImg = document.getElementById('lightboxImg');
+    const certLightboxClose = document.getElementById('lightboxClose');
+
+    window.openCertLightbox = function(el) {
+        const img = el.querySelector('img');
+        if (certLightboxImg && img) {
+            certLightboxImg.src = img.dataset.src || img.src;
+            certLightboxImg.alt = img.alt || 'Foto Sertifikat';
+            certLightbox.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+    };
+
+    document.querySelectorAll('.cert-card-frame').forEach(item => {
+        item.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                window.openCertLightbox(item);
+            }
+        });
+    });
+
+    if (certLightboxClose) {
+        certLightboxClose.addEventListener('click', () => {
+            certLightbox.classList.remove('open');
+            document.body.style.overflow = '';
+        });
+    }
+
+    if (certLightbox) {
+        certLightbox.addEventListener('click', (e) => {
+            if (e.target === certLightbox) {
+                certLightbox.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+        });
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && certLightbox && certLightbox.classList.contains('open')) {
+            certLightbox.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+    });
+}
+
 // ===== GALLERY PAGE: LIGHTBOX =====
 if (currentPage === 'galeri') {
     const lightbox = document.getElementById('lightbox');
