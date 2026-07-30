@@ -1013,6 +1013,15 @@ textarea:focus {
         font-size: 3rem; /* was 2.25rem (text-4xl); matches tablet's sm:text-5xl for a comfortable, non-cramped size on phones */
         line-height: 1.05;
     }
+
+    /* Turunkan sedikit grup tombol (WhatsApp, Instagram/Facebook/TikTok,
+       Layanan/Tipe Motor) agar tidak terlalu mepet ke atas dan jarak
+       kosong di bawahnya (sebelum statistik) tidak terasa terlalu jauh.
+       Hanya menambah sedikit jarak, tidak mengubah struktur/urutan
+       elemen apa pun. */
+    .hero-cta-in {
+        margin-top: 0.75rem;
+    }
 }
 
 
@@ -1183,37 +1192,111 @@ textarea:focus {
 }
 
 /* ===================================================================
-   HERO CTA BUTTONS — WhatsApp, Layanan, Tipe Motor, Keunggulan
-   (Task 4: hanya styling tombol Hero, tidak mengubah rule lain)
+   HERO CTA BUTTONS — WhatsApp, Media Sosial, Layanan, Tipe Motor, Keunggulan
+   (Task 35 revisi: WhatsApp di baris sendiri, tombol media sosial tepat
+   di bawahnya dan sejajar rata, Layanan/Tipe Motor di baris berikutnya)
 =================================================================== */
 
 .hero-cta-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    display: flex;
+    flex-direction: column;
     gap: 0.85rem;
     width: 100%;
     max-width: 32rem;
 }
 
-/* Task 10: Susunan tombol Hero khusus mobile (<640px)
-   Baris 1 : WhatsApp (CTA utama, full-width, di tengah)
-   Baris 2 : Layanan | Tipe Motor (ukuran sama, sejajar)
-   Tombol Keunggulan sudah dihapus dari grid CTA (digantikan tombol Keunggulan
-   mandiri di bawah statistik untuk mobile — lihat .hero-keunggulan-mobile-wrap). */
-.hero-cta-grid .hero-btn-primary {
-    grid-column: 1 / -1;
+@media (min-width: 640px) {
+    .hero-cta-grid {
+        max-width: none;
+        gap: 1.1rem;
+    }
+}
+
+/* Baris tombol sekunder: Layanan & Tipe Motor, sejajar rapi di bawah tombol media sosial */
+.hero-secondary-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.85rem;
+    width: 100%;
 }
 
 @media (min-width: 640px) {
-    .hero-cta-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+    .hero-secondary-grid {
         gap: 1.1rem;
-        max-width: none;
+    }
+}
+
+/* Task 35 (revisi): Tombol Media Sosial Resmi (Instagram, Facebook, TikTok) — tepat di bawah tombol WhatsApp,
+   sejajar rata dalam grid 3 kolom yang seimbang (lebar sama dengan tombol WhatsApp di atasnya).
+   Otomatis pecah ke 2 baris rapi bila ruang tidak cukup (auto-fit). */
+.hero-social-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 0.65rem;
+    width: 100%;
+}
+
+.hero-social-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    padding: 0.6rem 1rem;
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+                background-color 0.3s ease,
+                border-color 0.3s ease;
+}
+
+.hero-social-btn:hover {
+    transform: translateY(-3px);
+    background: rgba(50, 40, 105, 0.35);
+    border-color: rgba(127, 121, 161, 0.6);
+    box-shadow: 0 14px 30px -12px rgba(50, 40, 105, 0.5);
+}
+
+.hero-social-btn:active {
+    transform: translateY(-1px) scale(0.97);
+    transition-duration: 0.15s;
+}
+
+.hero-social-btn:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.65);
+    outline-offset: 3px;
+}
+
+.hero-social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    flex-shrink: 0;
+}
+
+.hero-social-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+@media (min-width: 640px) {
+    .hero-social-grid {
+        gap: 0.85rem;
     }
 
-    /* Kembalikan perilaku grid desktop apa adanya (3 tombol sejajar) */
-    .hero-cta-grid .hero-btn-primary {
-        grid-column: auto;
+    .hero-social-btn {
+        padding: 0.7rem 1.25rem;
+        font-size: 0.8125rem;
     }
 }
 
