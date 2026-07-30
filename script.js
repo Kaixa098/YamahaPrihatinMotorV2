@@ -293,109 +293,109 @@ const motorList = [
     // ===== Classy =====
     { name: 'Grand Filano Hybrid', slug: 'grand-filano', category: 'classy', categoryLabel: 'Classy', cc: '125cc', desc: 'Skutik retro elegan dengan teknologi Blue Core Hybrid, bagasi 27 liter, dan TFT Sub Display.', seed: 'yamaha-grand-filano', image: 'PotoMotor/Grand Filano.png',
         variants: [
-            { variant: 'Grand Filano Hybrid Neo', colors: ['Prime Gray', 'Greenish Gray', 'Pink Mauve', 'Essential White'], price: 27965000 },
-            { variant: 'Grand Filano Hybrid Lux', colors: ['Royal Iron', 'Magma Black'], price: 28445000 },
+            { variant: 'Grand Filano Hybrid Neo', image: 'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026012310263681335O86751.png', colors: ['Prime Gray', 'Greenish Gray', 'Pink Mauve', 'Essential White'], price: 28665000 },
+            { variant: 'Grand Filano Hybrid Lux', colors: ['Royal Iron', 'Magma Black'], price: 29145000 },
         ] },
-    { name: 'Fazzio Hybrid', slug: 'fazzio', category: 'classy', categoryLabel: 'Classy', cc: '125cc', desc: 'Skutik retro-modern hybrid dengan smart key dan tampilan stylish anak muda urban.', seed: 'yamaha-fazzio', image: '',
+    { name: 'Fazzio Hybrid', slug: 'fazzio', category: 'classy', categoryLabel: 'Classy', cc: '125cc', desc: 'Skutik retro-modern hybrid dengan smart key dan tampilan stylish anak muda urban.', seed: 'yamaha-fazzio', image: 'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026012315101756736A45457.png',
         variants: [
-            { variant: 'Fazzio Hybrid', colors: ['Blue White', 'Black Red'], price: 21920000 },
-            { variant: 'Fazzio Hybrid Neo', colors: ['Go Purple', 'Pink Mauve', 'White', 'Green'], price: 23705000 },
-            { variant: 'Fazzio Hybrid Lux', colors: ['Greenish Gray'], price: 24395000 },
+            { variant: 'Fazzio Hybrid', image: 'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026012315093684262D3348.png', colors: ['Blue White', 'Black Red'], price: 22820000 },
+            { variant: 'Fazzio Hybrid Neo', image: 'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/202601231711304860C78501.png', colors: ['Go Purple', 'Pink Mauve', 'White', 'Green'], price: 24405000 },
+            { variant: 'Fazzio Hybrid Lux', image: 'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026012315110540976J2461.png', colors: ['Greenish Gray'], price: 25095000 },
         ] },
 
     // ===== Matic =====
-    { name: 'GEAR 125', slug: 'gear-125', category: 'matic', categoryLabel: 'Matic', cc: '125cc', desc: 'Matic ringan dan lincah dengan bagasi luas, ideal untuk pelajar dan mobilitas perkotaan.', seed: 'yamaha-gear-125', image: '',
+    { name: 'GEAR 125', slug: 'gear-125', category: 'matic', categoryLabel: 'Matic', cc: '125cc', desc: 'Matic ringan dan lincah dengan bagasi luas, ideal untuk pelajar dan mobilitas perkotaan.', seed: 'yamaha-gear-125', image: 'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2025030717193296301C81889.png',
         variants: [
-            { variant: 'GEAR 125', colors: ['Black', 'Red', 'Blue'], price: 19395000 },
+            { variant: 'GEAR 125', colors: ['Black', 'Red', 'Blue'], price: 19495000 },
         ] },
-    { name: 'GEAR ULTIMA', slug: 'gear-ultima', category: 'matic', categoryLabel: 'Matic', cc: '125cc', desc: 'Skutik keluarga "Motor Kuat Mantap" bermesin Blue Core Hybrid 125cc dengan bagasi 18,6 liter terluas di kelasnya.', seed: 'yamaha-gear-ultima', image: '',
+    { name: 'GEAR ULTIMA', slug: 'gear-ultima', category: 'matic', categoryLabel: 'Matic', cc: '125cc', desc: 'Skutik keluarga "Motor Kuat Mantap" bermesin Blue Core Hybrid 125cc dengan bagasi 18,6 liter terluas di kelasnya.', seed: 'yamaha-gear-ultima', image: 'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026040210281363446A2951.png',
         variants: [
-            { variant: 'GEAR ULTIMA Hybrid', colors: ['Black', 'White'], price: 20240000 },
-            { variant: 'GEAR ULTIMA Hybrid Solid', colors: ['Solid Orange', 'Solid Blue'], price: 20660000 },
-            { variant: 'GEAR ULTIMA Hybrid Smart', colors: ['Magma Black', 'Matte Blue'], price: 22785000 },
+            { variant: 'GEAR ULTIMA Hybrid', image: 'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026040210355699153B34831.png', colors: ['Black', 'White'], price: 20240000 },
+            { variant: 'GEAR ULTIMA Hybrid Solid', image: 'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026040210302746779S97325.png', colors: ['Solid Orange', 'Solid Blue'], price: 20660000 },
+            { variant: 'GEAR ULTIMA Hybrid Smart', image: 'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026040210285549459N49815.png', colors: ['Magma Black', 'Matte Blue'], price: 22785000 },
         ] },
-    { name: 'FreeGo 125', slug: 'freego-125', category: 'matic', categoryLabel: 'Matic', cc: '125cc', desc: 'Matic dengan ruang kaki lapang dan bagasi besar, nyaman untuk penggunaan sehari-hari.', seed: 'yamaha-freego-125', image: '',
+    { name: 'FreeGo 125', slug: 'freego-125', category: 'matic', categoryLabel: 'Matic', cc: '125cc', desc: 'Matic dengan ruang kaki lapang dan bagasi besar, nyaman untuk penggunaan sehari-hari.', seed: 'yamaha-freego-125', image: 'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2025060914385589502M90490.png',
         variants: [
-            { variant: 'FreeGo 125', colors: ['Black', 'White', 'Red'], price: 22865000 },
+            { variant: 'FreeGo 125', image: 'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2025060914390790747E27231.png', colors: ['Black', 'White', 'Red'], price: 22865000 },
             { variant: 'FreeGo 125 Connected', colors: ['Matte Grey', 'Blue'], price: 24650000 },
         ] },
-    { name: 'X-Ride 125', slug: 'xride-125', category: 'matic', categoryLabel: 'Matic', cc: '125cc', desc: 'Matic petualang dengan ground clearance tinggi untuk berbagai kondisi jalan.', seed: 'yamaha-xride-125', image: '',
+    { name: 'X-Ride 125', slug: 'xride-125', category: 'matic', categoryLabel: 'Matic', cc: '125cc', desc: 'Matic petualang dengan ground clearance tinggi untuk berbagai kondisi jalan.', seed: 'yamaha-xride-125', image: 'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2025070409415976337A27649.png',
         variants: [
             { variant: 'X-Ride 125', colors: ['Black', 'Green', 'Red'], price: 21135000 },
         ] },
-    { name: 'Mio M3 125', slug: 'mio-m3', category: 'matic', categoryLabel: 'Matic', cc: '125cc', desc: 'Matic sporty ringan dengan mesin tangguh dan harga paling terjangkau di kelasnya.', seed: 'yamaha-mio-m3', image: '',
+    { name: 'Mio M3 125', slug: 'mio-m3', category: 'matic', categoryLabel: 'Matic', cc: '125cc', desc: 'Matic sporty ringan dengan mesin tangguh dan harga paling terjangkau di kelasnya.', seed: 'yamaha-mio-m3', image: 'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2025051911283817688W57116.png',
         variants: [
-            { variant: 'Mio M3 125', colors: ['Black', 'Red', 'White'], price: 18805000 },
+            { variant: 'Mio M3 125', colors: ['Black', 'Red', 'White'], price: 18905000 },
         ] },
-    { name: 'Fino 125', slug: 'fino-125', category: 'matic', categoryLabel: 'Matic', cc: '125cc', desc: 'Matic bergaya retro klasik yang memadukan estetika vintage dengan mesin Blue Core modern.', seed: 'yamaha-fino-125', image: '',
+    { name: 'Fino 125', slug: 'fino-125', category: 'matic', categoryLabel: 'Matic', cc: '125cc', desc: 'Matic bergaya retro klasik yang memadukan estetika vintage dengan mesin Blue Core modern.', seed: 'yamaha-fino-125', image: 'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2022030515231473422V37157.png',
         variants: [
-            { variant: 'Fino Sporty', colors: ['Black', 'Red'], price: 20400000 },
-            { variant: 'Fino Premium', colors: ['White', 'Cream'], price: 20400000 },
+            { variant: 'Fino Sporty', image: 'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2022030515293157128N76590.png', colors: ['Black', 'Red'], price: 20400000 },
+            { variant: 'Fino Premium', image: 'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2022030515262544883N54966.png', colors: ['White', 'Cream'], price: 20400000 },
             { variant: 'Fino Grande', colors: ['Matte Black', 'Brown'], price: 21610000 },
         ] },
 
     // ===== Sport =====
-    { name: 'R15', slug: 'r15', category: 'sport', categoryLabel: 'Sport', cc: '155cc', desc: 'Motor sport fairing full ala MotoGP dengan rangka Deltabox dan mesin 155cc VVA.', seed: 'yamaha-r15', image: '',
+    { name: 'R15', slug: 'r15', category: 'sport', categoryLabel: 'Sport', cc: '155cc', desc: 'Motor sport fairing full ala MotoGP dengan rangka Deltabox dan mesin 155cc VVA.', seed: 'yamaha-r15', image: 'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2025012017035257352I85474.png',
         variants: [
-            { variant: 'All New R15 Connected', colors: ['Black', 'Blue'], price: 42200000 },
-            { variant: 'R15M Connected/ABS', colors: ['Icon Performance', 'Tech Black'], price: 46950000 },
-            { variant: 'R15M Connected/ABS 70th Anniversary Livery', colors: ['70th Anniversary Livery'], price: 47100000 },
+            { variant: 'R15 Connected', colors: ['Black', 'Blue'], price: 42200000 },
+            { variant: 'R15M Connected/ABS', image: 'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2024072510405534685V24502.png', colors: ['Icon Performance', 'Tech Black'], price: 46950000 },
+            { variant: 'R15M Connected/ABS 70th Anniversary Livery', image: 'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/202601221233083712A95570.png', colors: ['70th Anniversary Livery'], price: 47100000 },
         ] },
-    { name: 'R25', slug: 'r25', category: 'sport', categoryLabel: 'Sport', cc: '250cc', desc: 'Sport fairing 2 silinder 250cc dengan desain aerodinamis terinspirasi YZR-M1 dan rem ABS.', seed: 'yamaha-r25', image: '',
+    { name: 'R25', slug: 'r25', category: 'sport', categoryLabel: 'Sport', cc: '250cc', desc: 'Sport fairing 2 silinder 250cc dengan desain aerodinamis terinspirasi YZR-M1 dan rem ABS.', seed: 'yamaha-r25', image: 'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2025012015280236852T12421.png',
         variants: [
             { variant: 'R25 ABS', colors: ['Yamaha Blue', 'Matte Black'], price: 76250000 },
         ] },
-    { name: 'MT-25', slug: 'mt-25', category: 'sport', categoryLabel: 'Sport', cc: '250cc', desc: 'Naked sport bike bermesin 250cc 2 silinder dengan karakter "Dark Side of Japan".', seed: 'yamaha-mt-25', image: '',
+    { name: 'MT-25', slug: 'mt-25', category: 'sport', categoryLabel: 'Sport', cc: '250cc', desc: 'Naked sport bike bermesin 250cc 2 silinder dengan karakter "Dark Side of Japan".', seed: 'yamaha-mt-25', image: 'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2025012015174655343P65550.png',
         variants: [
             { variant: 'MT-25', colors: ['Matte Black', 'Ice Fluo'], price: 66450000 },
         ] },
-    { name: 'MT-15', slug: 'mt-15', category: 'sport', categoryLabel: 'Sport', cc: '155cc', desc: 'Naked sport agresif dengan mesin 155cc VVA dan desain khas keluarga MT series.', seed: 'yamaha-mt-15', image: '',
+    { name: 'MT-15', slug: 'mt-15', category: 'sport', categoryLabel: 'Sport', cc: '155cc', desc: 'Naked sport agresif dengan mesin 155cc VVA dan desain khas keluarga MT series.', seed: 'yamaha-mt-15', image: 'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/202501201512088268P91906.png',
         variants: [
             { variant: 'MT-15', colors: ['Matte Black', 'Ice Fluo'], price: 41215000 },
         ] },
-    { name: 'Vixion', slug: 'vixion', category: 'sport', categoryLabel: 'Sport', cc: '150-155cc', desc: 'Sport naked legendaris dengan mesin VVA, tangguh untuk penggunaan harian maupun turing.', seed: 'yamaha-vixion', image: '',
+    { name: 'Vixion', slug: 'vixion', category: 'sport', categoryLabel: 'Sport', cc: '150-155cc', desc: 'Sport naked legendaris dengan mesin VVA, tangguh untuk penggunaan harian maupun turing.', seed: 'yamaha-vixion', image: 'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/202201110944359935S19728.png',
         variants: [
-            { variant: 'Vixion 150', colors: ['Black', 'Red'], price: 31450000 },
-            { variant: 'Vixion R 155', colors: ['Red', 'Grey'], price: 34020000 },
+            { variant: 'Vixion 150', image: 'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/202201110944359935S19728.png', colors: ['Black', 'Red'], price: 31450000 },
+            { variant: 'Vixion R 155', image: 'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2022011109442589529O58043.png', colors: ['Red', 'Grey'], price: 34020000 },
         ] },
 
     // ===== Sport Heritage =====
-    { name: 'XSR155', slug: 'xsr155', category: 'sport-heritage', categoryLabel: 'Sport Heritage', cc: '155cc', desc: 'Neo-retro sport bike bergaya scrambler dengan mesin 155cc VVA dan enam percepatan.', seed: 'yamaha-xsr-155', image: '',
+    { name: 'XSR155', slug: 'xsr155', category: 'sport-heritage', categoryLabel: 'Sport Heritage', cc: '155cc', desc: 'Neo-retro sport bike bergaya scrambler dengan mesin 155cc VVA dan enam percepatan.', seed: 'yamaha-xsr-155', image: 'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2022122614535230076F30677.png',
         variants: [
             { variant: 'XSR155', colors: ['Matte Black Elegance', 'Matte Silver Premium'], price: 40265000 },
-            { variant: 'XSR155 70th Anniversary Livery', colors: ['70th Anniversary Livery'], price: 40665000 },
+            { variant: 'XSR155 70th Anniversary Livery', image: 'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026012212283641750K65588.png', colors: ['70th Anniversary Livery'], price: 40665000 },
         ] },
 
     // ===== Off-Road =====
-    { name: 'WR155R', slug: 'wr155r', category: 'offroad', categoryLabel: 'Off-Road', cc: '155cc', desc: 'Trail dual-purpose "The Real Adventure Partner" dengan suspensi long-travel dan rangka Deltabox.', seed: 'yamaha-wr155r', image: '',
+    { name: 'WR155R', slug: 'wr155r', category: 'offroad', categoryLabel: 'Off-Road', cc: '155cc', desc: 'Trail dual-purpose "The Real Adventure Partner" dengan suspensi long-travel dan rangka Deltabox.', seed: 'yamaha-wr155r', image: 'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026012216212099486L85017.png',
         variants: [
             { variant: 'WR155R', colors: ['Blue', 'Black'], price: 41275000 },
         ] },
-    { name: 'YZ125X', slug: 'yz125x', category: 'offroad', categoryLabel: 'Off-Road', cc: '125cc', desc: 'Motor enduro kompetisi berbasis YZ125, pintu masuk ideal ke dunia off-road racing.', seed: 'yamaha-yz125x', image: '',
+    { name: 'YZ125X', slug: 'yz125x', category: 'offroad', categoryLabel: 'Off-Road', cc: '125cc', desc: 'Motor enduro kompetisi berbasis YZ125, pintu masuk ideal ke dunia off-road racing.', seed: 'yamaha-yz125x', image: 'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026060310515421581Q19732.png',
         variants: [
             { variant: 'YZ125X', colors: ['Yamaha Racing Blue'], price: 99800000 },
         ] },
-    { name: 'YZ250X', slug: 'yz250x', category: 'offroad', categoryLabel: 'Off-Road', cc: '250cc', desc: 'Motor cross-country kompetisi 250cc dengan performa tinggi untuk medan berat.', seed: 'yamaha-yz250x', image: '',
+    { name: 'YZ250X', slug: 'yz250x', category: 'offroad', categoryLabel: 'Off-Road', cc: '250cc', desc: 'Motor cross-country kompetisi 250cc dengan performa tinggi untuk medan berat.', seed: 'yamaha-yz250x', image: 'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026060310532432856X70087.png',
         variants: [
             { variant: 'YZ250X', colors: ['Yamaha Racing Blue'], price: 132000000 },
         ] },
-    { name: 'YZ250FX', slug: 'yz250fx', category: 'offroad', categoryLabel: 'Off-Road', cc: '250cc', desc: 'Motor cross-country 4-tak 250cc kelas kompetisi dengan teknologi balap terkini.', seed: 'yamaha-yz250fx', image: '',
+    { name: 'YZ250FX', slug: 'yz250fx', category: 'offroad', categoryLabel: 'Off-Road', cc: '250cc', desc: 'Motor cross-country 4-tak 250cc kelas kompetisi dengan teknologi balap terkini.', seed: 'yamaha-yz250fx', image: 'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026060310504041210L92658.png',
         variants: [
             { variant: 'YZ250FX', colors: ['Yamaha Racing Blue'], price: 140000000 },
         ] },
 
-    // ===== Cub =====
-    { name: 'MX King 150', slug: 'mx-king', category: 'cub', categoryLabel: 'Cub', cc: '150cc', desc: 'Bebek super sporty dengan Light Frame Design dan tenaga yang responsif.', seed: 'yamaha-mx-king', image: '',
+    // ===== Moped =====
+    { name: 'MX King 150', slug: 'mx-king', category: 'Moped', categoryLabel: 'Moped', cc: '150cc', desc: 'Bebek super sporty dengan Light Frame Design dan tenaga yang responsif.', seed: 'yamaha-mx-king', image: 'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2025120815501128784Y48788.png',
         variants: [
             { variant: 'MX King 150', colors: ['Black', 'Red'], price: 29200000 },
-            { variant: 'MX King 150 70th Anniversary Livery', colors: ['70th Anniversary Livery'], price: 29400000 },
-            { variant: 'MX King 150 Prima Pramac Livery', colors: ['Pramac Racing Livery'], price: 29900000 },
+            { variant: 'MX King 150 70th Anniversary Livery', image: 'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026012212570650164D72125.png', colors: ['70th Anniversary Livery'], price: 29400000 },
+            { variant: 'MX King 150 Prima Pramac Livery', image: 'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026062207303160354M62891.png', colors: ['Pramac Racing Livery'], price: 29900000 },
         ] },
-    { name: 'Jupiter Z1', slug: 'jupiter-z1', category: 'cub', categoryLabel: 'Cub', cc: '115cc', desc: 'Bebek legendaris yang irit, tangguh, dan andal untuk kebutuhan harian.', seed: 'yamaha-jupiter-z1', image: '',
+    { name: 'Jupiter Z1', slug: 'jupiter-z1', category: 'Moped', categoryLabel: 'Moped', cc: '115cc', desc: 'Bebek legendaris yang irit, tangguh, dan andal untuk kebutuhan harian.', seed: 'yamaha-jupiter-z1', image: 'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2025061108303017327J72634.png',
         variants: [
             { variant: 'Jupiter Z1', colors: ['Black', 'Red', 'Blue'], price: 22580000 },
         ] },
-    { name: 'Vega Force', slug: 'vega-force', category: 'cub', categoryLabel: 'Cub', cc: '115cc', desc: 'Bebek entry-level dengan desain sporty dan harga paling ekonomis di jajaran Yamaha.', seed: 'yamaha-vega-force', image: '',
+    { name: 'Vega Force', slug: 'vega-force', category: 'Moped', categoryLabel: 'Moped', cc: '115cc', desc: 'Bebek entry-level dengan desain sporty dan harga paling ekonomis di jajaran Yamaha.', seed: 'yamaha-vega-force', image: 'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2023060508085578784S98910.png',
         variants: [
             { variant: 'Vega Force', colors: ['Black', 'Red'], price: 19900000 },
         ] },
@@ -412,7 +412,7 @@ const categoryList = [
     { slug: 'sport', label: 'Sport', icon: 'flame', tagline: 'Performa tinggi dan adrenalin balap untuk jiwa muda yang menantang.' },
     { slug: 'sport-heritage', label: 'Sport Heritage', icon: 'history', tagline: 'Gaya neo-retro modern yang memadukan desain klasik dan performa masa kini.' },
     { slug: 'offroad', label: 'Off-Road', icon: 'mountain', tagline: 'Tangguh di segala medan, dirancang untuk para petualang sejati.' },
-    { slug: 'cub', label: 'Cub', icon: 'bike', tagline: 'Motor bebek irit, tangguh, dan andal untuk kebutuhan harian.' },
+    { slug: 'Moped', label: 'Moped', icon: 'bike', tagline: 'Motor bebek irit, tangguh, dan andal untuk kebutuhan harian.' },
 ];
 
 // Kategori "hangat" (merah) vs "sejuk" (biru) — dipakai untuk warna badge kartu produk & detail motor
@@ -600,7 +600,7 @@ if (currentPage === 'motor-detail') {
     // di jajaran Yamaha memakai jenis transmisi yang sama)
     function transmisiForCategory(cat) {
         if (cat === 'maxi' || cat === 'classy' || cat === 'matic') return 'Otomatis (CVT)';
-        if (cat === 'cub') return 'Rotary (Tanpa Kopling Tangan)';
+        if (cat === 'Moped') return 'Rotary (Tanpa Kopling Tangan)';
         return 'Manual';
     }
 
