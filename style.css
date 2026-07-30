@@ -1969,3 +1969,113 @@ textarea:focus-visible,
         margin-top: 0;
     }
 }
+
+/* ===== TASK 31 — Dealer Image Carousel (About/"Tentang Kami" section) =====
+   Drop-in replacement for the single static image. Same box size
+   (w-full h-[450px] rounded-2xl shadow-xl) as before, so the section
+   layout is unchanged — only the content inside is now a slider. */
+.dealer-carousel {
+    background: #0C0A1A;
+}
+
+.dealer-carousel-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+
+.dealer-carousel-slide {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+}
+
+.dealer-carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+/* Arrow buttons */
+.dealer-carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 9999px;
+    border: none;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    color: #1F1942;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 5;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.dealer-carousel-btn:hover {
+    background: #ffffff;
+    transform: translateY(-50%) scale(1.08);
+}
+
+.dealer-carousel-btn:active {
+    transform: translateY(-50%) scale(0.96);
+}
+
+.dealer-carousel-btn--prev { left: 14px; }
+.dealer-carousel-btn--next { right: 14px; }
+
+/* Dots indicator */
+.dealer-carousel-dots {
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    z-index: 5;
+}
+
+.dealer-carousel-dot {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border: none;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.55);
+    cursor: pointer;
+    transition: width 0.25s ease, background 0.25s ease;
+}
+
+.dealer-carousel-dot.active {
+    width: 22px;
+    background: #ffffff;
+}
+
+/* Responsive: slightly smaller arrow buttons on phones so they don't
+   crowd the image edges; carousel box height itself is untouched
+   (still the original h-[450px], same as before this task). */
+@media (max-width: 639px) {
+    .dealer-carousel-btn {
+        width: 36px;
+        height: 36px;
+    }
+
+    .dealer-carousel-btn--prev { left: 10px; }
+    .dealer-carousel-btn--next { right: 10px; }
+
+    .dealer-carousel-dots {
+        bottom: 12px;
+    }
+}

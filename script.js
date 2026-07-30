@@ -852,5 +852,55 @@ document.querySelectorAll('.tilt-3d').forEach(card => {
         inner.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0)';
     });
 });
+// ===== DEALER IMAGE CAROUSEL (About/"Tentang Kami" section) =====
+document.querySelectorAll('.dealer-carousel').forEach((carousel) => {
+    const track = carousel.querySelector('.dealer-carousel-track');
+    const slides = Array.from(carousel.querySelectorAll('.dealer-carousel-slide'));
+    const prevBtn = carousel.querySelector('.dealer-carousel-btn--prev');
+    const nextBtn = carousel.querySelector('.dealer-carousel-btn--next');
+    const dots = Array.from(carousel.querySelectorAll('.dealer-carousel-dot'));
+    if (!track || slides.length === 0) return;
+
+    let current = 0;
+    let isAnimating = false;
+    const ANIMATION_MS = 400;
+
+    function render() {
+        track.style.transform = `translateX(-${current * 100}%)`;
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === current);
+            dot.setAttribute('aria-current', i === current ? 'true' : 'false');
+        });
+    }
+
+    function goTo(index) {
+        if (isAnimating) return;
+        const total = slides.length;
+        current = (index + total) % total;
+        isAnimating = true;
+        render();
+        setTimeout(() => { isAnimating = false; }, ANIMATION_MS);
+    }
+
+    if (nextBtn) nextBtn.addEventListener('click', () => goTo(current + 1));
+    if (prevBtn) prevBtn.addEventListener('click', () => goTo(current - 1));
+    dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
+
+    // Basic swipe support for touch devices
+    let touchStartX = 0;
+    track.addEventListener('touchstart', (e) => {
+        touchStartX = e.touches[0].clientX;
+    }, { passive: true });
+
+    track.addEventListener('touchend', (e) => {
+        const diff = e.changedTouches[0].clientX - touchStartX;
+        if (Math.abs(diff) > 40) {
+            goTo(diff < 0 ? current + 1 : current - 1);
+        }
+    }, { passive: true });
+
+    render();
+});
+
 // ===== INIT LUCIDE ICONS =====
 lucide.createIcons();

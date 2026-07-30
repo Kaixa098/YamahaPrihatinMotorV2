@@ -295,7 +295,31 @@
             <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
                 <div class="animate-on-scroll from-left relative">
                     <div class="relative">
-                        <img src="https://picsum.photos/seed/Dealer-motor-yamaha/600/500.jpg" alt="Dealer Yamaha Prihatin Motor" class="w-full h-[450px] object-cover rounded-2xl shadow-xl">
+                        <!-- Dealer image carousel (Task 31): same footprint (w-full h-[450px]
+                             rounded-2xl shadow-xl) as the previous single image, so the section
+                             layout is unchanged — only the content inside became a slider. -->
+                        <div class="dealer-carousel relative w-full h-[450px] rounded-2xl shadow-xl overflow-hidden" data-carousel aria-roledescription="carousel" aria-label="Foto Dealer Yamaha Prihatin Motor">
+                            <div class="dealer-carousel-track">
+                                <div class="dealer-carousel-slide"><img src="Image/dealerdepan.PNG" alt="Tampak depan Dealer Yamaha Prihatin Motor" class="w-full h-full object-cover"></div>
+                                <div class="dealer-carousel-slide"><img src="Image/look1.png" alt="Suasana Dealer Yamaha Prihatin Motor" class="w-full h-full object-cover"></div>
+                                <div class="dealer-carousel-slide"><img src="Image/look2.png" alt="Layanan servis motor Yamaha" class="w-full h-full object-cover"></div>
+                                <div class="dealer-carousel-slide"><img src="Image/look3.png" alt="Peralatan Dealer Yamaha Prihatin Motor" class="w-full h-full object-cover"></div>
+                                <div class="dealer-carousel-slide"><img src="Image/look4.png" alt="Mekanik Yamaha Prihatin Motor sedang bekerja" class="w-full h-full object-cover"></div>
+                            </div>
+                            <button type="button" class="dealer-carousel-btn dealer-carousel-btn--prev" aria-label="Foto sebelumnya">
+                                <i data-lucide="chevron-left" class="w-5 h-5"></i>
+                            </button>
+                            <button type="button" class="dealer-carousel-btn dealer-carousel-btn--next" aria-label="Foto berikutnya">
+                                <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                            </button>
+                            <div class="dealer-carousel-dots" role="tablist" aria-label="Pilih foto">
+                                <button type="button" class="dealer-carousel-dot active" aria-label="Foto 1" aria-current="true"></button>
+                                <button type="button" class="dealer-carousel-dot" aria-label="Foto 2"></button>
+                                <button type="button" class="dealer-carousel-dot" aria-label="Foto 3"></button>
+                                <button type="button" class="dealer-carousel-dot" aria-label="Foto 4"></button>
+                                <button type="button" class="dealer-carousel-dot" aria-label="Foto 5"></button>
+                            </div>
+                        </div>
                         <div class="absolute -bottom-6 -right-6 w-48 h-48 yamaha-stripe rounded-2xl -z-10 opacity-80"></div>
                         <div class="absolute -top-4 -left-4 bg-yamaha-dark text-white rounded-2xl p-5 shadow-2xl">
                             <p class="text-4xl font-black stat-number">10+</p>
