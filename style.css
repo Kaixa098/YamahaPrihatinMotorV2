@@ -299,6 +299,45 @@ body {
     box-shadow: 0 25px 50px -12px rgba(50, 40, 105, 0.25);
 }
 
+/* ===== Kartu Sertifikat (halaman Tentang Kami) ===== */
+.cert-card {
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+}
+
+.cert-card:hover {
+    border-color: rgba(50, 40, 105, 0.25);
+}
+
+.cert-card-num {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 2.75rem;
+    height: 2.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 800;
+    font-size: 0.8rem;
+    letter-spacing: 0.02em;
+    border-radius: 0 0 1rem 0;
+    box-shadow: 4px 4px 14px rgba(12, 10, 26, 0.18);
+}
+
+.cert-card-frame {
+    background-image: repeating-linear-gradient(135deg, rgba(50, 40, 105, 0.04) 0px, rgba(50, 40, 105, 0.04) 2px, transparent 2px, transparent 12px);
+}
+
+.cert-card-frame i {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cert-card:hover .cert-card-frame i {
+    transform: scale(1.12) rotate(-6deg);
+}
+
 .nav-blur {
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
