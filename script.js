@@ -432,6 +432,11 @@ function formatRupiah(n) {
     return 'Rp ' + n.toLocaleString('id-ID');
 }
 
+function truncateText(str, max) {
+    if (!str || str.length <= max) return str;
+    return str.slice(0, max).trim() + '…';
+}
+
 // URL halaman detail motor berdasarkan slug
 function motorDetailUrl(slug) {
     return 'motor-detail.html?motor=' + encodeURIComponent(slug);
@@ -537,8 +542,6 @@ if (currentPage === 'produk') {
         }
         if (noResults) noResults.classList.add('hidden');
         produkGrid.innerHTML = items.map((m, idx) => {
-            const prices = m.variants.map(v => v.price);
-            const minPrice = Math.min(...prices);
             const hasMultiple = m.variants.length > 1;
 
             return `
@@ -555,13 +558,9 @@ if (currentPage === 'produk') {
                     </div>
                     <p class="text-gray-500 text-sm font-light leading-relaxed mb-4 flex-1">${m.desc}</p>
                     <div class="flex items-center justify-between pt-4 border-t border-gray-100">
-                        <div>
-                            <p class="text-[11px] text-gray-400">OTR Jakarta, mulai dari</p>
-                            <p class="text-yamaha-blue font-black text-base">${formatRupiah(minPrice)}</p>
-                        </div>
+                        <span class="produk-detail-link !mt-0">Lihat Detail &amp; Semua Varian</span>
                         <span class="w-10 h-10 rounded-xl red-accent flex items-center justify-center flex-shrink-0" aria-hidden="true"><i data-lucide="arrow-right" class="w-5 h-5 text-white"></i></span>
                     </div>
-                    <span class="produk-detail-link">Lihat Detail &amp; Semua Varian <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i></span>
                 </div>
             </a>
         `;
@@ -614,8 +613,6 @@ if (currentPage === 'motor-detail') {
         document.title = 'Yamaha ' + motor.name + ' — Yamaha Prihatin Motor';
 
         const heroImg = motor.image && motor.image.trim() !== '' ? motor.image : 'https://picsum.photos/seed/' + motor.seed + '/1200/750.jpg';
-        const prices = motor.variants.map(v => v.price);
-        const minPrice = Math.min(...prices);
 
         if (heroEl) {
             heroEl.innerHTML = `
@@ -638,7 +635,6 @@ if (currentPage === 'motor-detail') {
                     <div class="motor-hero-meta">
                         <div class="motor-hero-meta-item"><i data-lucide="gauge" class="w-4 h-4"></i><span>${motor.cc}</span></div>
                         <div class="motor-hero-meta-item"><i data-lucide="layers" class="w-4 h-4"></i><span>${motor.variants.length} Varian Resmi</span></div>
-                        <div class="motor-hero-meta-item"><i data-lucide="tag" class="w-4 h-4"></i><span>Mulai ${formatRupiah(minPrice)}</span></div>
                     </div>
                 </div>
             `;
@@ -650,7 +646,6 @@ if (currentPage === 'motor-detail') {
                 { icon: 'gauge', label: 'Kapasitas Mesin', value: motor.cc },
                 { icon: 'cog', label: 'Transmisi', value: transmisiForCategory(motor.category) },
                 { icon: 'layers', label: 'Varian Resmi', value: motor.variants.length + ' Varian' },
-                { icon: 'tag', label: 'Harga Mulai', value: formatRupiah(minPrice) + ' (OTR Jakarta)' },
             ];
             specsEl.innerHTML = specItems.map(s => `
                 <div class="motor-spec-item">
@@ -672,14 +667,12 @@ if (currentPage === 'motor-detail') {
                     </div>
                     <div class="motor-variant-card-body">
                         <h3 class="motor-variant-card-name">${v.variant}</h3>
+                        <p class="text-gray-500 text-xs font-light leading-relaxed mb-3">${truncateText(motor.desc, 70)}</p>
                         <div class="motor-variant-card-colors">
                             ${v.colors.map(c => `<span class="produk-color-chip">${c}</span>`).join('')}
                         </div>
                         <div class="motor-variant-card-footer">
-                            <div>
-                                <p class="text-[11px] text-gray-400">OTR Jakarta</p>
-                                <p class="motor-variant-card-price">${formatRupiah(v.price)}</p>
-                            </div>
+                            <span class="produk-detail-link !mt-0">Hubungi Kami</span>
                             <a href="https://wa.me/6281211117265?text=${encodeURIComponent('Halo, saya ingin tanya tentang Yamaha ' + v.variant)}" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl red-accent flex items-center justify-center flex-shrink-0 hover:scale-110 transition-transform" aria-label="Tanya soal ${v.variant} via WhatsApp"><i data-lucide="message-circle" class="w-5 h-5 text-white"></i></a>
                         </div>
                     </div>
