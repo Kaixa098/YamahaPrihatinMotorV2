@@ -998,6 +998,23 @@ textarea:focus {
     }
 }
 
+/* ===== TASK 30 — Hero: mobile-only text size & position tweak =====
+   Mobile phones only (<640px, below Tailwind's `sm`). Enlarges the
+   "Yamaha Prihatin Motor" heading and nudges the whole text block down a
+   little so it sits more level with the hero image, with a more
+   proportional gap between them. Hero image size, the fade mask, and the
+   sm+/tablet/desktop layout are all untouched. */
+@media (max-width: 639px) {
+    .hero-content-wrap {
+        padding-top: 8.5rem; /* was 7rem (py-28); shifts the whole text block down slightly */
+    }
+
+    .hero-title-in {
+        font-size: 3rem; /* was 2.25rem (text-4xl); matches tablet's sm:text-5xl for a comfortable, non-cramped size on phones */
+        line-height: 1.05;
+    }
+}
+
 
 /* 3D Service Card */
 .card-3d {
