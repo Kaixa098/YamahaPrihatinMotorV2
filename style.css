@@ -292,11 +292,13 @@ body {
 
 .card-hover {
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
 }
 
 .card-hover:hover {
     transform: translateY(-8px);
     box-shadow: 0 25px 50px -12px rgba(50, 40, 105, 0.25);
+    border-color: rgba(226, 23, 12, 0.3);
 }
 
 /* ===== Kartu Sertifikat (halaman Tentang Kami) ===== */
@@ -345,10 +347,11 @@ body {
 
 .btn-primary {
     background: linear-gradient(135deg, #322869, #7F79A1);
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1);
     position: relative;
     overflow: hidden;
     box-shadow: 0 8px 20px -8px rgba(50, 40, 105, 0.45);
+    cursor: pointer;
 }
 
 .btn-primary::before {
@@ -380,10 +383,11 @@ body {
 
 .btn-red {
     background: linear-gradient(135deg, #E2170C, #ED6E67);
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1);
     position: relative;
     overflow: hidden;
     box-shadow: 0 8px 20px -8px rgba(226, 23, 12, 0.45);
+    cursor: pointer;
 }
 
 .btn-red::before {
@@ -417,7 +421,8 @@ body {
    (scale + shadow) to buttons that don't already use .btn-primary/.btn-red/
    .hero-btn, without touching their existing colors. */
 .btn-interactive {
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease;
+    transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.28s ease;
+    cursor: pointer;
 }
 
 .btn-interactive:hover {
@@ -775,7 +780,7 @@ textarea:focus {
 /* ===== NAV LINK — hover underline + active indicator ===== */
 .nav-link {
     position: relative;
-    transition: color 0.35s ease, background-color 0.35s ease;
+    transition: color 0.25s ease, background-color 0.25s ease;
 }
 
 .nav-link::after {
@@ -790,12 +795,18 @@ textarea:focus {
     transform: scaleX(0);
     transform-origin: center;
     opacity: 0;
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
 }
 
 .nav-link:hover::after {
     transform: scaleX(1);
     opacity: 1;
+}
+
+/* TASK 37 — Micro Interaction: nav text warms toward Yamaha red on hover,
+   layered on top of the underline slide-in above (desktop nav only). */
+.nav-link:hover {
+    color: #F8C5C3;
 }
 
 /* ===== NAV ACTIVE STATE ===== */
@@ -1112,11 +1123,16 @@ textarea:focus {
     opacity: 1;
 }
 
+.nav-card-3d {
+    cursor: pointer;
+}
+
 .nav-card-3d:hover {
     transform: translateZ(25px) rotateX(3deg) rotateY(-3deg) translateY(-10px);
     box-shadow: 
         25px 35px 50px rgba(50, 40, 105, 0.12),
         0 15px 30px rgba(0, 0, 0, 0.06);
+    border-color: rgba(226, 23, 12, 0.3);
 }
 
 .nav-card-3d .nav-card-3d-icon {
@@ -1838,6 +1854,7 @@ textarea:focus {
 .motor-variant-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 22px 44px -22px rgba(12, 10, 26, 0.28);
+    border-color: rgba(226, 23, 12, 0.3);
 }
 
 .motor-variant-card-image {
@@ -2199,5 +2216,91 @@ textarea:focus-visible,
 
     .dealer-carousel-dots {
         bottom: 12px;
+    }
+}
+
+/* ===================================================================
+   TASK 37 — MICRO INTERACTION & HOVER ANIMATION
+   Purely additive polish layer: smooth, lightweight hover/tap feedback
+   on interactive elements site-wide. Does NOT touch structure, layout,
+   section sizes, element positions, primary colors, or content — only
+   adds transform/shadow/color transitions and :active tap feedback.
+=================================================================== */
+
+/* --- Buttons: every <button> gets an explicit pointer cursor (some
+   browsers default buttons to a text/arrow cursor, not pointer). --- */
+button {
+    cursor: pointer;
+}
+
+/* --- Small circular icon buttons (menu toggle/close, lightbox close,
+   testimonial arrows, carousel dots) — a gentle lift + brighten on
+   hover, consistent 280ms easing, without changing their size/position. --- */
+#mobileToggle,
+#mobileClose,
+#lightboxClose,
+#testimonialPrev,
+#testimonialNext {
+    transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.28s ease, color 0.28s ease, border-color 0.28s ease;
+}
+
+#mobileToggle:hover,
+#lightboxClose:hover,
+#testimonialPrev:hover,
+#testimonialNext:hover {
+    transform: translateY(-2px) scale(1.05);
+}
+
+#mobileToggle:active,
+#mobileClose:active,
+#lightboxClose:active,
+#testimonialPrev:active,
+#testimonialNext:active {
+    transform: scale(0.94);
+    transition-duration: 0.15s;
+}
+
+/* --- Footer/menu text links: a soft lift so plain text links don't feel
+   static, layered on top of their existing color transition. --- */
+.footer-gradient a:not(.footer-social-icon) {
+    display: inline-block;
+    transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.footer-gradient a:not(.footer-social-icon):hover {
+    transform: translateX(2px);
+}
+
+/* --- Mobile tap feedback: since :hover lift/shadow effects never fire on
+   touch, mirror them as a quick, light :active "press" so every card and
+   button still feels responsive on phones/tablets. --- */
+@media (max-width: 640px) {
+    .produk-card:active,
+    .category-card:active,
+    .motor-variant-card:active {
+        transform: translateY(-2px);
+        transition-duration: 0.15s;
+    }
+
+    .btn-primary:active,
+    .btn-red:active,
+    .btn-interactive:active {
+        transform: translateY(-1px) scale(0.98);
+        transition-duration: 0.15s;
+    }
+
+    #mobileToggle:active,
+    #lightboxClose:active,
+    #testimonialPrev:active,
+    #testimonialNext:active,
+    .dealer-carousel-dot:active {
+        transform: scale(0.92);
+        transition-duration: 0.15s;
+    }
+
+    /* Keeps its own translateY(-50%) centering — only the scale changes. */
+    .dealer-carousel-btn:active {
+        transform: translateY(-50%) scale(0.92);
+        transition-duration: 0.15s;
     }
 }
