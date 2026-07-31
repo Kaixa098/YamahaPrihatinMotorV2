@@ -245,7 +245,7 @@ document.querySelectorAll('.counter-group').forEach(group => {
 //
 // "slug" dipakai sebagai alamat halaman detail (motor-detail.html?motor=slug).
 // Setiap model motor memiliki daftar "variants": varian resmi (nama
-// varian, pilihan warna resmi, harga OTR Jakarta) sesuai referensi situs
+// varian, pilihan warna resmi, harga OTW Bogor) sesuai referensi situs
 // resmi Yamaha Indonesia (yamaha-motor.co.id). Untuk menambah/ubah
 // varian, cukup tambah/ubah objek di dalam array "variants" milik model
 // terkait — kartu di halaman Produk dan halaman detail motor akan
@@ -468,7 +468,6 @@ if (currentPage === 'produk') {
                 <div class="relative aspect-[4/3] overflow-hidden bg-yamaha-gray-light">
                     <img src="${categoryCover(c.slug)}" alt="Kategori ${c.label}" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 category-card-img">
                     <div class="absolute inset-0" style="background: linear-gradient(180deg, rgba(12,10,26,0.05) 0%, rgba(12,10,26,0.75) 100%);"></div>
-                    <span class="absolute top-3 left-3 w-10 h-10 rounded-xl bg-white/15 backdrop-blur flex items-center justify-center"><i data-lucide="${c.icon}" class="w-5 h-5 text-white"></i></span>
                     <span class="absolute top-3 right-3 text-[11px] font-bold text-white/85 bg-black/30 backdrop-blur px-2.5 py-1 rounded-full">${count} Model</span>
                     <span class="absolute bottom-3 left-4 text-white font-black text-xl tracking-tight">${c.label}</span>
                 </div>
