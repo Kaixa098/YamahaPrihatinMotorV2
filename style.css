@@ -1344,6 +1344,37 @@ textarea:focus {
     height: 100%;
 }
 
+/* Warna resmi tiap platform — Instagram, Facebook, TikTok */
+.hero-social-instagram {
+    background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+.hero-social-instagram:hover {
+    background: linear-gradient(45deg, #ffe08a, #ff9838, #e8408a, #a83fd1, #6070e8);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.hero-social-facebook {
+    background: #1877F2;
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+.hero-social-facebook:hover {
+    background: #2b88ff;
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.hero-social-tiktok {
+    background: #000000;
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+.hero-social-tiktok:hover {
+    background: #1a1a1a;
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
 @media (min-width: 640px) {
     .hero-social-grid {
         gap: 0.85rem;
@@ -1433,10 +1464,10 @@ textarea:focus {
     transform: scale(1.1) rotate(-4deg);
 }
 
-/* Primary variant — WhatsApp (memakai warna merah brand yang sudah ada) */
+/* Primary variant — WhatsApp (memakai warna hijau resmi WhatsApp) */
 .hero-btn-primary {
-    background: linear-gradient(135deg, #E2170C, #ED6E67);
-    box-shadow: 0 10px 30px -8px rgba(226, 23, 12, 0.55);
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    box-shadow: 0 10px 30px -8px rgba(37, 211, 102, 0.55);
 }
 
 .hero-btn-primary::before {
@@ -1444,7 +1475,7 @@ textarea:focus {
     position: absolute;
     inset: 0;
     z-index: 0;
-    background: linear-gradient(135deg, #ED6E67, #E2170C);
+    background: linear-gradient(135deg, #128C7E, #25D366);
     opacity: 0;
     transition: opacity 0.35s ease;
 }
@@ -1454,7 +1485,7 @@ textarea:focus {
 }
 
 .hero-btn-primary:hover {
-    box-shadow: 0 18px 40px -8px rgba(226, 23, 12, 0.65);
+    box-shadow: 0 18px 40px -8px rgba(37, 211, 102, 0.65);
 }
 
 .hero-btn-primary .hero-btn-icon {
@@ -1481,6 +1512,32 @@ textarea:focus {
 
 .hero-btn-glass:hover .hero-btn-icon {
     background: linear-gradient(135deg, #322869, #7F79A1);
+}
+
+/* White variant — khusus tombol Layanan & Tipe Motor */
+.hero-btn-white {
+    background: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    color: #1a1a2e;
+    box-shadow: 0 10px 30px -8px rgba(0, 0, 0, 0.35);
+}
+
+.hero-btn-white:hover {
+    background: #f7f7fa;
+    box-shadow: 0 18px 40px -8px rgba(0, 0, 0, 0.45);
+}
+
+.hero-btn-white .hero-btn-icon {
+    background: rgba(226, 23, 12, 0.1);
+    color: #E2170C;
+}
+
+.hero-btn-white:hover .hero-btn-icon {
+    background: rgba(226, 23, 12, 0.18);
+}
+
+.hero-btn-white .hero-btn-label {
+    font-weight: 800;
 }
 
 /* Anchor placeholder untuk section Tipe Motor & Keunggulan (belum ada kontennya) */
