@@ -1386,17 +1386,237 @@ textarea:focus {
     }
 }
 
-/* Tombol Keunggulan mandiri di bawah statistik Hero — khusus mobile.
-   Ditampilkan terpisah dari grid CTA, di tengah, tepat di bawah angka statistik.
-   Otomatis disembunyikan di >=640px karena Keunggulan sudah ada di grid 4-tombol desktop. */
-.hero-keunggulan-mobile-wrap {
+/* Kartu Fitur Layanan & Tipe Motor di Hero CTA */
+.hero-feature-grid {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 0.85rem;
+    width: 100%;
+    margin-top: 0.25rem;
+}
+
+@media (min-width: 520px) {
+    .hero-feature-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+    }
+}
+
+.hero-feature-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 1.1rem 1.15rem;
+    border-radius: 1.25rem;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    color: #ffffff !important;
+    text-decoration: none;
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+                background-color 0.35s ease,
+                border-color 0.35s ease,
+                box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    isolation: isolate;
+    overflow: hidden;
+}
+
+.hero-feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+    transform: skewX(-20deg);
+    transition: left 0.75s ease;
+    pointer-events: none;
+}
+
+.hero-feature-card:hover::before {
+    left: 140%;
+}
+
+.hero-feature-card:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.14);
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.hero-feature-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+}
+
+.hero-feature-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 0.85rem;
+    color: #ffffff !important;
+    flex-shrink: 0;
+    box-shadow: 0 6px 16px -4px rgba(0, 0, 0, 0.3);
+    transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hero-feature-card:hover .hero-feature-icon {
+    transform: scale(1.1) rotate(-5deg);
+}
+
+/* Red & Blue brand icon badges */
+.hero-icon-layanan {
+    background: linear-gradient(135deg, #E2170C, #FF5252);
+    box-shadow: 0 6px 16px -4px rgba(226, 23, 12, 0.5);
+}
+
+.hero-icon-produk {
+    background: linear-gradient(135deg, #322869, #7F79A1);
+    box-shadow: 0 6px 16px -4px rgba(50, 40, 105, 0.5);
+}
+
+.hero-feature-title {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: #ffffff !important;
+    letter-spacing: 0.01em;
+    flex-grow: 1;
+}
+
+.hero-feature-arrow {
+    color: rgba(255, 255, 255, 0.6) !important;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.hero-feature-card:hover .hero-feature-arrow {
+    color: #ffffff !important;
+    transform: translate(2px, -2px);
+}
+
+.hero-feature-divider {
+    height: 1px;
+    width: 100%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.04));
+    margin: 0.75rem 0 0.6rem 0;
+}
+
+.hero-feature-desc {
+    font-size: 0.8125rem;
+    color: rgba(255, 255, 255, 0.85) !important;
+    line-height: 1.45;
+    font-weight: 400;
+    margin: 0;
+}
+
+/* Tombol / Kartu Keunggulan di bawah statistik Hero */
+.hero-keunggulan-wrap {
     display: flex;
     justify-content: center;
+    width: 100%;
     margin-top: 1.25rem;
 }
 
-.hero-keunggulan-mobile-btn {
-    width: 11rem;
+.hero-keunggulan-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    padding: 1rem 1.25rem;
+    border-radius: 1.25rem;
+    background: linear-gradient(135deg, rgba(226, 23, 12, 0.2), rgba(50, 40, 105, 0.4));
+    border: 1px solid rgba(226, 23, 12, 0.4);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    color: #ffffff !important;
+    text-decoration: none;
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+                background-color 0.35s ease,
+                border-color 0.35s ease,
+                box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    overflow: hidden;
+}
+
+.hero-keunggulan-card:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(135deg, rgba(226, 23, 12, 0.3), rgba(50, 40, 105, 0.55));
+    border-color: rgba(226, 23, 12, 0.7);
+    box-shadow: 0 16px 36px -10px rgba(226, 23, 12, 0.45), 0 0 24px rgba(226, 23, 12, 0.25);
+}
+
+.hero-keunggulan-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 0.9rem;
+    background: linear-gradient(135deg, #E2170C, #FF4D4D);
+    color: #ffffff !important;
+    flex-shrink: 0;
+    box-shadow: 0 6px 18px -3px rgba(226, 23, 12, 0.6);
+    transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hero-keunggulan-card:hover .hero-keunggulan-icon {
+    transform: scale(1.1) rotate(6deg);
+}
+
+.hero-keunggulan-text {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+}
+
+.hero-keunggulan-title {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: #ffffff !important;
+    letter-spacing: 0.01em;
+}
+
+.hero-keunggulan-sub {
+    font-size: 0.8125rem;
+    color: rgba(255, 255, 255, 0.85) !important;
+    font-weight: 400;
+    white-space: normal;
+}
+
+.hero-keunggulan-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.45rem 0.85rem;
+    border-radius: 0.75rem;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff !important;
+    font-size: 0.75rem;
+    font-weight: 700;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.hero-keunggulan-card:hover .hero-keunggulan-badge {
+    background: rgba(226, 23, 12, 0.85);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.hero-keunggulan-chevron {
+    transition: transform 0.3s ease;
+    color: #ffffff !important;
+}
+
+.hero-keunggulan-card:hover .hero-keunggulan-chevron {
+    transform: translateX(3px);
 }
 
 .hero-btn {
