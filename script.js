@@ -163,7 +163,7 @@ if (currentPage === 'beranda') {
     // ===== TYPING EFFECT =====
     const typingEl = document.getElementById('typingText');
     if (typingEl) {
-        const text = 'Servis motor Yamaha terpercaya, original, mekanik bersertifikat, dan harga transparan. Kepuasan Anda adalah prioritas kami.';
+        const text = 'Servis motor Yamaha terpercaya dengan sparepart original, mekanik bersertifikat, dan harga transparan. Kepuasan Anda adalah prioritas kami.';
         let i = 0;
         function typeChar() {
             if (i < text.length) {

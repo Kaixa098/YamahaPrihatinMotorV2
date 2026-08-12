@@ -54,17 +54,8 @@ body {
 }
 
 @keyframes preloaderPulse {
-
-    0%,
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-
-    50% {
-        transform: scale(1.15);
-        opacity: 0.7;
-    }
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.15); opacity: 0.7; }
 }
 
 .preloader-bar {
@@ -85,17 +76,9 @@ body {
 }
 
 @keyframes preloaderLoad {
-    0% {
-        width: 0%;
-    }
-
-    60% {
-        width: 75%;
-    }
-
-    100% {
-        width: 100%;
-    }
+    0% { width: 0%; }
+    60% { width: 75%; }
+    100% { width: 100%; }
 }
 
 /* ===== SCROLL PROGRESS ===== */
@@ -112,63 +95,28 @@ body {
 
 /* ===== ANIMATIONS ===== */
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-40px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+    from { opacity: 0; transform: translateX(-40px); }
+    to { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes fadeInRight {
-    from {
-        opacity: 0;
-        transform: translateX(40px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+    from { opacity: 0; transform: translateX(40px); }
+    to { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes float {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-10px);
-    }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
 }
 
 /* ===== HERO — dedicated entrance animations (scoped to Hero only) ===== */
@@ -178,7 +126,6 @@ body {
         transform: translateY(26px);
         filter: blur(6px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
@@ -192,7 +139,6 @@ body {
         transform: translateX(34px);
         filter: blur(8px);
     }
-
     to {
         opacity: 1;
         transform: translateX(0);
@@ -200,33 +146,13 @@ body {
     }
 }
 
-.hero-badge-in {
-    animation: heroReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
-}
-
-.hero-title-in {
-    animation: heroReveal 1s cubic-bezier(0.16, 1, 0.3, 1) 0.28s both;
-}
-
-.hero-desc-in {
-    animation: heroReveal 1s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both;
-}
-
-.hero-cta-in {
-    animation: heroReveal 1s cubic-bezier(0.16, 1, 0.3, 1) 0.72s both;
-}
-
-.hero-stats-in {
-    animation: heroReveal 1s cubic-bezier(0.16, 1, 0.3, 1) 0.92s both;
-}
-
-.hero-image-in {
-    animation: heroRevealRight 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.55s both;
-}
-
-.hero-scroll-in {
-    animation: heroReveal 1s cubic-bezier(0.16, 1, 0.3, 1) 1.15s both;
-}
+.hero-badge-in  { animation: heroReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both; }
+.hero-title-in  { animation: heroReveal 1s cubic-bezier(0.16, 1, 0.3, 1) 0.28s both; }
+.hero-desc-in   { animation: heroReveal 1s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both; }
+.hero-cta-in    { animation: heroReveal 1s cubic-bezier(0.16, 1, 0.3, 1) 0.72s both; }
+.hero-stats-in  { animation: heroReveal 1s cubic-bezier(0.16, 1, 0.3, 1) 0.92s both; }
+.hero-image-in  { animation: heroRevealRight 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.55s both; }
+.hero-scroll-in { animation: heroReveal 1s cubic-bezier(0.16, 1, 0.3, 1) 1.15s both; }
 
 .animate-on-scroll {
     opacity: 0;
@@ -267,15 +193,8 @@ body {
 }
 
 @keyframes blink {
-
-    0%,
-    100% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0;
-    }
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 }
 
 /* ===== HERO ===== */
@@ -345,15 +264,8 @@ body {
 }
 
 @keyframes heroOrbDrift {
-
-    0%,
-    100% {
-        transform: translate(0, 0) scale(1);
-    }
-
-    50% {
-        transform: translate(2%, -3%) scale(1.06);
-    }
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(2%, -3%) scale(1.06); }
 }
 
 .red-accent {
@@ -559,10 +471,7 @@ body {
 }
 
 @keyframes fadeOut {
-    to {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
+    to { opacity: 0; transform: translateY(-10px); }
 }
 
 .mobile-menu {
@@ -702,15 +611,8 @@ textarea:focus {
 }
 
 @keyframes waPulse {
-    0% {
-        transform: scale(1);
-        opacity: 0.7;
-    }
-
-    100% {
-        transform: scale(1.5);
-        opacity: 0;
-    }
+    0% { transform: scale(1); opacity: 0.7; }
+    100% { transform: scale(1.5); opacity: 0; }
 }
 
 /* ===== TESTIMONIAL CAROUSEL ===== */
@@ -854,8 +756,8 @@ textarea:focus {
     background: rgba(12, 10, 26, 0.28);
     box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
     transition: background-color 0.5s cubic-bezier(0.16, 1, 0.3, 1),
-        box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1),
-        backdrop-filter 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+                box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                backdrop-filter 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 #navbar.navbar-scrolled {
@@ -956,9 +858,9 @@ textarea:focus {
 /* Footer social icons — Instagram, Facebook, TikTok, WhatsApp */
 .footer-social-icon {
     transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-        background-color 0.25s ease,
-        color 0.25s ease,
-        opacity 0.25s ease;
+                background-color 0.25s ease,
+                color 0.25s ease,
+                opacity 0.25s ease;
 }
 
 .footer-social-icon:hover,
@@ -970,7 +872,6 @@ textarea:focus {
 .footer-social-icon:active {
     transform: scale(0.96);
 }
-
 /* ===== 3D ELEMENTS ===== */
 
 /* 3D Card Tilt Base */
@@ -992,18 +893,11 @@ textarea:focus {
 }
 
 @keyframes heroImageFloat {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-9px);
-    }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-9px); }
 }
 
-.hero-image-frame {
+.hero-image-fade-mask {
     display: block;
     perspective: 1200px;
     transform-style: preserve-3d;
@@ -1012,8 +906,7 @@ textarea:focus {
 .hero-3d-wrapper img {
     transform: translateZ(40px) rotateY(-5deg) rotateX(3deg);
     transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-    border: 1px solid rgba(255, 255, 255, 0.16);
-    box-shadow:
+    box-shadow: 
         24px 30px 55px rgba(12, 10, 26, 0.5),
         0 0 0 1px rgba(255, 255, 255, 0.06),
         0 0 60px -10px rgba(127, 121, 161, 0.25);
@@ -1021,21 +914,51 @@ textarea:focus {
 
 .hero-3d-wrapper:hover img {
     transform: translateZ(55px) rotateY(0deg) rotateX(0deg);
-    box-shadow:
+    box-shadow: 
         30px 36px 70px rgba(12, 10, 26, 0.55),
         0 0 0 1px rgba(255, 255, 255, 0.1),
         0 0 80px -8px rgba(127, 121, 161, 0.35);
 }
 
-/* TASK 38 — Elegant frame, no fade: the image is shown at full opacity.
-   The left-to-right transparency mask that used to live here has been
-   removed entirely; .hero-image-frame is now just the plain (non-rotated)
-   wrapper that keeps the perspective context for the 3D-tilted <img>
-   inside it. The "frame" itself is the thin border + soft shadow applied
-   directly to the <img> above, using the same rounded-3xl radius as the
-   image for a consistent, minimal look. */
+/* Premium fade / reveal effect: genuinely transparent on the left, fully
+   clear on the right (Transparan -----> Jelas).
+   Applied to .hero-image-fade-mask (a plain, non-rotated wrapper around the
+   image) rather than the 3D-tilted <img> itself, so the fade line stays
+   perfectly straight and even from top to bottom. */
+.hero-image-fade-mask {
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        transparent 6%,
+        rgba(0, 0, 0, 0.12) 18%,
+        rgba(0, 0, 0, 0.30) 30%,
+        rgba(0, 0, 0, 0.50) 42%,
+        rgba(0, 0, 0, 0.70) 54%,
+        rgba(0, 0, 0, 0.86) 66%,
+        rgba(0, 0, 0, 0.96) 78%,
+        #000 90%
+    );
+    mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        transparent 6%,
+        rgba(0, 0, 0, 0.12) 18%,
+        rgba(0, 0, 0, 0.30) 30%,
+        rgba(0, 0, 0, 0.50) 42%,
+        rgba(0, 0, 0, 0.70) 54%,
+        rgba(0, 0, 0, 0.86) 66%,
+        rgba(0, 0, 0, 0.96) 78%,
+        #000 90%
+    );
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+}
 
-/* Soft ambient glow behind the framed image for extra depth */
+/* Soft glow behind the image to reinforce the "emerging" feel where the fade begins */
 .hero-3d-wrapper::before {
     content: '';
     position: absolute;
@@ -1047,59 +970,60 @@ textarea:focus {
 }
 
 /* ===== HERO IMAGE — MOBILE & TABLET ONLY =====
-   TASK 39 — the photo sits inline next to the title inside .hero-title-row
-   (see markup), so it reads as a real part of the Hero's layout —
-   top-right, close to "Yamaha Prihatin Motor" — instead of a separately
-   "stuck on" element. Desktop's own 3D image column
-   (.hero-image-in.hidden.lg\:block, further down the markup) is completely
-   untouched; this block only affects screens below the `lg` breakpoint via
-   `lg:hidden` on .hero-mobile-image-wrap.
-
-   TASK 40 — visual-balance polish only (no structural change): the photo
-   is ~12% larger so it reads as a real companion to the title rather than
-   a small afterthought; the gap to the title is tightened (~12px) so the
-   two feel paired instead of floating apart; a small top offset nudges the
-   image down so its visible top lines up with the title's visible glyph
-   top rather than the box edge; and the frame is toned down to a thinner
-   2px white border with a single soft shadow (the earlier ambient glow —
-   which read as too strong — is removed). Radius is aligned to the
-   1.5rem/rounded-3xl scale already used for the desktop hero image, for
-   consistency across the site. Still full opacity, still no fade. */
-.hero-title-row {
-    display: flex;
-    align-items: stretch;
-    gap: 0.125rem;
-}
-
-.hero-title-col {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-}
-
-.hero-title-divider {
-    width: 56px;
-    height: 4px;
-    border-radius: 999px;
-    background: #E2170C;
-    margin-bottom: 0.85rem;
-}
-
+   Desktop's .hero-image-in.hidden.lg\:block (and its fade mask above) is
+   completely untouched. This is a separate layer, shown only below the
+   `lg` breakpoint via the `lg:hidden` utility on .hero-mobile-image-wrap,
+   positioned top-right and placed behind the title/description/buttons
+   (z-index 2, below the content wrapper's z-10) so it never covers them.
+   The fade direction/character mirrors desktop: transparent on the left,
+   fully visible on the right. */
 .hero-mobile-image-wrap {
-    flex-shrink: 0;
-    width: clamp(168px, 53vw, 240px);
-    aspect-ratio: 9 / 10;
-    margin-top: 0.625rem;
+    position: absolute;
+    top: 3.75rem;
+    right: 0;
+    width: clamp(150px, 46vw, 230px);
+    aspect-ratio: 6 / 7;
+    max-height: 56vh;
+    z-index: 2;
+    pointer-events: none;
     overflow: hidden;
-    border-radius: 1.5rem;
-    border: 2px solid rgba(255, 255, 255, 0.85);
-    box-shadow: 0 16px 32px -16px rgba(6, 4, 20, 0.55);
+    border-bottom-left-radius: 2.5rem;
 }
 
-.hero-mobile-image-frame {
+.hero-mobile-image-fade {
     position: relative;
     width: 100%;
     height: 100%;
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        transparent 4%,
+        rgba(0, 0, 0, 0.10) 9%,
+        rgba(0, 0, 0, 0.20) 14%,
+        rgba(0, 0, 0, 0.42) 21%,
+        rgba(0, 0, 0, 0.65) 29%,
+        rgba(0, 0, 0, 0.85) 38%,
+        rgba(0, 0, 0, 0.94) 48%,
+        rgba(0, 0, 0, 0.98) 62%,
+        #000 80%
+    );
+    mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        transparent 4%,
+        rgba(0, 0, 0, 0.10) 9%,
+        rgba(0, 0, 0, 0.20) 14%,
+        rgba(0, 0, 0, 0.42) 21%,
+        rgba(0, 0, 0, 0.65) 29%,
+        rgba(0, 0, 0, 0.85) 38%,
+        rgba(0, 0, 0, 0.94) 48%,
+        rgba(0, 0, 0, 0.98) 62%,
+        #000 80%
+    );
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
 }
 
 .hero-mobile-image-img {
@@ -1110,34 +1034,43 @@ textarea:focus {
     object-position: 65% 30%;
 }
 
+.hero-mobile-image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(12, 10, 26, 0.45) 0%, transparent 45%, transparent 70%, rgba(12, 10, 26, 0.35) 100%);
+    pointer-events: none;
+}
+
 @media (max-width: 374px) {
     .hero-mobile-image-wrap {
-        width: clamp(143px, 49vw, 196px);
+        width: clamp(120px, 40vw, 185px);
+        top: 3.5rem;
     }
 }
 
-/* ===== TASK 30/39 — Hero: mobile-only text size & spacing tweak =====
-   Mobile phones only (<640px, below Tailwind's `sm`). The photo now sits
-   inline beside the title (Task 39), so the block no longer needs to be
-   pushed down to visually align with a separate floating image — padding
-   is trimmed back down for a tighter, higher composition. Title size is
-   also brought back down a notch (from Task 30's 3rem) so "Prihatin" /
-   "Motor" stay comfortable on one line each next to the photo, and its
-   bottom margin is tightened to close the gap before the description.
-   sm+/tablet/desktop layout is untouched. */
+/* ===== TASK 30 — Hero: mobile-only text size & position tweak =====
+   Mobile phones only (<640px, below Tailwind's `sm`). Enlarges the
+   "Yamaha Prihatin Motor" heading and nudges the whole text block down a
+   little so it sits more level with the hero image, with a more
+   proportional gap between them. Hero image size, the fade mask, and the
+   sm+/tablet/desktop layout are all untouched. */
 @media (max-width: 639px) {
     .hero-content-wrap {
-        padding-top: 7.25rem;
+        padding-top: 8.5rem; /* was 7rem (py-28); shifts the whole text block down slightly */
     }
 
     .hero-title-in {
-        font-size: 2.25rem;
-        line-height: 1.08;
-        margin-bottom: 0.75rem;
+        font-size: 3rem; /* was 2.25rem (text-4xl); matches tablet's sm:text-5xl for a comfortable, non-cramped size on phones */
+        line-height: 1.05;
     }
 
+    /* Turunkan sedikit grup tombol (WhatsApp, Instagram/Facebook/TikTok,
+       Layanan/Tipe Motor) agar tidak terlalu mepet ke atas dan jarak
+       kosong di bawahnya (sebelum statistik) tidak terasa terlalu jauh.
+       Hanya menambah sedikit jarak, tidak mengubah struktur/urutan
+       elemen apa pun. */
     .hero-cta-in {
-        margin-top: 0.75rem;
+        margin-top: 1rem;
     }
 }
 
@@ -1151,7 +1084,7 @@ textarea:focus {
 
 .card-3d:hover {
     transform: translateZ(30px) rotateX(2deg) rotateY(-2deg) translateY(-8px);
-    box-shadow:
+    box-shadow: 
         20px 30px 50px rgba(50, 40, 105, 0.15),
         0 10px 20px rgba(0, 0, 0, 0.08);
 }
@@ -1178,7 +1111,7 @@ textarea:focus {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(50, 40, 105, 0.05) 0%, transparent 50%, rgba(226, 23, 12, 0.05) 100%);
+    background: linear-gradient(135deg, rgba(50, 40, 105,0.05) 0%, transparent 50%, rgba(226, 23, 12,0.05) 100%);
     opacity: 0;
     transition: opacity 0.5s ease;
     border-radius: inherit;
@@ -1196,7 +1129,7 @@ textarea:focus {
 
 .nav-card-3d:hover {
     transform: translateZ(25px) rotateX(3deg) rotateY(-3deg) translateY(-10px);
-    box-shadow:
+    box-shadow: 
         25px 35px 50px rgba(50, 40, 105, 0.12),
         0 15px 30px rgba(0, 0, 0, 0.06);
     border-color: rgba(226, 23, 12, 0.3);
@@ -1242,13 +1175,8 @@ textarea:focus {
 }
 
 @keyframes rotateCube {
-    0% {
-        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
-    }
-
-    100% {
-        transform: rotateX(360deg) rotateY(360deg) rotateZ(0deg);
-    }
+    0%   { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+    100% { transform: rotateX(360deg) rotateY(360deg) rotateZ(0deg); }
 }
 
 .shape-cube .face {
@@ -1261,29 +1189,12 @@ textarea:focus {
     backdrop-filter: blur(2px);
 }
 
-.shape-cube .face-front {
-    transform: translateZ(20px);
-}
-
-.shape-cube .face-back {
-    transform: rotateY(180deg) translateZ(20px);
-}
-
-.shape-cube .face-right {
-    transform: rotateY(90deg) translateZ(20px);
-}
-
-.shape-cube .face-left {
-    transform: rotateY(-90deg) translateZ(20px);
-}
-
-.shape-cube .face-top {
-    transform: rotateX(90deg) translateZ(20px);
-}
-
-.shape-cube .face-bottom {
-    transform: rotateX(-90deg) translateZ(20px);
-}
+.shape-cube .face-front  { transform: translateZ(20px); }
+.shape-cube .face-back   { transform: rotateY(180deg) translateZ(20px); }
+.shape-cube .face-right  { transform: rotateY(90deg) translateZ(20px); }
+.shape-cube .face-left   { transform: rotateY(-90deg) translateZ(20px); }
+.shape-cube .face-top    { transform: rotateX(90deg) translateZ(20px); }
+.shape-cube .face-bottom { transform: rotateX(-90deg) translateZ(20px); }
 
 .shape-ring {
     width: 60px;
@@ -1302,13 +1213,8 @@ textarea:focus {
 }
 
 @keyframes rotateRing {
-    0% {
-        transform: rotateX(65deg) rotateZ(0deg);
-    }
-
-    100% {
-        transform: rotateX(65deg) rotateZ(360deg);
-    }
+    0%   { transform: rotateX(65deg) rotateZ(0deg); }
+    100% { transform: rotateX(65deg) rotateZ(360deg); }
 }
 
 .shape-pyramid {
@@ -1322,15 +1228,8 @@ textarea:focus {
 }
 
 @keyframes floatPyramid {
-
-    0%,
-    100% {
-        transform: translateY(0) rotateX(20deg) rotateZ(0deg);
-    }
-
-    50% {
-        transform: translateY(-15px) rotateX(-10deg) rotateZ(10deg);
-    }
+    0%, 100% { transform: translateY(0) rotateX(20deg) rotateZ(0deg); }
+    50%      { transform: translateY(-15px) rotateX(-10deg) rotateZ(10deg); }
 }
 
 /* ===================================================================
@@ -1382,102 +1281,6 @@ textarea:focus {
     }
 }
 
-/* Kartu fitur Layanan & Tipe Motor — ikon, judul, garis aksen merah, deskripsi singkat */
-.hero-feature-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.85rem;
-    width: 100%;
-}
-
-.hero-feature-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    background: #ffffff;
-    border-radius: 1.25rem;
-    padding: 1.5rem 1.1rem;
-    box-shadow: 0 10px 30px -8px rgba(0, 0, 0, 0.35);
-    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
-        box-shadow 0.35s ease;
-}
-
-.hero-feature-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 18px 40px -8px rgba(0, 0, 0, 0.45);
-}
-
-.hero-feature-card:focus-visible {
-    outline: 2px solid rgba(255, 255, 255, 0.65);
-    outline-offset: 3px;
-}
-
-.hero-feature-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 3.25rem;
-    height: 3.25rem;
-    border-radius: 9999px;
-    background: rgba(226, 23, 12, 0.1);
-    color: #E2170C;
-    margin-bottom: 0.85rem;
-    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-        background-color 0.35s ease;
-}
-
-.hero-feature-card:hover .hero-feature-icon {
-    transform: scale(1.1) rotate(-4deg);
-    background: rgba(226, 23, 12, 0.18);
-}
-
-.hero-feature-title {
-    font-size: 1.05rem;
-    font-weight: 800;
-    color: #1a1a2e;
-    line-height: 1.2;
-}
-
-.hero-feature-divider {
-    width: 26px;
-    height: 3px;
-    border-radius: 999px;
-    background: #E2170C;
-    margin: 0.6rem 0;
-}
-
-.hero-feature-desc {
-    font-size: 0.78rem;
-    line-height: 1.5;
-    color: #6b7280;
-    font-weight: 400;
-}
-
-@media (min-width: 640px) {
-    .hero-feature-grid {
-        gap: 1.1rem;
-    }
-
-    .hero-feature-card {
-        padding: 1.75rem 1.35rem;
-    }
-
-    .hero-feature-title {
-        font-size: 1.15rem;
-    }
-
-    .hero-feature-desc {
-        font-size: 0.85rem;
-    }
-}
-
-/* Pemisah tipis antar kolom statistik */
-.hero-stat-divider {
-    border-left: 1px solid rgba(255, 255, 255, 0.15);
-    padding-left: 1rem;
-}
-
 /* Task 35 (revisi): Tombol Media Sosial Resmi (Instagram, Facebook, TikTok) — tepat di bawah tombol WhatsApp,
    sejajar rata dalam grid 3 kolom yang seimbang (lebar sama dengan tombol WhatsApp di atasnya).
    Otomatis pecah ke 2 baris rapi bila ruang tidak cukup (auto-fit). */
@@ -1505,9 +1308,9 @@ textarea:focus {
     letter-spacing: 0.02em;
     white-space: nowrap;
     transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
-        box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
-        background-color 0.3s ease,
-        border-color 0.3s ease;
+                box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+                background-color 0.3s ease,
+                border-color 0.3s ease;
 }
 
 .hero-social-btn:hover {
@@ -1583,76 +1386,17 @@ textarea:focus {
     }
 }
 
-/* Kartu Keunggulan mandiri di bawah statistik Hero — khusus mobile, kartu gelap penuh lebar.
-   Otomatis disembunyikan di >=640px karena Keunggulan sudah ada di grid 4-tombol desktop.
-   padding-right memberi ruang agar tidak tertutup tombol WhatsApp mengambang. */
+/* Tombol Keunggulan mandiri di bawah statistik Hero — khusus mobile.
+   Ditampilkan terpisah dari grid CTA, di tengah, tepat di bawah angka statistik.
+   Otomatis disembunyikan di >=640px karena Keunggulan sudah ada di grid 4-tombol desktop. */
 .hero-keunggulan-mobile-wrap {
-    margin-top: 1.25rem;
-    padding-right: 4.5rem;
-}
-
-.hero-keunggulan-card {
     display: flex;
-    align-items: center;
-    gap: 0.85rem;
-    width: 100%;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.14);
-    border-radius: 1.25rem;
-    padding: 1rem 1.1rem;
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    text-align: left;
-    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
-}
-
-.hero-keunggulan-card:hover {
-    background: rgba(50, 40, 105, 0.35);
-    border-color: rgba(127, 121, 161, 0.6);
-    transform: translateY(-2px);
-}
-
-.hero-keunggulan-card:focus-visible {
-    outline: 2px solid rgba(255, 255, 255, 0.65);
-    outline-offset: 3px;
-}
-
-.hero-keunggulan-icon {
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
     justify-content: center;
-    width: 2.75rem;
-    height: 2.75rem;
-    border-radius: 9999px;
-    background: rgba(255, 255, 255, 0.12);
-    color: #fff;
+    margin-top: 1.25rem;
 }
 
-.hero-keunggulan-text {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    min-width: 0;
-}
-
-.hero-keunggulan-title {
-    font-size: 0.95rem;
-    font-weight: 800;
-    color: #fff;
-    line-height: 1.2;
-}
-
-.hero-keunggulan-sub {
-    font-size: 0.75rem;
-    color: rgba(255, 255, 255, 0.55);
-    margin-top: 0.2rem;
-    line-height: 1.35;
-}
-
-.hero-keunggulan-chevron {
-    flex-shrink: 0;
-    color: rgba(255, 255, 255, 0.6);
+.hero-keunggulan-mobile-btn {
+    width: 11rem;
 }
 
 .hero-btn {
@@ -1672,9 +1416,9 @@ textarea:focus {
     overflow: hidden;
     isolation: isolate;
     transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-        box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-        background-color 0.4s ease,
-        border-color 0.4s ease;
+                box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+                background-color 0.4s ease,
+                border-color 0.4s ease;
 }
 
 .hero-btn:focus-visible {
@@ -1698,7 +1442,7 @@ textarea:focus {
     border-radius: 0.85rem;
     background: rgba(255, 255, 255, 0.12);
     transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-        background-color 0.35s ease;
+                background-color 0.35s ease;
 }
 
 .hero-btn-label {
@@ -1809,7 +1553,6 @@ textarea:focus {
 .scroll-anchor-target {
     scroll-margin-top: 90px;
 }
-
 /* ==================== HALAMAN PRODUK: TIPE MOTOR ==================== */
 .produk-card {
     background: #ffffff;
@@ -1920,7 +1663,7 @@ textarea:focus {
     margin-top: 0.75rem;
 }
 
-.produk-variant-panel>div {
+.produk-variant-panel > div {
     overflow: hidden;
 }
 
@@ -1997,9 +1740,7 @@ textarea:focus {
 }
 
 @media (min-width: 640px) {
-    .produk-variant-item-head {
-        align-items: center;
-    }
+    .produk-variant-item-head { align-items: center; }
 }
 
 /* ----- Kartu produk sekarang berupa <a> menuju halaman detail motor ----- */
@@ -2059,7 +1800,7 @@ textarea:focus {
 .motor-hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(12, 10, 26, 0.1) 0%, rgba(12, 10, 26, 0.55) 55%, rgba(12, 10, 26, 0.96) 100%);
+    background: linear-gradient(180deg, rgba(12,10,26,0.1) 0%, rgba(12,10,26,0.55) 55%, rgba(12,10,26,0.96) 100%);
 }
 
 .motor-hero-content {
@@ -2078,12 +1819,12 @@ textarea:focus {
     gap: 0.4rem;
     font-size: 0.75rem;
     font-weight: 600;
-    color: rgba(255, 255, 255, 0.45);
+    color: rgba(255,255,255,0.45);
     margin-bottom: 0.9rem;
 }
 
 .motor-breadcrumb a {
-    color: rgba(255, 255, 255, 0.65);
+    color: rgba(255,255,255,0.65);
     text-decoration: none;
     transition: color 0.2s ease;
 }
@@ -2093,7 +1834,7 @@ textarea:focus {
 }
 
 .motor-breadcrumb-current {
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(255,255,255,0.85);
 }
 
 .motor-back-link {
@@ -2102,7 +1843,7 @@ textarea:focus {
     gap: 0.4rem;
     font-size: 0.8rem;
     font-weight: 600;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255,255,255,0.7);
     margin-bottom: 1.25rem;
     text-decoration: none;
     transition: color 0.2s ease;
@@ -2128,7 +1869,7 @@ textarea:focus {
 }
 
 .motor-hero-desc {
-    color: rgba(255, 255, 255, 0.65);
+    color: rgba(255,255,255,0.65);
     font-weight: 300;
     font-size: 0.9rem;
     max-width: 40rem;
@@ -2266,27 +2007,14 @@ textarea:focus {
 }
 
 @media (min-width: 640px) {
-    .motor-hero-title {
-        font-size: 2.75rem;
-    }
-
-    .motor-hero-desc {
-        font-size: 0.95rem;
-    }
-
-    .motor-hero-content {
-        padding: 7rem 1.5rem 2.75rem;
-    }
+    .motor-hero-title { font-size: 2.75rem; }
+    .motor-hero-desc { font-size: 0.95rem; }
+    .motor-hero-content { padding: 7rem 1.5rem 2.75rem; }
 }
 
 @media (min-width: 1024px) {
-    .motor-detail-hero {
-        min-height: 64vh;
-    }
-
-    .motor-hero-title {
-        font-size: 3.25rem;
-    }
+    .motor-detail-hero { min-height: 64vh; }
+    .motor-hero-title { font-size: 3.25rem; }
 }
 
 /* ===== ACCESSIBILITY — consistent keyboard focus state ===== */
@@ -2324,7 +2052,6 @@ textarea:focus-visible,
 
 /* ===== ACCESSIBILITY / PERFORMANCE — respect reduced motion preference ===== */
 @media (prefers-reduced-motion: reduce) {
-
     *,
     *::before,
     *::after {
@@ -2339,7 +2066,6 @@ textarea:focus-visible,
    Layout-safety and comfort tweaks for small screens only. Does not touch
    colors, the Hero section, navbar, footer, or any content/structure. */
 @media (max-width: 640px) {
-
     /* Safety net: embedded content (e.g. Google Maps) can never force
        horizontal overflow on narrow screens, whatever width/height
        attributes it was given in the HTML. */
@@ -2359,6 +2085,280 @@ textarea:focus-visible,
     #waFloat {
         right: 16px;
         bottom: 20px;
+    }
+}
+
+/* ===================================================================
+   FINAL MOBILE UI/UX FINE TUNING (Task 24)
+   Small, additive polish for small screens only — no structure, colors,
+   typography system, navigation, or content changes. Desktop (>640px)
+   is completely untouched by this block.
+=================================================================== */
+@media (max-width: 640px) {
+
+    /* --- Touch comfort: instant tap feedback, no gray flash / 300ms delay
+       on Android & iOS Chrome. Purely behavioral — no visual change. --- */
+    a,
+    button,
+    .hero-btn,
+    .motor-tab-btn,
+    .nav-card-3d,
+    .gallery-item,
+    .faq-header {
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+    }
+
+    /* --- Card & button press feedback on touch devices, since :hover
+       lift effects don't apply on tap. Keeps the same shadow/scale
+       language already used for :hover, just triggered on :active. --- */
+    .card-hover:active,
+    .nav-card-3d:active {
+        transform: translateY(-2px);
+        transition-duration: 0.15s;
+    }
+
+    .produk-card:active .produk-card-image img {
+        transform: scale(1.04);
+    }
+
+    /* --- Hero stat row: keep the 3 stats from feeling cramped edge-to-edge
+       on narrow phones by trimming the gap slightly (was 2rem via gap-8),
+       without changing size, order, or content. --- */
+    .hero-stats-in.flex {
+        gap: 1.25rem;
+    }
+
+    /* --- Keunggulan stat strip: same comfortable-gap treatment for the
+       2-column stat grid on very small phones. --- */
+    .counter-group.grid-cols-2 {
+        gap: 1.5rem 1rem;
+    }
+
+    /* --- Gallery grid: slightly tighter gutter between photo tiles on
+       narrow phones for a more balanced, less fragmented mosaic. --- */
+    .gallery-item {
+        border-radius: 14px;
+    }
+
+    /* --- FAQ accordion: a touch more breathing room inside the closed
+       header row so the tap target feels comfortably generous. --- */
+    .faq-header {
+        padding-top: 1.15rem;
+        padding-bottom: 1.15rem;
+    }
+
+    /* --- Comparison table (Keunggulan vs Dealer Umum): ensure the row
+       label never crowds the check/x icon columns on the narrowest
+       phones (~320–360px). --- */
+    .grid.grid-cols-3 > div:first-child {
+        line-height: 1.25;
+    }
+}
+
+/* Slightly wider band (up to tablet) for card grid rhythm: consistent,
+   comfortable spacing between stacked cards without touching the
+   desktop 3–4 column layouts (which take over via sm:/lg: prefixes). */
+@media (max-width: 767px) {
+    .produk-card + .produk-card,
+    .card-hover + .card-hover {
+        margin-top: 0;
+    }
+}
+
+/* ===== TASK 31 — Dealer Image Carousel (About/"Tentang Kami" section) =====
+   Drop-in replacement for the single static image. Same box size
+   (w-full h-[450px] rounded-2xl shadow-xl) as before, so the section
+   layout is unchanged — only the content inside is now a slider. */
+.dealer-carousel {
+    background: #0C0A1A;
+}
+
+.dealer-carousel-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+
+.dealer-carousel-slide {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+}
+
+.dealer-carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+/* Arrow buttons */
+.dealer-carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 9999px;
+    border: none;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    color: #1F1942;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 5;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.dealer-carousel-btn:hover {
+    background: #ffffff;
+    transform: translateY(-50%) scale(1.08);
+}
+
+.dealer-carousel-btn:active {
+    transform: translateY(-50%) scale(0.96);
+}
+
+.dealer-carousel-btn--prev { left: 14px; }
+.dealer-carousel-btn--next { right: 14px; }
+
+/* Dots indicator */
+.dealer-carousel-dots {
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    z-index: 5;
+}
+
+.dealer-carousel-dot {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border: none;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.55);
+    cursor: pointer;
+    transition: width 0.25s ease, background 0.25s ease;
+}
+
+.dealer-carousel-dot.active {
+    width: 22px;
+    background: #ffffff;
+}
+
+/* Responsive: slightly smaller arrow buttons on phones so they don't
+   crowd the image edges; carousel box height itself is untouched
+   (still the original h-[450px], same as before this task). */
+@media (max-width: 639px) {
+    .dealer-carousel-btn {
+        width: 36px;
+        height: 36px;
+    }
+
+    .dealer-carousel-btn--prev { left: 10px; }
+    .dealer-carousel-btn--next { right: 10px; }
+
+    .dealer-carousel-dots {
+        bottom: 12px;
+    }
+}
+
+/* ===================================================================
+   TASK 37 — MICRO INTERACTION & HOVER ANIMATION
+   Purely additive polish layer: smooth, lightweight hover/tap feedback
+   on interactive elements site-wide. Does NOT touch structure, layout,
+   section sizes, element positions, primary colors, or content — only
+   adds transform/shadow/color transitions and :active tap feedback.
+=================================================================== */
+
+/* --- Buttons: every <button> gets an explicit pointer cursor (some
+   browsers default buttons to a text/arrow cursor, not pointer). --- */
+button {
+    cursor: pointer;
+}
+
+/* --- Small circular icon buttons (menu toggle/close, lightbox close,
+   testimonial arrows, carousel dots) — a gentle lift + brighten on
+   hover, consistent 280ms easing, without changing their size/position. --- */
+#mobileToggle,
+#mobileClose,
+#lightboxClose,
+#testimonialPrev,
+#testimonialNext {
+    transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.28s ease, color 0.28s ease, border-color 0.28s ease;
+}
+
+#mobileToggle:hover,
+#lightboxClose:hover,
+#testimonialPrev:hover,
+#testimonialNext:hover {
+    transform: translateY(-2px) scale(1.05);
+}
+
+#mobileToggle:active,
+#mobileClose:active,
+#lightboxClose:active,
+#testimonialPrev:active,
+#testimonialNext:active {
+    transform: scale(0.94);
+    transition-duration: 0.15s;
+}
+
+/* --- Footer/menu text links: a soft lift so plain text links don't feel
+   static, layered on top of their existing color transition. --- */
+.footer-gradient a:not(.footer-social-icon) {
+    display: inline-block;
+    transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.footer-gradient a:not(.footer-social-icon):hover {
+    transform: translateX(2px);
+}
+
+/* --- Mobile tap feedback: since :hover lift/shadow effects never fire on
+   touch, mirror them as a quick, light :active "press" so every card and
+   button still feels responsive on phones/tablets. --- */
+@media (max-width: 640px) {
+    .produk-card:active,
+    .category-card:active,
+    .motor-variant-card:active {
+        transform: translateY(-2px);
+        transition-duration: 0.15s;
+    }
+
+    .btn-primary:active,
+    .btn-red:active,
+    .btn-interactive:active {
+        transform: translateY(-1px) scale(0.98);
+        transition-duration: 0.15s;
+    }
+
+    #mobileToggle:active,
+    #lightboxClose:active,
+    #testimonialPrev:active,
+    #testimonialNext:active,
+    .dealer-carousel-dot:active {
+        transform: scale(0.92);
+        transition-duration: 0.15s;
+    }
+
+    /* Keeps its own translateY(-50%) centering — only the scale changes. */
+    .dealer-carousel-btn:active {
+        transform: translateY(-50%) scale(0.92);
+        transition-duration: 0.15s;
     }
 }
 
