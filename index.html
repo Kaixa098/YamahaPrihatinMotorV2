@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,19 +8,20 @@
     <link rel="icon" type="image/png" href="Image/iconfinal.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: { 50:'#DFDEE8',100:'#CCCADA',200:'#A6A1BE',300:'#7F79A1',400:'#595085',500:'#322869',600:'#292055',700:'#1F1942',800:'#16122E',900:'#0C0A1A' },
-                        secondary: { 50:'#FBDBDA',100:'#F8C5C3',200:'#F29A95',300:'#ED6E67',400:'#E7433A',500:'#E2170C',600:'#B8130A',700:'#8D0E08',800:'#630A05',900:'#380603' },
-                        blue: { 50:'#DFDEE8',100:'#CCCADA',200:'#A6A1BE',300:'#7F79A1',400:'#595085',500:'#322869',600:'#292055',700:'#1F1942',800:'#16122E',900:'#0C0A1A' },
-                        red: { 50:'#FBDBDA',100:'#F8C5C3',200:'#F29A95',300:'#ED6E67',400:'#E7433A',500:'#E2170C',600:'#B8130A',700:'#8D0E08',800:'#630A05',900:'#380603' },
-                        orange: { 300:'#F5B8A8' },
-                        cyan: { 300:'#B9B4D9' },
-                                                yamaha: {
+                        primary: { 50: '#DFDEE8', 100: '#CCCADA', 200: '#A6A1BE', 300: '#7F79A1', 400: '#595085', 500: '#322869', 600: '#292055', 700: '#1F1942', 800: '#16122E', 900: '#0C0A1A' },
+                        secondary: { 50: '#FBDBDA', 100: '#F8C5C3', 200: '#F29A95', 300: '#ED6E67', 400: '#E7433A', 500: '#E2170C', 600: '#B8130A', 700: '#8D0E08', 800: '#630A05', 900: '#380603' },
+                        blue: { 50: '#DFDEE8', 100: '#CCCADA', 200: '#A6A1BE', 300: '#7F79A1', 400: '#595085', 500: '#322869', 600: '#292055', 700: '#1F1942', 800: '#16122E', 900: '#0C0A1A' },
+                        red: { 50: '#FBDBDA', 100: '#F8C5C3', 200: '#F29A95', 300: '#ED6E67', 400: '#E7433A', 500: '#E2170C', 600: '#B8130A', 700: '#8D0E08', 800: '#630A05', 900: '#380603' },
+                        orange: { 300: '#F5B8A8' },
+                        cyan: { 300: '#B9B4D9' },
+                        yamaha: {
                             blue: '#322869', 'blue-dark': '#1F1942', 'blue-light': '#7F79A1',
                             red: '#E2170C', 'red-dark': '#8D0E08', 'red-light': '#ED6E67',
                             dark: '#0C0A1A', 'dark-2': '#16122E', 'dark-3': '#1F1942',
@@ -33,6 +35,7 @@
     </script>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body class="bg-white text-gray-800 overflow-x-hidden" data-page="beranda">
 
     <!-- PRELOADER -->
@@ -41,7 +44,9 @@
             <img src="Image/logorevisi.png" alt="Prihatin Motor" class="h-24 w-auto mx-auto">
         </div>
         <p class="text-white/60 text-xs font-semibold tracking-[0.3em] uppercase mt-6">Yamaha Prihatin Motor</p>
-        <div class="preloader-bar"><div class="preloader-bar-inner"></div></div>
+        <div class="preloader-bar">
+            <div class="preloader-bar-inner"></div>
+        </div>
     </div>
 
     <div id="scrollProgress"></div>
@@ -55,18 +60,30 @@
                     <img src="Image/logorevisi.png" alt="Prihatin Motor" class="h-16 w-auto">
                 </a>
                 <div class="hidden lg:flex items-center gap-1">
-                    <a href="index.html" class="nav-link active-link px-4 py-2 text-sm font-medium text-white/80 hover:text-white rounded-lg hover:bg-white/10 transition-all">Beranda</a>
-                    <a href="keunggulan.html" class="nav-link px-4 py-2 text-sm font-medium text-white/80 hover:text-white rounded-lg hover:bg-white/10 transition-all">Keunggulan</a>
-                    <a href="tentang-kami.html" class="nav-link px-4 py-2 text-sm font-medium text-white/80 hover:text-white rounded-lg hover:bg-white/10 transition-all">Tentang Kami</a>
-                    <a href="layanan.html" class="nav-link px-4 py-2 text-sm font-medium text-white/80 hover:text-white rounded-lg hover:bg-white/10 transition-all">Layanan</a>
-                    <a href="produk.html" class="nav-link px-4 py-2 text-sm font-medium text-white/80 hover:text-white rounded-lg hover:bg-white/10 transition-all">Produk</a>
-                    <a href="galeri.html" class="nav-link px-4 py-2 text-sm font-medium text-white/80 hover:text-white rounded-lg hover:bg-white/10 transition-all">Galeri</a>
-                    <a href="info.html" class="nav-link px-4 py-2 text-sm font-medium text-white/80 hover:text-white rounded-lg hover:bg-white/10 transition-all">Informasi</a>
-                    <a href="bantuan.html" class="nav-link px-4 py-2 text-sm font-medium text-white/80 hover:text-white rounded-lg hover:bg-white/10 transition-all">FAQ</a>
-                    <a href="hubungi.html" class="nav-link px-4 py-2 text-sm font-medium text-white/80 hover:text-white rounded-lg hover:bg-white/10 transition-all">Kontak</a>
+                    <a href="index.html"
+                        class="nav-link active-link px-4 py-2 text-sm font-medium text-white/80 hover:text-white rounded-lg hover:bg-white/10 transition-all">Beranda</a>
+                    <a href="keunggulan.html"
+                        class="nav-link px-4 py-2 text-sm font-medium text-white/80 hover:text-white rounded-lg hover:bg-white/10 transition-all">Keunggulan</a>
+                    <a href="tentang-kami.html"
+                        class="nav-link px-4 py-2 text-sm font-medium text-white/80 hover:text-white rounded-lg hover:bg-white/10 transition-all">Tentang
+                        Kami</a>
+                    <a href="layanan.html"
+                        class="nav-link px-4 py-2 text-sm font-medium text-white/80 hover:text-white rounded-lg hover:bg-white/10 transition-all">Layanan</a>
+                    <a href="produk.html"
+                        class="nav-link px-4 py-2 text-sm font-medium text-white/80 hover:text-white rounded-lg hover:bg-white/10 transition-all">Produk</a>
+                    <a href="galeri.html"
+                        class="nav-link px-4 py-2 text-sm font-medium text-white/80 hover:text-white rounded-lg hover:bg-white/10 transition-all">Galeri</a>
+                    <a href="info.html"
+                        class="nav-link px-4 py-2 text-sm font-medium text-white/80 hover:text-white rounded-lg hover:bg-white/10 transition-all">Informasi</a>
+                    <a href="bantuan.html"
+                        class="nav-link px-4 py-2 text-sm font-medium text-white/80 hover:text-white rounded-lg hover:bg-white/10 transition-all">FAQ</a>
+                    <a href="hubungi.html"
+                        class="nav-link px-4 py-2 text-sm font-medium text-white/80 hover:text-white rounded-lg hover:bg-white/10 transition-all">Kontak</a>
                 </div>
                 <div class="flex items-center gap-3">
-                    <button id="mobileToggle" aria-label="Buka menu navigasi" aria-expanded="false" class="lg:hidden w-10 h-10 flex items-center justify-center text-white rounded-lg hover:bg-white/10 transition-colors"><i data-lucide="menu" class="w-6 h-6"></i></button>
+                    <button id="mobileToggle" aria-label="Buka menu navigasi" aria-expanded="false"
+                        class="lg:hidden w-10 h-10 flex items-center justify-center text-white rounded-lg hover:bg-white/10 transition-colors"><i
+                            data-lucide="menu" class="w-6 h-6"></i></button>
                 </div>
             </div>
         </div>
@@ -75,19 +92,32 @@
     <!-- MOBILE MENU -->
     <div id="mobileMenu" class="mobile-menu">
         <div class="flex items-center justify-between p-6">
-            <div class="flex items-center gap-3"><img src="Image/logorevisi.png" alt="Prihatin Motor" class="h-14 w-auto"></div>
-            <button id="mobileClose" aria-label="Tutup menu navigasi" class="w-10 h-10 flex items-center justify-center text-white rounded-lg hover:bg-white/10"><i data-lucide="x" class="w-6 h-6"></i></button>
+            <div class="flex items-center gap-3"><img src="Image/logorevisi.png" alt="Prihatin Motor"
+                    class="h-14 w-auto"></div>
+            <button id="mobileClose" aria-label="Tutup menu navigasi"
+                class="w-10 h-10 flex items-center justify-center text-white rounded-lg hover:bg-white/10"><i
+                    data-lucide="x" class="w-6 h-6"></i></button>
         </div>
         <div class="flex flex-col gap-1 px-6 mt-4">
-            <a href="index.html" class="mobile-link active-link px-4 py-3 text-lg font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">Beranda</a>
-            <a href="keunggulan.html" class="mobile-link px-4 py-3 text-lg font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">Keunggulan</a>
-            <a href="tentang-kami.html" class="mobile-link px-4 py-3 text-lg font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">Tentang Kami</a>
-            <a href="layanan.html" class="mobile-link px-4 py-3 text-lg font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">Layanan</a>
-            <a href="produk.html" class="mobile-link px-4 py-3 text-lg font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">Produk</a>
-            <a href="galeri.html" class="mobile-link px-4 py-3 text-lg font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">Galeri</a>
-            <a href="info.html" class="mobile-link px-4 py-3 text-lg font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">Informasi</a>
-            <a href="bantuan.html" class="mobile-link px-4 py-3 text-lg font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">FAQ</a>
-            <a href="hubungi.html" class="mobile-link px-4 py-3 text-lg font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">Kontak</a>
+            <a href="index.html"
+                class="mobile-link active-link px-4 py-3 text-lg font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">Beranda</a>
+            <a href="keunggulan.html"
+                class="mobile-link px-4 py-3 text-lg font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">Keunggulan</a>
+            <a href="tentang-kami.html"
+                class="mobile-link px-4 py-3 text-lg font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">Tentang
+                Kami</a>
+            <a href="layanan.html"
+                class="mobile-link px-4 py-3 text-lg font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">Layanan</a>
+            <a href="produk.html"
+                class="mobile-link px-4 py-3 text-lg font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">Produk</a>
+            <a href="galeri.html"
+                class="mobile-link px-4 py-3 text-lg font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">Galeri</a>
+            <a href="info.html"
+                class="mobile-link px-4 py-3 text-lg font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">Informasi</a>
+            <a href="bantuan.html"
+                class="mobile-link px-4 py-3 text-lg font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">FAQ</a>
+            <a href="hubungi.html"
+                class="mobile-link px-4 py-3 text-lg font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">Kontak</a>
         </div>
     </div>
 
@@ -103,9 +133,12 @@
         <!-- 3D Floating Shapes -->
         <div class="shape-3d" style="top:15%; left:5%;">
             <div class="shape-cube">
-                <div class="face face-front"></div><div class="face face-back"></div>
-                <div class="face face-right"></div><div class="face face-left"></div>
-                <div class="face face-top"></div><div class="face face-bottom"></div>
+                <div class="face face-front"></div>
+                <div class="face face-back"></div>
+                <div class="face face-right"></div>
+                <div class="face face-left"></div>
+                <div class="face face-top"></div>
+                <div class="face face-bottom"></div>
             </div>
         </div>
         <div class="shape-3d" style="bottom:20%; right:8%;">
@@ -115,89 +148,135 @@
             <div class="shape-pyramid"></div>
         </div>
         <div class="shape-3d hidden lg:block" style="top:25%; right:25%;">
-            <div class="shape-ring" style="width:40px;height:40px;border-color:rgba(230,0,18,0.08);animation-duration:10s;animation-direction:reverse;"></div>
-        </div>
-
-        <!-- Hero Image — Mobile & Tablet only (desktop image below is untouched).
-             Positioned top-right, behind the text/CTA (z-index lower than the
-             z-10 content wrapper), with the same left-to-right fade concept
-             as desktop so visual identity stays consistent on every screen. -->
-        <div class="hero-image-in hero-mobile-image-wrap lg:hidden" aria-hidden="true">
-            <div class="hero-mobile-image-fade">
-                <img src="Image/dealerdepan.PNG" alt="" class="hero-mobile-image-img">
-                <div class="hero-mobile-image-overlay"></div>
+            <div class="shape-ring"
+                style="width:40px;height:40px;border-color:rgba(230,0,18,0.08);animation-duration:10s;animation-direction:reverse;">
             </div>
         </div>
 
         <div class="hero-content-wrap relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full py-28 lg:py-32">
-            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div class="grid lg:grid-cols-2 gap-8 lg:gap-10 items-center">
                 <div>
-                    <h1 class="hero-title-in text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black text-white leading-[1.05] tracking-tight mb-7">
-                        Yamaha<br>
-                        <span class="text-white">Prihatin</span><br>
-                        <span class="text-white">Motor</span>
-                    </h1>
-                    <p class="hero-desc-in text-base sm:text-lg text-white/70 font-light leading-relaxed max-w-lg mb-10">
-                        <span id="typingText"></span><span class="typing-cursor"></span>
-                    </p>
+                    <!-- TASK 39 — mobile/tablet: the showroom photo now sits
+                         inline next to the title (top-right, close to
+                         "Yamaha Prihatin Motor") as a real part of the Hero
+                         layout instead of an absolutely-positioned overlay.
+                         On lg+ this row collapses back to a plain block so
+                         desktop (which uses its own 3D image column further
+                         below) is completely unaffected. -->
+                    <div class="hero-title-row flex items-start gap-3 lg:block">
+                        <div class="hero-title-col flex-1 min-w-0 flex flex-col lg:block">
+                            <h1
+                                class="hero-title-in text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black text-white leading-[1.05] tracking-tight mb-7">
+                                Yamaha<br>
+                                <span class="text-white">Prihatin</span><br>
+                                <span class="text-white">Motor</span>
+                            </h1>
+                            <div class="hero-title-divider lg:hidden" aria-hidden="true"></div>
+                            <p
+                                class="hero-desc-in text-sm sm:text-base lg:text-lg text-white/70 font-light leading-relaxed lg:max-w-lg mb-4 lg:mb-10">
+                                <span id="typingText"></span><span class="typing-cursor"></span>
+                            </p>
+                        </div>
+                        <div class="hero-image-in hero-mobile-image-wrap lg:hidden">
+                            <div class="hero-mobile-image-frame">
+                                <img src="Image/dealerdepan.PNG" alt="Showroom Yamaha Prihatin Motor"
+                                    class="hero-mobile-image-img">
+                            </div>
+                        </div>
+                    </div>
                     <div class="hero-cta-in hero-cta-grid">
-                        <a href="https://wa.me/6281211117265" target="_blank" rel="noopener" class="hero-btn hero-btn-primary" aria-label="Chat WhatsApp Yamaha Prihatin Motor">
+                        <a href="https://wa.me/6281211117265" target="_blank" rel="noopener"
+                            class="hero-btn hero-btn-primary" aria-label="Chat WhatsApp Yamaha Prihatin Motor">
                             <span class="hero-btn-icon">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                                </svg>
                             </span>
                             <span class="hero-btn-label">WhatsApp</span>
                         </a>
 
                         <!-- Tombol Media Sosial Resmi - tepat di bawah tombol WhatsApp, sejajar rata -->
                         <div class="hero-social-grid">
-                            <a href="https://www.instagram.com/yamaha_prihatinmotor/" target="_blank" rel="noopener noreferrer" class="hero-social-btn hero-social-instagram" aria-label="Instagram Yamaha Prihatin Motor">
-                                <span class="hero-social-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.98-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.198-4.354-2.618-6.782-6.98-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></span>
+                            <a href="https://www.instagram.com/yamaha_prihatinmotor/" target="_blank"
+                                rel="noopener noreferrer" class="hero-social-btn hero-social-instagram"
+                                aria-label="Instagram Yamaha Prihatin Motor">
+                                <span class="hero-social-icon"><svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.98-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.198-4.354-2.618-6.782-6.98-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                                    </svg></span>
                                 <span class="hero-social-label">Instagram</span>
                             </a>
-                            <a href="https://www.facebook.com/YamahaPrihatinMotor1" target="_blank" rel="noopener noreferrer" class="hero-social-btn hero-social-facebook" aria-label="Facebook Yamaha Prihatin Motor">
-                                <span class="hero-social-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.675 0h-21.35C.6 0 0 .6 0 1.325v21.351C0 23.4.6 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.4 24 24 23.4 24 22.676V1.325C24 .6 23.4 0 22.675 0z"/></svg></span>
+                            <a href="https://www.facebook.com/YamahaPrihatinMotor1" target="_blank"
+                                rel="noopener noreferrer" class="hero-social-btn hero-social-facebook"
+                                aria-label="Facebook Yamaha Prihatin Motor">
+                                <span class="hero-social-icon"><svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M22.675 0h-21.35C.6 0 0 .6 0 1.325v21.351C0 23.4.6 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.4 24 24 23.4 24 22.676V1.325C24 .6 23.4 0 22.675 0z" />
+                                    </svg></span>
                                 <span class="hero-social-label">Facebook</span>
                             </a>
-                            <a href="https://tiktok.com/@yamaha_prihatinmotor" target="_blank" rel="noopener noreferrer" class="hero-social-btn hero-social-tiktok" aria-label="TikTok Yamaha Prihatin Motor">
-                                <span class="hero-social-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></span>
+                            <a href="https://tiktok.com/@yamaha_prihatinmotor" target="_blank" rel="noopener noreferrer"
+                                class="hero-social-btn hero-social-tiktok" aria-label="TikTok Yamaha Prihatin Motor">
+                                <span class="hero-social-icon"><svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z" />
+                                    </svg></span>
                                 <span class="hero-social-label">TikTok</span>
                             </a>
                         </div>
 
-                        <!-- Layanan & Tipe Motor - baris berikutnya -->
-                        <div class="hero-secondary-grid">
-                            <a href="#layanan" class="hero-btn hero-btn-white" aria-label="Lihat section Layanan">
-                                <span class="hero-btn-icon"><i data-lucide="wrench" class="w-5 h-5"></i></span>
-                                <span class="hero-btn-label">Layanan</span>
+                        <!-- Layanan & Tipe Motor - kartu fitur dengan deskripsi -->
+                        <div class="hero-feature-grid">
+                            <a href="#layanan" class="hero-feature-card" aria-label="Lihat section Layanan">
+                                <span class="hero-feature-icon"><i data-lucide="wrench" class="w-6 h-6"></i></span>
+                                <span class="hero-feature-title">Layanan</span>
+                                <span class="hero-feature-divider" aria-hidden="true"></span>
+                                <span class="hero-feature-desc">Servis lengkap & berkualitas untuk motor Yamaha
+                                    Anda.</span>
                             </a>
-                            <a href="produk.html" class="hero-btn hero-btn-white" aria-label="Lihat Tipe Motor Yamaha">
-                                <span class="hero-btn-icon"><i data-lucide="bike" class="w-5 h-5"></i></span>
-                                <span class="hero-btn-label">Tipe Motor</span>
+                            <a href="produk.html" class="hero-feature-card" aria-label="Lihat Tipe Motor Yamaha">
+                                <span class="hero-feature-icon"><i data-lucide="bike" class="w-6 h-6"></i></span>
+                                <span class="hero-feature-title">Tipe Motor</span>
+                                <span class="hero-feature-divider" aria-hidden="true"></span>
+                                <span class="hero-feature-desc">Beragam pilihan motor Yamaha sesuai kebutuhan
+                                    Anda.</span>
                             </a>
                         </div>
                     </div>
 
                     <!-- 3D Stats -->
-                    <div class="hero-stats-in stat-3d counter-group flex gap-8 mt-14 pt-9 border-t border-white/10">
-                        <div class="stat-num">
-                            <p class="text-3xl font-black stat-number"><span class="counter" data-target="30">0</span>+</p>
+                    <div class="hero-stats-in stat-3d counter-group flex items-start justify-between gap-4 mt-14 pt-9 border-t border-white/10">
+                        <div class="stat-num flex-1 text-center">
+                            <i data-lucide="shield-check" class="w-5 h-5 text-white/60 mx-auto mb-2"></i>
+                            <p class="text-3xl font-black stat-number"><span class="counter" data-target="30">0</span>+
+                            </p>
                             <p class="text-xs text-white mt-1">Tahun Pengalaman</p>
                         </div>
-                        <div class="stat-num">
-                            <p class="text-3xl font-black stat-number"><span class="counter" data-target="300">0</span>K+</p>
+                        <div class="stat-num flex-1 text-center hero-stat-divider">
+                            <i data-lucide="bike" class="w-5 h-5 text-white/60 mx-auto mb-2"></i>
+                            <p class="text-3xl font-black stat-number"><span class="counter"
+                                    data-target="300">0</span>K+</p>
                             <p class="text-xs text-white mt-1">Motor Ditangani</p>
                         </div>
-                        <div class="stat-num">
-                            <p class="text-3xl font-black stat-number"><span class="counter-decimal" data-target="4.9">0</span></p>
+                        <div class="stat-num flex-1 text-center hero-stat-divider">
+                            <i data-lucide="star" class="w-5 h-5 text-white/60 mx-auto mb-2"></i>
+                            <p class="text-3xl font-black stat-number"><span class="counter-decimal"
+                                    data-target="4.9">0</span></p>
                             <p class="text-xs text-white mt-1">Rating Pelanggan</p>
                         </div>
                     </div>
 
-                    <!-- Tombol Keunggulan mandiri - khusus mobile, di tengah, tepat di bawah statistik -->
+                    <!-- Tombol Keunggulan mandiri - khusus mobile, kartu penuh lebar di bawah statistik -->
                     <div class="hero-keunggulan-mobile-wrap sm:hidden">
-                        <a href="keunggulan.html" class="hero-btn hero-btn-glass hero-keunggulan-mobile-btn" aria-label="Lihat Keunggulan Yamaha Prihatin Motor">
-                            <span class="hero-btn-icon"><i data-lucide="award" class="w-5 h-5"></i></span>
-                            <span class="hero-btn-label">Keunggulan</span>
+                        <a href="keunggulan.html" class="hero-keunggulan-card"
+                            aria-label="Lihat Keunggulan Yamaha Prihatin Motor">
+                            <span class="hero-keunggulan-icon"><i data-lucide="award" class="w-6 h-6"></i></span>
+                            <span class="hero-keunggulan-text">
+                                <span class="hero-keunggulan-title">Keunggulan</span>
+                                <span class="hero-keunggulan-sub">Mengapa memilih Yamaha Prihatin Motor?</span>
+                            </span>
+                            <i data-lucide="chevron-right" class="w-5 h-5 hero-keunggulan-chevron"></i>
                         </a>
                     </div>
                 </div>
@@ -205,9 +284,9 @@
                 <!-- 3D Hero Image -->
                 <div class="hero-image-in hidden lg:block relative">
                     <div class="hero-3d-wrapper relative">
-                        <div class="hero-image-fade-mask relative rounded-3xl">
-                            <img src="Image/dealerdepan.PNG" alt="Yamaha Motor" class="w-full h-[600px] object-cover rounded-3xl">
-                            <div class="absolute inset-0 rounded-3xl bg-gradient-to-t from-yamaha-dark/60 via-transparent to-transparent"></div>
+                        <div class="hero-image-frame relative rounded-3xl">
+                            <img src="Image/dealerdepan.PNG" alt="Yamaha Motor"
+                                class="w-full h-[600px] object-cover rounded-3xl">
                         </div>
                     </div>
                 </div>
@@ -227,44 +306,74 @@
             </div>
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div class="animate-on-scroll card-hover bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 group">
-                    <div class="w-14 h-14 rounded-2xl blue-accent flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-blue-500/20"><i data-lucide="badge-check" class="w-7 h-7 text-white"></i></div>
+                    <div
+                        class="w-14 h-14 rounded-2xl blue-accent flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-blue-500/20">
+                        <i data-lucide="badge-check" class="w-7 h-7 text-white"></i></div>
                     <h3 class="text-lg font-bold text-yamaha-dark mb-3">Mekanik Bersertifikat</h3>
-                    <p class="text-gray-500 text-sm font-light leading-relaxed">Tim mekanik kami terlatih langsung dengan standar teknis resmi Yamaha, bukan sekadar montir umum.</p>
+                    <p class="text-gray-500 text-sm font-light leading-relaxed">Tim mekanik kami terlatih langsung
+                        dengan standar teknis resmi Yamaha, bukan sekadar montir umum.</p>
                 </div>
-                <div class="animate-on-scroll card-hover bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 group" style="transition-delay:0.1s">
-                    <div class="w-14 h-14 rounded-2xl red-accent flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-red-500/20"><i data-lucide="package-check" class="w-7 h-7 text-white"></i></div>
+                <div class="animate-on-scroll card-hover bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 group"
+                    style="transition-delay:0.1s">
+                    <div
+                        class="w-14 h-14 rounded-2xl red-accent flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-red-500/20">
+                        <i data-lucide="package-check" class="w-7 h-7 text-white"></i></div>
                     <h3 class="text-lg font-bold text-yamaha-dark mb-3">Sparepart 100% Original</h3>
-                    <p class="text-gray-500 text-sm font-light leading-relaxed">Hanya menggunakan Yamaha Genuine Parts (YGP) agar performa dan keawetan motor Anda tetap terjaga.</p>
+                    <p class="text-gray-500 text-sm font-light leading-relaxed">Hanya menggunakan Yamaha Genuine Parts
+                        (YGP) agar performa dan keawetan motor Anda tetap terjaga.</p>
                 </div>
-                <div class="animate-on-scroll card-hover bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 group" style="transition-delay:0.2s">
-                    <div class="w-14 h-14 rounded-2xl blue-accent flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-blue-500/20"><i data-lucide="shield-check" class="w-7 h-7 text-white"></i></div>
+                <div class="animate-on-scroll card-hover bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 group"
+                    style="transition-delay:0.2s">
+                    <div
+                        class="w-14 h-14 rounded-2xl blue-accent flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-blue-500/20">
+                        <i data-lucide="shield-check" class="w-7 h-7 text-white"></i></div>
                     <h3 class="text-lg font-bold text-yamaha-dark mb-3">Garansi Servis 30 Hari</h3>
-                    <p class="text-gray-500 text-sm font-light leading-relaxed">Setiap pekerjaan servis kami bergaransi, jadi Anda tak perlu khawatir soal kualitas pengerjaan.</p>
+                    <p class="text-gray-500 text-sm font-light leading-relaxed">Setiap pekerjaan servis kami bergaransi,
+                        jadi Anda tak perlu khawatir soal kualitas pengerjaan.</p>
                 </div>
-                <div class="animate-on-scroll card-hover bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 group" style="transition-delay:0.3s">
-                    <div class="w-14 h-14 rounded-2xl red-accent flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-red-500/20"><i data-lucide="cpu" class="w-7 h-7 text-white"></i></div>
+                <div class="animate-on-scroll card-hover bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 group"
+                    style="transition-delay:0.3s">
+                    <div
+                        class="w-14 h-14 rounded-2xl red-accent flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-red-500/20">
+                        <i data-lucide="cpu" class="w-7 h-7 text-white"></i></div>
                     <h3 class="text-lg font-bold text-yamaha-dark mb-3">Peralatan & Diagnosa Modern</h3>
-                    <p class="text-gray-500 text-sm font-light leading-relaxed">Dilengkapi alat diagnosa digital untuk mendeteksi masalah motor secara cepat dan akurat.</p>
+                    <p class="text-gray-500 text-sm font-light leading-relaxed">Dilengkapi alat diagnosa digital untuk
+                        mendeteksi masalah motor secara cepat dan akurat.</p>
                 </div>
                 <div class="animate-on-scroll card-hover bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 group">
-                    <div class="w-14 h-14 rounded-2xl blue-accent flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-blue-500/20"><i data-lucide="banknote" class="w-7 h-7 text-white"></i></div>
+                    <div
+                        class="w-14 h-14 rounded-2xl blue-accent flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-blue-500/20">
+                        <i data-lucide="banknote" class="w-7 h-7 text-white"></i></div>
                     <h3 class="text-lg font-bold text-yamaha-dark mb-3">Harga Transparan</h3>
-                    <p class="text-gray-500 text-sm font-light leading-relaxed">Rincian biaya jasa dan sparepart disampaikan di awal, tanpa biaya tersembunyi di kemudian hari.</p>
+                    <p class="text-gray-500 text-sm font-light leading-relaxed">Rincian biaya jasa dan sparepart
+                        disampaikan di awal, tanpa biaya tersembunyi di kemudian hari.</p>
                 </div>
-                <div class="animate-on-scroll card-hover bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 group" style="transition-delay:0.1s">
-                    <div class="w-14 h-14 rounded-2xl red-accent flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-red-500/20"><i data-lucide="timer" class="w-7 h-7 text-white"></i></div>
+                <div class="animate-on-scroll card-hover bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 group"
+                    style="transition-delay:0.1s">
+                    <div
+                        class="w-14 h-14 rounded-2xl red-accent flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-red-500/20">
+                        <i data-lucide="timer" class="w-7 h-7 text-white"></i></div>
                     <h3 class="text-lg font-bold text-yamaha-dark mb-3">Proses Servis Cepat</h3>
-                    <p class="text-gray-500 text-sm font-light leading-relaxed">Alur kerja yang efisien membuat motor Anda selesai diservis tanpa menunggu terlalu lama.</p>
+                    <p class="text-gray-500 text-sm font-light leading-relaxed">Alur kerja yang efisien membuat motor
+                        Anda selesai diservis tanpa menunggu terlalu lama.</p>
                 </div>
-                <div class="animate-on-scroll card-hover bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 group" style="transition-delay:0.2s">
-                    <div class="w-14 h-14 rounded-2xl blue-accent flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-blue-500/20"><i data-lucide="message-circle" class="w-7 h-7 text-white"></i></div>
+                <div class="animate-on-scroll card-hover bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 group"
+                    style="transition-delay:0.2s">
+                    <div
+                        class="w-14 h-14 rounded-2xl blue-accent flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-blue-500/20">
+                        <i data-lucide="message-circle" class="w-7 h-7 text-white"></i></div>
                     <h3 class="text-lg font-bold text-yamaha-dark mb-3">Konsultasi Gratis</h3>
-                    <p class="text-gray-500 text-sm font-light leading-relaxed">Bingung soal keluhan motor? Konsultasikan gratis dengan mekanik kami sebelum memutuskan servis.</p>
+                    <p class="text-gray-500 text-sm font-light leading-relaxed">Bingung soal keluhan motor?
+                        Konsultasikan gratis dengan mekanik kami sebelum memutuskan servis.</p>
                 </div>
-                <div class="animate-on-scroll card-hover bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 group" style="transition-delay:0.3s">
-                    <div class="w-14 h-14 rounded-2xl red-accent flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-red-500/20"><i data-lucide="map-pin" class="w-7 h-7 text-white"></i></div>
+                <div class="animate-on-scroll card-hover bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 group"
+                    style="transition-delay:0.3s">
+                    <div
+                        class="w-14 h-14 rounded-2xl red-accent flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-red-500/20">
+                        <i data-lucide="map-pin" class="w-7 h-7 text-white"></i></div>
                     <h3 class="text-lg font-bold text-yamaha-dark mb-3">Lokasi Strategis</h3>
-                    <p class="text-gray-500 text-sm font-light leading-relaxed">Berada di lokasi yang mudah dijangkau dengan area parkir luas dan ruang tunggu yang nyaman.</p>
+                    <p class="text-gray-500 text-sm font-light leading-relaxed">Berada di lokasi yang mudah dijangkau
+                        dengan area parkir luas dan ruang tunggu yang nyaman.</p>
                 </div>
             </div>
         </div>
@@ -280,32 +389,59 @@
                     Apa yang Anda <span class="blue-gradient-text">Butuhkan?</span>
                 </h2>
                 <div class="divider-line mx-auto mb-6"></div>
-                <p class="text-gray-500 font-light max-w-2xl mx-auto">Pilih kategori di bawah ini untuk menemukan informasi yang Anda cari.</p>
+                <p class="text-gray-500 font-light max-w-2xl mx-auto">Pilih kategori di bawah ini untuk menemukan
+                    informasi yang Anda cari.</p>
             </div>
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <a href="tentang-kami.html" class="animate-on-scroll nav-card-3d bg-yamaha-gray-light rounded-2xl p-6 sm:p-8 border border-gray-100 group block relative">
-                    <div class="nav-card-3d-icon w-14 h-14 rounded-2xl red-accent flex items-center justify-center mb-6 shadow-lg shadow-red-500/20"><i data-lucide="building-2" class="w-7 h-7 text-white"></i></div>
+                <a href="tentang-kami.html"
+                    class="animate-on-scroll nav-card-3d bg-yamaha-gray-light rounded-2xl p-6 sm:p-8 border border-gray-100 group block relative">
+                    <div
+                        class="nav-card-3d-icon w-14 h-14 rounded-2xl red-accent flex items-center justify-center mb-6 shadow-lg shadow-red-500/20">
+                        <i data-lucide="building-2" class="w-7 h-7 text-white"></i></div>
                     <h3 class="text-lg font-bold text-yamaha-dark mb-2 relative z-10">Tentang Kami</h3>
-                    <p class="text-gray-500 text-sm font-light leading-relaxed mb-4 relative z-10">Kenali lebih dekat Dealer Yamaha Prihatin Motor, visi misi, dan tim kami.</p>
-                    <span class="text-yamaha-red font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition-all relative z-10">Selengkapnya <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
+                    <p class="text-gray-500 text-sm font-light leading-relaxed mb-4 relative z-10">Kenali lebih dekat
+                        Dealer Yamaha Prihatin Motor, visi misi, dan tim kami.</p>
+                    <span
+                        class="text-yamaha-red font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition-all relative z-10">Selengkapnya
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
                 </a>
-                <a href="layanan.html" class="animate-on-scroll nav-card-3d bg-yamaha-gray-light rounded-2xl p-6 sm:p-8 border border-gray-100 group block relative" style="transition-delay:0.1s">
-                    <div class="nav-card-3d-icon w-14 h-14 rounded-2xl red-accent flex items-center justify-center mb-6 shadow-lg shadow-red-500/20"><i data-lucide="wrench" class="w-7 h-7 text-white"></i></div>
+                <a href="layanan.html"
+                    class="animate-on-scroll nav-card-3d bg-yamaha-gray-light rounded-2xl p-6 sm:p-8 border border-gray-100 group block relative"
+                    style="transition-delay:0.1s">
+                    <div
+                        class="nav-card-3d-icon w-14 h-14 rounded-2xl red-accent flex items-center justify-center mb-6 shadow-lg shadow-red-500/20">
+                        <i data-lucide="wrench" class="w-7 h-7 text-white"></i></div>
                     <h3 class="text-lg font-bold text-yamaha-dark mb-2 relative z-10">Layanan Servis</h3>
-                    <p class="text-gray-500 text-sm font-light leading-relaxed mb-4 relative z-10">Servis berkala, overhaul mesin, kelistrikan, dan layanan lainnya.</p>
-                    <span class="text-yamaha-red font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition-all relative z-10">Selengkapnya <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
+                    <p class="text-gray-500 text-sm font-light leading-relaxed mb-4 relative z-10">Servis berkala,
+                        overhaul mesin, kelistrikan, dan layanan lainnya.</p>
+                    <span
+                        class="text-yamaha-red font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition-all relative z-10">Selengkapnya
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
                 </a>
-                <a href="galeri.html" class="animate-on-scroll nav-card-3d bg-yamaha-gray-light rounded-2xl p-6 sm:p-8 border border-gray-100 group block relative">
-                    <div class="nav-card-3d-icon w-14 h-14 rounded-2xl blue-accent flex items-center justify-center mb-6 shadow-lg shadow-blue-500/20"><i data-lucide="image" class="w-7 h-7 text-white"></i></div>
+                <a href="galeri.html"
+                    class="animate-on-scroll nav-card-3d bg-yamaha-gray-light rounded-2xl p-6 sm:p-8 border border-gray-100 group block relative">
+                    <div
+                        class="nav-card-3d-icon w-14 h-14 rounded-2xl blue-accent flex items-center justify-center mb-6 shadow-lg shadow-blue-500/20">
+                        <i data-lucide="image" class="w-7 h-7 text-white"></i></div>
                     <h3 class="text-lg font-bold text-yamaha-dark mb-2 relative z-10">Galeri</h3>
-                    <p class="text-gray-500 text-sm font-light leading-relaxed mb-4 relative z-10">Lihat dokumentasi Dealer dan hasil pekerjaan kami yang berkualitas.</p>
-                    <span class="text-yamaha-blue font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition-all relative z-10">Selengkapnya <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
+                    <p class="text-gray-500 text-sm font-light leading-relaxed mb-4 relative z-10">Lihat dokumentasi
+                        Dealer dan hasil pekerjaan kami yang berkualitas.</p>
+                    <span
+                        class="text-yamaha-blue font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition-all relative z-10">Selengkapnya
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
                 </a>
-                <a href="info.html" class="animate-on-scroll nav-card-3d bg-yamaha-gray-light rounded-2xl p-6 sm:p-8 border border-gray-100 group block relative" style="transition-delay:0.1s">
-                    <div class="nav-card-3d-icon w-14 h-14 rounded-2xl blue-accent flex items-center justify-center mb-6 shadow-lg shadow-blue-500/20"><i data-lucide="info" class="w-7 h-7 text-white"></i></div>
+                <a href="info.html"
+                    class="animate-on-scroll nav-card-3d bg-yamaha-gray-light rounded-2xl p-6 sm:p-8 border border-gray-100 group block relative"
+                    style="transition-delay:0.1s">
+                    <div
+                        class="nav-card-3d-icon w-14 h-14 rounded-2xl blue-accent flex items-center justify-center mb-6 shadow-lg shadow-blue-500/20">
+                        <i data-lucide="info" class="w-7 h-7 text-white"></i></div>
                     <h3 class="text-lg font-bold text-yamaha-dark mb-2 relative z-10">Informasi</h3>
-                    <p class="text-gray-500 text-sm font-light leading-relaxed mb-4 relative z-10">Jam operasional, lokasi Dealer, dan testimoni dari pelanggan kami.</p>
-                    <span class="text-yamaha-blue font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition-all relative z-10">Selengkapnya <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
+                    <p class="text-gray-500 text-sm font-light leading-relaxed mb-4 relative z-10">Jam operasional,
+                        lokasi Dealer, dan testimoni dari pelanggan kami.</p>
+                    <span
+                        class="text-yamaha-blue font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition-all relative z-10">Selengkapnya
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
                 </a>
             </div>
         </div>
@@ -313,8 +449,11 @@
 
     <!-- ==================== ABOUT CONTENT (TENTANG KAMI) ==================== -->
     <section id="tentang" class="py-16 sm:py-24 bg-white relative overflow-hidden scroll-anchor-target">
-        <div class="absolute top-0 right-0 w-96 h-96 bg-blue-50 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
-        <div class="absolute bottom-0 left-0 w-72 h-72 bg-red-50 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl"></div>
+        <div class="absolute top-0 right-0 w-96 h-96 bg-blue-50 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl">
+        </div>
+        <div
+            class="absolute bottom-0 left-0 w-72 h-72 bg-red-50 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl">
+        </div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 relative">
             <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
                 <div class="animate-on-scroll from-left relative">
@@ -322,29 +461,44 @@
                         <!-- Dealer image carousel (Task 31): same footprint (w-full h-[450px]
                              rounded-2xl shadow-xl) as the previous single image, so the section
                              layout is unchanged — only the content inside became a slider. -->
-                        <div class="dealer-carousel relative w-full h-[450px] rounded-2xl shadow-xl overflow-hidden" data-carousel aria-roledescription="carousel" aria-label="Foto Dealer Yamaha Prihatin Motor">
+                        <div class="dealer-carousel relative w-full h-[450px] rounded-2xl shadow-xl overflow-hidden"
+                            data-carousel aria-roledescription="carousel"
+                            aria-label="Foto Dealer Yamaha Prihatin Motor">
                             <div class="dealer-carousel-track">
-                                <div class="dealer-carousel-slide"><img src="Image/dealerdepan.PNG" alt="Tampak depan Dealer Yamaha Prihatin Motor" class="w-full h-full object-cover"></div>
-                                <div class="dealer-carousel-slide"><img src="Image/look1.png" alt="Suasana Dealer Yamaha Prihatin Motor" class="w-full h-full object-cover"></div>
-                                <div class="dealer-carousel-slide"><img src="Image/look2.png" alt="Layanan servis motor Yamaha" class="w-full h-full object-cover"></div>
-                                <div class="dealer-carousel-slide"><img src="Image/look3.png" alt="Peralatan Dealer Yamaha Prihatin Motor" class="w-full h-full object-cover"></div>
-                                <div class="dealer-carousel-slide"><img src="Image/look4.png" alt="Mekanik Yamaha Prihatin Motor sedang bekerja" class="w-full h-full object-cover"></div>
+                                <div class="dealer-carousel-slide"><img src="Image/dealerdepan.PNG"
+                                        alt="Tampak depan Dealer Yamaha Prihatin Motor"
+                                        class="w-full h-full object-cover"></div>
+                                <div class="dealer-carousel-slide"><img src="Image/look1.png"
+                                        alt="Suasana Dealer Yamaha Prihatin Motor" class="w-full h-full object-cover">
+                                </div>
+                                <div class="dealer-carousel-slide"><img src="Image/look2.png"
+                                        alt="Layanan servis motor Yamaha" class="w-full h-full object-cover"></div>
+                                <div class="dealer-carousel-slide"><img src="Image/look3.png"
+                                        alt="Peralatan Dealer Yamaha Prihatin Motor" class="w-full h-full object-cover">
+                                </div>
+                                <div class="dealer-carousel-slide"><img src="Image/look4.png"
+                                        alt="Mekanik Yamaha Prihatin Motor sedang bekerja"
+                                        class="w-full h-full object-cover"></div>
                             </div>
-                            <button type="button" class="dealer-carousel-btn dealer-carousel-btn--prev" aria-label="Foto sebelumnya">
+                            <button type="button" class="dealer-carousel-btn dealer-carousel-btn--prev"
+                                aria-label="Foto sebelumnya">
                                 <i data-lucide="chevron-left" class="w-5 h-5"></i>
                             </button>
-                            <button type="button" class="dealer-carousel-btn dealer-carousel-btn--next" aria-label="Foto berikutnya">
+                            <button type="button" class="dealer-carousel-btn dealer-carousel-btn--next"
+                                aria-label="Foto berikutnya">
                                 <i data-lucide="chevron-right" class="w-5 h-5"></i>
                             </button>
                             <div class="dealer-carousel-dots" role="tablist" aria-label="Pilih foto">
-                                <button type="button" class="dealer-carousel-dot active" aria-label="Foto 1" aria-current="true"></button>
+                                <button type="button" class="dealer-carousel-dot active" aria-label="Foto 1"
+                                    aria-current="true"></button>
                                 <button type="button" class="dealer-carousel-dot" aria-label="Foto 2"></button>
                                 <button type="button" class="dealer-carousel-dot" aria-label="Foto 3"></button>
                                 <button type="button" class="dealer-carousel-dot" aria-label="Foto 4"></button>
                                 <button type="button" class="dealer-carousel-dot" aria-label="Foto 5"></button>
                             </div>
                         </div>
-                        <div class="absolute -bottom-6 -right-6 w-48 h-48 yamaha-stripe rounded-2xl -z-10 opacity-80"></div>
+                        <div class="absolute -bottom-6 -right-6 w-48 h-48 yamaha-stripe rounded-2xl -z-10 opacity-80">
+                        </div>
                         <div class="absolute -top-4 -left-4 bg-yamaha-dark text-white rounded-2xl p-5 shadow-2xl">
                             <p class="text-4xl font-black stat-number">30+</p>
                             <p class="text-xs text-white/60 mt-1">Tahun<br>Pengalaman</p>
@@ -358,31 +512,56 @@
                     </h2>
                     <div class="divider-line mb-8"></div>
                     <p class="text-gray-600 font-light leading-relaxed mb-6">
-                        <strong class="text-gray-800">Yamaha Prihatin Motor</strong> hadir sebagai Dealer resmi yang memberikan layanan servis motor Yamaha dengan kualitas terbaik. Kami berkomitmen untuk memberikan pelayanan yang ramah, cepat, dan terpercaya.
+                        <strong class="text-gray-800">Yamaha Prihatin Motor</strong> hadir sebagai Dealer resmi yang
+                        memberikan layanan servis motor Yamaha dengan kualitas terbaik. Kami berkomitmen untuk
+                        memberikan pelayanan yang ramah, cepat, dan terpercaya.
                     </p>
                     <p class="text-gray-600 font-light leading-relaxed mb-8">
-                        Dengan tim mekanik bersertifikat dan peralatan modern, kami memastikan setiap motor yang ditangani mendapat perawatan terbaik. Kepuasan pelanggan adalah prioritas utama kami.
+                        Dengan tim mekanik bersertifikat dan peralatan modern, kami memastikan setiap motor yang
+                        ditangani mendapat perawatan terbaik. Kepuasan pelanggan adalah prioritas utama kami.
                     </p>
                     <div class="grid sm:grid-cols-2 gap-4 mb-8">
                         <div class="flex items-start gap-3">
-                            <div class="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="wrench" class="w-5 h-5 text-yamaha-blue"></i></div>
-                            <div><p class="font-semibold text-sm text-yamaha-dark">Mekanik Bersertifikat</p><p class="text-xs text-gray-500 mt-0.5">Terlatih & profesional</p></div>
+                            <div
+                                class="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <i data-lucide="wrench" class="w-5 h-5 text-yamaha-blue"></i></div>
+                            <div>
+                                <p class="font-semibold text-sm text-yamaha-dark">Mekanik Bersertifikat</p>
+                                <p class="text-xs text-gray-500 mt-0.5">Terlatih & profesional</p>
+                            </div>
                         </div>
                         <div class="flex items-start gap-3">
-                            <div class="w-10 h-10 rounded-lg bg-red-50 flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="shield-check" class="w-5 h-5 text-yamaha-red"></i></div>
-                            <div><p class="font-semibold text-sm text-yamaha-dark">Garansi Servis</p><p class="text-xs text-gray-500 mt-0.5">Bergaransi 30 hari</p></div>
+                            <div
+                                class="w-10 h-10 rounded-lg bg-red-50 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <i data-lucide="shield-check" class="w-5 h-5 text-yamaha-red"></i></div>
+                            <div>
+                                <p class="font-semibold text-sm text-yamaha-dark">Garansi Servis</p>
+                                <p class="text-xs text-gray-500 mt-0.5">Bergaransi 30 hari</p>
+                            </div>
                         </div>
                         <div class="flex items-start gap-3">
-                            <div class="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="timer" class="w-5 h-5 text-yamaha-blue"></i></div>
-                            <div><p class="font-semibold text-sm text-yamaha-dark">Pengerjaan Cepat</p><p class="text-xs text-gray-500 mt-0.5">Tepat waktu</p></div>
+                            <div
+                                class="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <i data-lucide="timer" class="w-5 h-5 text-yamaha-blue"></i></div>
+                            <div>
+                                <p class="font-semibold text-sm text-yamaha-dark">Pengerjaan Cepat</p>
+                                <p class="text-xs text-gray-500 mt-0.5">Tepat waktu</p>
+                            </div>
                         </div>
                         <div class="flex items-start gap-3">
-                            <div class="w-10 h-10 rounded-lg bg-red-50 flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="badge-indian-rupee" class="w-5 h-5 text-yamaha-red"></i></div>
-                            <div><p class="font-semibold text-sm text-yamaha-dark">Harga Transparan</p><p class="text-xs text-gray-500 mt-0.5">Tanpa biaya tersembunyi</p></div>
+                            <div
+                                class="w-10 h-10 rounded-lg bg-red-50 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <i data-lucide="badge-indian-rupee" class="w-5 h-5 text-yamaha-red"></i></div>
+                            <div>
+                                <p class="font-semibold text-sm text-yamaha-dark">Harga Transparan</p>
+                                <p class="text-xs text-gray-500 mt-0.5">Tanpa biaya tersembunyi</p>
+                            </div>
                         </div>
                     </div>
-                    <a href="hubungi.html" class="btn-primary text-white px-8 py-3.5 rounded-xl text-sm font-bold tracking-wide inline-flex items-center gap-2">
-                        <span class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4"></i> Hubungi Kami</span>
+                    <a href="hubungi.html"
+                        class="btn-primary text-white px-8 py-3.5 rounded-xl text-sm font-bold tracking-wide inline-flex items-center gap-2">
+                        <span class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4"></i> Hubungi
+                            Kami</span>
                     </a>
                 </div>
             </div>
@@ -395,25 +574,39 @@
             <div class="grid lg:grid-cols-2 gap-8 lg:gap-12">
                 <div class="animate-on-scroll from-left">
                     <div class="bg-white rounded-2xl p-6 sm:p-10 border border-gray-100 h-full">
-                        <div class="w-14 h-14 rounded-2xl blue-accent flex items-center justify-center mb-6 shadow-lg shadow-blue-500/20">
+                        <div
+                            class="w-14 h-14 rounded-2xl blue-accent flex items-center justify-center mb-6 shadow-lg shadow-blue-500/20">
                             <i data-lucide="eye" class="w-7 h-7 text-white"></i>
                         </div>
                         <h3 class="text-2xl font-black text-yamaha-dark mb-4">Visi Kami</h3>
-                        <p class="text-gray-600 font-light leading-relaxed">Menjadi Dealer motor Yamaha terpercaya dan terdepan di Indonesia yang memberikan pelayanan terbaik dengan standar kualitas tinggi, serta menjadi pilihan utama masyarakat dalam perawatan dan perbaikan motor Yamaha.</p>
+                        <p class="text-gray-600 font-light leading-relaxed">Menjadi Dealer motor Yamaha terpercaya dan
+                            terdepan di Indonesia yang memberikan pelayanan terbaik dengan standar kualitas tinggi,
+                            serta menjadi pilihan utama masyarakat dalam perawatan dan perbaikan motor Yamaha.</p>
                     </div>
                 </div>
                 <div class="animate-on-scroll from-right">
                     <div class="bg-white rounded-2xl p-6 sm:p-10 border border-gray-100 h-full">
-                        <div class="w-14 h-14 rounded-2xl red-accent flex items-center justify-center mb-6 shadow-lg shadow-red-500/20">
+                        <div
+                            class="w-14 h-14 rounded-2xl red-accent flex items-center justify-center mb-6 shadow-lg shadow-red-500/20">
                             <i data-lucide="target" class="w-7 h-7 text-white"></i>
                         </div>
                         <h3 class="text-2xl font-black text-yamaha-dark mb-4">Misi Kami</h3>
                         <ul class="space-y-3 text-gray-600 font-light leading-relaxed">
-                            <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-5 h-5 text-yamaha-blue flex-shrink-0 mt-0.5"></i>Memberikan layanan servis berkualitas dengan harga terjangkau</li>
-                            <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-5 h-5 text-yamaha-blue flex-shrink-0 mt-0.5"></i>Mengutamakan kepuasan dan kepercayaan pelanggan</li>
-                            <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-5 h-5 text-yamaha-blue flex-shrink-0 mt-0.5"></i>Mengembangkan SDM mekanik yang kompeten dan bersertifikat</li>
-                            <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-5 h-5 text-yamaha-blue flex-shrink-0 mt-0.5"></i>Memberikan garansi pada setiap pekerjaan servis</li>
-                            <li class="flex items-start gap-3"><i data-lucide="check-circle" class="w-5 h-5 text-yamaha-blue flex-shrink-0 mt-0.5"></i>Menerapkan teknologi modern dalam setiap proses pengerjaan</li>
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle"
+                                    class="w-5 h-5 text-yamaha-blue flex-shrink-0 mt-0.5"></i>Memberikan layanan servis
+                                berkualitas dengan harga terjangkau</li>
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle"
+                                    class="w-5 h-5 text-yamaha-blue flex-shrink-0 mt-0.5"></i>Mengutamakan kepuasan dan
+                                kepercayaan pelanggan</li>
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle"
+                                    class="w-5 h-5 text-yamaha-blue flex-shrink-0 mt-0.5"></i>Mengembangkan SDM mekanik
+                                yang kompeten dan bersertifikat</li>
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle"
+                                    class="w-5 h-5 text-yamaha-blue flex-shrink-0 mt-0.5"></i>Memberikan garansi pada
+                                setiap pekerjaan servis</li>
+                            <li class="flex items-start gap-3"><i data-lucide="check-circle"
+                                    class="w-5 h-5 text-yamaha-blue flex-shrink-0 mt-0.5"></i>Menerapkan teknologi
+                                modern dalam setiap proses pengerjaan</li>
                         </ul>
                     </div>
                 </div>
@@ -426,28 +619,99 @@
         <div class="yamaha-stripe h-1 w-full"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 py-16">
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
-                <div><div class="mb-5"><img src="Image/logorevisi.png" alt="Prihatin Motor" class="h-14 w-auto"></div><p class="text-white/50 text-sm font-light leading-relaxed">Dealer resmi Yamaha yang menyediakan layanan servis motor berkualitas tinggi.</p></div>
-                <div><h4 class="font-bold text-sm mb-5">Menu</h4><ul class="space-y-3"><li><a href="index.html" class="text-white/50 text-sm hover:text-white transition-colors">Beranda</a></li><li><a href="tentang-kami.html" class="text-white/50 text-sm hover:text-white transition-colors">Tentang Kami</a></li><li><a href="layanan.html" class="text-white/50 text-sm hover:text-white transition-colors">Layanan</a></li><li><a href="produk.html" class="text-white/50 text-sm hover:text-white transition-colors">Produk</a></li><li><a href="galeri.html" class="text-white/50 text-sm hover:text-white transition-colors">Galeri</a></li></ul></div>
-                <div><h4 class="font-bold text-sm mb-5">Layanan</h4><ul class="space-y-3"><li><a href="layanan.html" class="text-white/50 text-sm hover:text-white transition-colors">Sales</a></li><li><a href="layanan.html" class="text-white/50 text-sm hover:text-white transition-colors">Service</a></li><li><a href="layanan.html" class="text-white/50 text-sm hover:text-white transition-colors">Sparepart</a></li></ul></div>
-                <div><h4 class="font-bold text-sm mb-5">Kontak</h4><ul class="space-y-3"><li class="flex items-start gap-2 text-white/50 text-sm"><i data-lucide="map-pin" class="w-4 h-4 mt-0.5 flex-shrink-0"></i>Kabupaten Bogor, Jawa Barat, dengan alamat utama di Jl. Raya Narogong No. 10, Cileungsi.</li><li class="flex items-center gap-2 text-white/50 text-sm"><i data-lucide="phone" class="w-4 h-4 flex-shrink-0"></i>(+62) 812-1111-7265</li><li class="flex items-center gap-2 text-white/50 text-sm"><i data-lucide="mail" class="w-4 h-4 flex-shrink-0"></i>prihatinmotor96@gmail.com</li><li class="flex items-center gap-2 text-white/50 text-sm"><i data-lucide="clock" class="w-4 h-4 flex-shrink-0"></i>Senin - Minggu: 08:00 - 17:00</li></ul></div>
+                <div>
+                    <div class="mb-5"><img src="Image/logorevisi.png" alt="Prihatin Motor" class="h-14 w-auto"></div>
+                    <p class="text-white/50 text-sm font-light leading-relaxed">Dealer resmi Yamaha yang menyediakan
+                        layanan servis motor berkualitas tinggi.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sm mb-5">Menu</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html"
+                                class="text-white/50 text-sm hover:text-white transition-colors">Beranda</a></li>
+                        <li><a href="tentang-kami.html"
+                                class="text-white/50 text-sm hover:text-white transition-colors">Tentang Kami</a></li>
+                        <li><a href="layanan.html"
+                                class="text-white/50 text-sm hover:text-white transition-colors">Layanan</a></li>
+                        <li><a href="produk.html"
+                                class="text-white/50 text-sm hover:text-white transition-colors">Produk</a></li>
+                        <li><a href="galeri.html"
+                                class="text-white/50 text-sm hover:text-white transition-colors">Galeri</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sm mb-5">Layanan</h4>
+                    <ul class="space-y-3">
+                        <li><a href="layanan.html"
+                                class="text-white/50 text-sm hover:text-white transition-colors">Sales</a></li>
+                        <li><a href="layanan.html"
+                                class="text-white/50 text-sm hover:text-white transition-colors">Service</a></li>
+                        <li><a href="layanan.html"
+                                class="text-white/50 text-sm hover:text-white transition-colors">Sparepart</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sm mb-5">Kontak</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-2 text-white/50 text-sm"><i data-lucide="map-pin"
+                                class="w-4 h-4 mt-0.5 flex-shrink-0"></i>Kabupaten Bogor, Jawa Barat, dengan alamat
+                            utama di Jl. Raya Narogong No. 10, Cileungsi.</li>
+                        <li class="flex items-center gap-2 text-white/50 text-sm"><i data-lucide="phone"
+                                class="w-4 h-4 flex-shrink-0"></i>(+62) 812-1111-7265</li>
+                        <li class="flex items-center gap-2 text-white/50 text-sm"><i data-lucide="mail"
+                                class="w-4 h-4 flex-shrink-0"></i>prihatinmotor96@gmail.com</li>
+                        <li class="flex items-center gap-2 text-white/50 text-sm"><i data-lucide="clock"
+                                class="w-4 h-4 flex-shrink-0"></i>Senin - Minggu: 08:00 - 17:00</li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="border-t border-white/10">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div
+                class="max-w-7xl mx-auto px-4 sm:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
                 <p class="text-white/40 text-xs">&copy; 2026 Yamaha Prihatin Motor. All rights reserved.</p>
                 <div class="flex items-center gap-3">
                     <span class="text-white/40 text-xs font-semibold uppercase tracking-wider mr-1">Ikuti Kami</span>
-                    <a href="https://www.instagram.com/yamaha_prihatinmotor/" target="_blank" rel="noopener noreferrer" class="footer-social-icon w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center hover:bg-yamaha-blue transition-all" aria-label="Instagram"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.98-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.198-4.354-2.618-6.782-6.98-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
-                    <a href="https://www.facebook.com/YamahaPrihatinMotor1" target="_blank" rel="noopener noreferrer" class="footer-social-icon w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center hover:bg-yamaha-blue transition-all" aria-label="Facebook"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M22.675 0h-21.35C.6 0 0 .6 0 1.325v21.351C0 23.4.6 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.4 24 24 23.4 24 22.676V1.325C24 .6 23.4 0 22.675 0z"/></svg></a>
-                    <a href="https://tiktok.com/@yamaha_prihatinmotor" target="_blank" rel="noopener noreferrer" class="footer-social-icon w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center hover:bg-yamaha-blue transition-all" aria-label="TikTok"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
-                    <a href="https://wa.me/6281211117265" target="_blank" rel="noopener noreferrer" class="footer-social-icon w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center hover:bg-yamaha-blue transition-all" aria-label="WhatsApp"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+                    <a href="https://www.instagram.com/yamaha_prihatinmotor/" target="_blank" rel="noopener noreferrer"
+                        class="footer-social-icon w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center hover:bg-yamaha-blue transition-all"
+                        aria-label="Instagram"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.98-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.198-4.354-2.618-6.782-6.98-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                        </svg></a>
+                    <a href="https://www.facebook.com/YamahaPrihatinMotor1" target="_blank" rel="noopener noreferrer"
+                        class="footer-social-icon w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center hover:bg-yamaha-blue transition-all"
+                        aria-label="Facebook"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M22.675 0h-21.35C.6 0 0 .6 0 1.325v21.351C0 23.4.6 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.4 24 24 23.4 24 22.676V1.325C24 .6 23.4 0 22.675 0z" />
+                        </svg></a>
+                    <a href="https://tiktok.com/@yamaha_prihatinmotor" target="_blank" rel="noopener noreferrer"
+                        class="footer-social-icon w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center hover:bg-yamaha-blue transition-all"
+                        aria-label="TikTok"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z" />
+                        </svg></a>
+                    <a href="https://wa.me/6281211117265" target="_blank" rel="noopener noreferrer"
+                        class="footer-social-icon w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center hover:bg-yamaha-blue transition-all"
+                        aria-label="WhatsApp"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                        </svg></a>
                 </div>
             </div>
         </div>
     </footer>
 
     <button id="backToTop" aria-label="Kembali ke atas"><i data-lucide="chevron-up" class="w-5 h-5"></i></button>
-    <a id="waFloat" aria-label="Chat via WhatsApp" href="https://wa.me/6281211117265" target="_blank" rel="noopener noreferrer"><div class="wa-btn relative"><div class="wa-pulse"></div><svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div></a>
+    <a id="waFloat" aria-label="Chat via WhatsApp" href="https://wa.me/6281211117265" target="_blank"
+        rel="noopener noreferrer">
+        <div class="wa-btn relative">
+            <div class="wa-pulse"></div><svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+            </svg>
+        </div>
+    </a>
     <script src="script.js"></script>
 </body>
+
 </html>
