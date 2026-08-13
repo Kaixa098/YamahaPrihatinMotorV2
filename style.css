@@ -2833,6 +2833,105 @@ button {
     transform: translateX(2px);
 }
 
+/* ===== 3D INTERACTIVE CARDS & HOOKS ===== */
+.interactive-card, .card-hover, .nav-card-3d {
+    transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+    will-change: transform, box-shadow, border-color;
+    position: relative;
+    overflow: hidden; /* Contains the glare effect */
+    /* Hardware acceleration and 3D space */
+    transform: perspective(1200px) rotateX(var(--rotate-x, 0deg)) rotateY(var(--rotate-y, 0deg)) scale3d(1, 1, 1);
+    transform-style: preserve-3d;
+}
+
+.interactive-card:hover, .card-hover:hover, .nav-card-3d:hover {
+    /* Slightly scale up and use variables for dynamic JS rotation */
+    transform: perspective(1200px) rotateX(var(--rotate-x, 0deg)) rotateY(var(--rotate-y, 0deg)) scale3d(1.02, 1.02, 1.02);
+    box-shadow: 0 30px 60px -15px rgba(50, 40, 105, 0.3), 0 0 0 1px rgba(50, 40, 105, 0.05);
+    border-color: rgba(50, 40, 105, 0.15);
+    z-index: 10;
+}
+
+/* Mouse-tracking Glare Overlay */
+.interactive-card::after, .card-hover::after, .nav-card-3d::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    background: radial-gradient(
+        800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+        rgba(255, 255, 255, 0.3),
+        transparent 40%
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    mix-blend-mode: overlay;
+}
+
+.interactive-card:hover::after, .card-hover:hover::after, .nav-card-3d:hover::after {
+    opacity: 1;
+}
+
+/* 3D Pop-out effect for inner elements */
+.interactive-card .icon-box, .card-hover .icon-box, .nav-card-3d .icon-box {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.4s ease;
+    /* Move elements forward in Z space */
+    transform: translateZ(30px); 
+}
+
+.interactive-card:hover .icon-box, .card-hover:hover .icon-box, .nav-card-3d:hover .icon-box {
+    /* Pop out further on hover */
+    transform: translateZ(50px) scale(1.1) rotate(5deg);
+}
+
+
+
+/* ===== INTERACTIVE BUTTONS ===== */
+.btn-interactive, .btn-primary, .btn-red, .hero-btn {
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-interactive::before, .btn-primary::before, .btn-red::before, .hero-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateX(-100%);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: -1;
+}
+
+.btn-interactive:hover, .btn-primary:hover, .btn-red:hover, .hero-btn:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.2);
+}
+
+.btn-interactive:hover::before, .btn-primary:hover::before, .btn-red:hover::before, .hero-btn:hover::before {
+    transform: translateX(0);
+}
+
+/* ===== IMAGE ZOOM (Gallery & Certificates) ===== */
+.gallery-item, .cert-card-frame, .produk-image-wrapper {
+    overflow: hidden;
+    position: relative;
+}
+
+.gallery-item img, .cert-card-frame img, .produk-image-wrapper img {
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform;
+}
+
+.gallery-item:hover img, .cert-card-frame:hover img, .produk-image-wrapper:hover img {
+    transform: scale(1.1);
+}
+
 /* --- Mobile tap feedback: since :hover lift/shadow effects never fire on
    touch, mirror them as a quick, light :active "press" so every card and
    button still feels responsive on phones/tablets. --- */

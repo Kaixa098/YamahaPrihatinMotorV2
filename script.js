@@ -150,14 +150,20 @@ if (currentPage === 'beranda') {
             }
         }
 
-        for (let i = 0; i < 80; i++) particles.push(new Particle());
+        for (let i = 0; i < 40; i++) particles.push(new Particle());
 
+        let rafId;
         function animateParticles() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             particles.forEach(p => { p.update(); p.draw(); });
-            requestAnimationFrame(animateParticles);
+            rafId = requestAnimationFrame(animateParticles);
         }
         animateParticles();
+        // Pause animation when tab is hidden to save GPU/CPU
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) cancelAnimationFrame(rafId);
+            else animateParticles();
+        });
     }
 
     // ===== TYPING EFFECT =====
@@ -989,6 +995,51 @@ document.querySelectorAll('.dealer-carousel').forEach((carousel) => {
 
     render();
 });
+
+// ===== 3D INTERACTIVE CARDS =====
+function init3DCards() {
+    // Only apply on devices with mouse/hover capability
+    if (window.matchMedia("(hover: none)").matches) return;
+
+    const cards = document.querySelectorAll('.interactive-card, .card-hover, .nav-card-3d');
+    
+    cards.forEach(card => {
+        card.addEventListener('mousemove', e => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            // Set position for glare
+            card.style.setProperty('--mouse-x', `${x}px`);
+            card.style.setProperty('--mouse-y', `${y}px`);
+            
+            // Calculate 3D tilt
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const rotateX = ((y - centerY) / centerY) * -10; // Max 10 deg tilt
+            const rotateY = ((x - centerX) / centerX) * 10;
+            
+            card.style.setProperty('--rotate-x', `${rotateX}deg`);
+            card.style.setProperty('--rotate-y', `${rotateY}deg`);
+        });
+
+        card.addEventListener('mouseleave', () => {
+            // Reset transforms smoothly
+            card.style.setProperty('--rotate-x', `0deg`);
+            card.style.setProperty('--rotate-y', `0deg`);
+            
+            // Center glare
+            const rect = card.getBoundingClientRect();
+            card.style.setProperty('--mouse-x', `${rect.width / 2}px`);
+            card.style.setProperty('--mouse-y', `${rect.height / 2}px`);
+        });
+    });
+}
+
+// Initialize on load
+document.addEventListener('DOMContentLoaded', init3DCards);
+// Also run immediately in case DOMContentLoaded already fired
+init3DCards();
 
 // ===== INIT LUCIDE ICONS =====
 lucide.createIcons();
