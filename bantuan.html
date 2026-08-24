@@ -3,138 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ — Yamaha Prihatin Motor</title>
+    <title>Pusat Bantuan & FAQ — Yamaha Prihatin Motor</title>
+    <meta name="description" content="Jawaban atas pertanyaan umum seputar servis, suku cadang asli, garansi 30 hari, metode pembayaran (QRIS, transfer, tunai), dan jam buka Yamaha Prihatin Motor Cileungsi.">
+    <meta name="keywords" content="FAQ Yamaha Prihatin Motor, Tanya Jawab Servis Yamaha, Garansi Servis Yamaha Cileungsi, Pembayaran Servis QRIS">
+    <meta name="author" content="Yamaha Prihatin Motor">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yamahaprihatinmotor.vercel.app/bantuan.html">
+    <meta property="og:title" content="Pusat Bantuan & FAQ — Yamaha Prihatin Motor">
+    <meta property="og:description" content="Temukan jawaban cepat atas pertanyaan seputar servis dan suku cadang motor Yamaha Anda.">
+    <meta property="og:image" content="Image/dealerdepan.png">
+
     <link rel="icon" type="image/png" href="Image/iconfinal.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: { 50:'#DFDEE8',100:'#CCCADA',200:'#A6A1BE',300:'#7F79A1',400:'#595085',500:'#322869',600:'#292055',700:'#1F1942',800:'#16122E',900:'#0C0A1A' },
-                        secondary: { 50:'#FBDBDA',100:'#F8C5C3',200:'#F29A95',300:'#ED6E67',400:'#E7433A',500:'#E2170C',600:'#B8130A',700:'#8D0E08',800:'#630A05',900:'#380603' },
-                        blue: { 50:'#DFDEE8',100:'#CCCADA',200:'#A6A1BE',300:'#7F79A1',400:'#595085',500:'#322869',600:'#292055',700:'#1F1942',800:'#16122E',900:'#0C0A1A' },
-                        red: { 50:'#FBDBDA',100:'#F8C5C3',200:'#F29A95',300:'#ED6E67',400:'#E7433A',500:'#E2170C',600:'#B8130A',700:'#8D0E08',800:'#630A05',900:'#380603' },
-                        orange: { 300:'#F5B8A8' },
-                        cyan: { 300:'#B9B4D9' },
-                        yamaha: {
-                            blue: '#322869', 'blue-dark': '#1F1942', 'blue-light': '#7F79A1',
-                            red: '#E2170C', 'red-dark': '#8D0E08', 'red-light': '#ED6E67',
-                            dark: '#0C0A1A', 'dark-2': '#16122E', 'dark-3': '#1F1942',
-                            gray: '#6B7280', 'gray-light': '#D9D4DB',
-                        }
-                    },
-                    fontFamily: { inter: ['Inter', 'sans-serif'] }
-                }
-            }
-        }
-    </script>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-white text-gray-800 overflow-x-hidden" data-page="faq">
+<body class="bg-[#F8FAFC] text-slate-800 overflow-x-hidden" data-page="faq">
 
     <div id="scrollProgress"></div>
-    <div id="toastContainer" class="fixed top-24 right-4 z-[100] flex flex-col gap-3"></div>
+    <nav id="navbar"></nav>
 
-    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6">
-            <div class="flex items-center justify-between h-20">
-                <a href="index.html" class="flex items-center gap-3 group">
-                    <img src="Image/logorevisi.png" alt="Prihatin Motor" class="h-16 w-auto">
-                </a>
-                <div class="hidden lg:flex items-center gap-1">
-                    <a href="index.html" class="nav-link px-4 py-2 text-sm font-medium text-white/80 hover:text-white rounded-lg hover:bg-white/10 transition-all">Beranda</a>
-                    <a href="tentang-kami.html" class="nav-link px-4 py-2 text-sm font-medium text-white/80 hover:text-white rounded-lg hover:bg-white/10 transition-all">Tentang Kami</a>
-                    <a href="layanan.html" class="nav-link px-4 py-2 text-sm font-medium text-white/80 hover:text-white rounded-lg hover:bg-white/10 transition-all">Layanan</a>
-                    <a href="produk.html" class="nav-link px-4 py-2 text-sm font-medium text-white/80 hover:text-white rounded-lg hover:bg-white/10 transition-all">Produk</a>
-                    <a href="info.html" class="nav-link px-4 py-2 text-sm font-medium text-white/80 hover:text-white rounded-lg hover:bg-white/10 transition-all">Informasi</a>
-                    <a href="bantuan.html" class="nav-link active-link px-4 py-2 text-sm font-medium text-white/80 hover:text-white rounded-lg hover:bg-white/10 transition-all">FAQ</a>
-                </div>
-                <div class="flex items-center gap-3">
-                    <button id="mobileToggle" aria-label="Buka menu navigasi" aria-expanded="false" class="lg:hidden w-10 h-10 flex items-center justify-center text-white rounded-lg hover:bg-white/10 transition-colors"><i data-lucide="menu" class="w-6 h-6"></i></button>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <div id="mobileMenu" class="mobile-menu">
-        <div class="flex items-center justify-between p-6">
-            <div class="flex items-center gap-3"><img src="Image/logorevisi.png" alt="Prihatin Motor" class="h-14 w-auto"></div>
-            <button id="mobileClose" aria-label="Tutup menu navigasi" class="w-10 h-10 flex items-center justify-center text-white rounded-lg hover:bg-white/10"><i data-lucide="x" class="w-6 h-6"></i></button>
-        </div>
-        <div class="flex flex-col gap-1 px-6 mt-4">
-            <a href="index.html" class="mobile-link px-4 py-3 text-lg font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">Beranda</a>
-            <a href="tentang-kami.html" class="mobile-link px-4 py-3 text-lg font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">Tentang Kami</a>
-            <a href="layanan.html" class="mobile-link px-4 py-3 text-lg font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">Layanan</a>
-            <a href="produk.html" class="mobile-link px-4 py-3 text-lg font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">Produk</a>
-            <a href="info.html" class="mobile-link px-4 py-3 text-lg font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">Informasi</a>
-            <a href="bantuan.html" class="mobile-link active-link px-4 py-3 text-lg font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all">FAQ</a>
-        </div>
-    </div>
-
-    <section class="page-hero pt-28 pb-16 sm:pt-32 sm:pb-20 relative">
+    <!-- ==================== PAGE HERO ==================== -->
+    <section class="page-hero pt-32 pb-20 relative">
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 text-center">
-            <p class="text-xs font-bold tracking-[0.2em] uppercase text-red-400 mb-4" style="animation: fadeInUp 0.6s ease both;">FAQ</p>
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight mb-4" style="animation: fadeInUp 0.8s ease 0.1s both;">Pertanyaan yang <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Sering Ditanyakan</span></h1>
-            <p class="text-white/60 font-light max-w-2xl mx-auto" style="animation: fadeInUp 0.8s ease 0.2s both;">Temukan jawaban atas pertanyaan umum tentang layanan kami.</p>
+            <span class="badge-telemetry badge-telemetry-dark mb-4">PUSAT BANTUAN &amp; FAQ</span>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight mb-4">
+                Pertanyaan yang <span class="red-gradient-text">Sering Ditanyakan</span>
+            </h1>
+            <p class="text-white/80 text-base sm:text-lg font-normal max-w-2xl mx-auto leading-relaxed">
+                Jawaban praktis dan transparan mengenai layanan servis, garansi, keaslian sparepart, serta prosedur di bengkel resmi Yamaha Prihatin Motor.
+            </p>
         </div>
     </section>
 
+    <!-- ==================== FAQ ACCORDION ==================== -->
     <section class="py-16 sm:py-24 bg-white relative">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            
             <div class="space-y-4">
-                <div class="faq-item interactive-card animate-on-scroll bg-yamaha-gray-light rounded-2xl border border-gray-100 overflow-hidden">
-                    <div class="faq-header flex items-center justify-between px-6 py-5 cursor-pointer hover:bg-gray-100/50 transition-colors" role="button" tabindex="0" aria-expanded="false"><h3 class="font-semibold text-sm text-yamaha-dark pr-4">Apakah Dealer ini resmi dari Yamaha?</h3><div class="faq-icon w-8 h-8 rounded-full bg-white flex items-center justify-center flex-shrink-0 shadow-sm"><i data-lucide="plus" class="w-4 h-4 text-yamaha-blue"></i></div></div>
-                    <div class="faq-content"><p class="text-gray-600 text-sm font-light leading-relaxed">Ya, Yamaha Prihatin Motor adalah Dealer resmi yang terafiliasi dengan Yamaha Indonesia. Mekanik kami telah tersertifikasi langsung oleh Yamaha.</p></div>
+                <!-- 1 -->
+                <div class="faq-item animate-on-scroll">
+                    <div class="faq-header flex items-center justify-between px-6 sm:px-8 py-5 cursor-pointer" role="button" tabindex="0" aria-expanded="false">
+                        <h3 class="font-bold text-base sm:text-lg text-slate-900 pr-4">Apakah Yamaha Prihatin Motor adalah Dealer dan Bengkel resmi?</h3>
+                        <div class="faq-icon w-9 h-9 rounded-xl bg-slate-100 flex items-center justify-center flex-shrink-0 text-slate-700">
+                            <i data-lucide="plus" class="w-5 h-5"></i>
+                        </div>
+                    </div>
+                    <div class="faq-content text-slate-600 text-sm sm:text-base leading-relaxed">
+                        <p>Ya, Yamaha Prihatin Motor adalah Dealer &amp; Bengkel resmi 3S yang terafiliasi langsung dengan PT Yamaha Indonesia Motor Mfg. sejak 26 Mei 1996. Seluruh mekanik kami memegang sertifikasi Yamaha Technical Academy (YTA) dan seluruh suku cadang dijamin 100% Yamaha Genuine Parts (YGP).</p>
+                    </div>
                 </div>
-                <div class="faq-item interactive-card animate-on-scroll bg-yamaha-gray-light rounded-2xl border border-gray-100 overflow-hidden" style="transition-delay:0.05s">
-                    <div class="faq-header flex items-center justify-between px-6 py-5 cursor-pointer hover:bg-gray-100/50 transition-colors" role="button" tabindex="0" aria-expanded="false"><h3 class="font-semibold text-sm text-yamaha-dark pr-4">Berapa lama proses servis berkala?</h3><div class="faq-icon w-8 h-8 rounded-full bg-white flex items-center justify-center flex-shrink-0 shadow-sm"><i data-lucide="plus" class="w-4 h-4 text-yamaha-blue"></i></div></div>
-                    <div class="faq-content"><p class="text-gray-600 text-sm font-light leading-relaxed">Servis berkala biasanya memakan waktu 30-60 menit tergantung kondisi motor dan antrian.</p></div>
+
+                <!-- 2 -->
+                <div class="faq-item animate-on-scroll" style="transition-delay:0.05s">
+                    <div class="faq-header flex items-center justify-between px-6 sm:px-8 py-5 cursor-pointer" role="button" tabindex="0" aria-expanded="false">
+                        <h3 class="font-bold text-base sm:text-lg text-slate-900 pr-4">Berapa lama estimasi waktu pengerjaan servis berkala?</h3>
+                        <div class="faq-icon w-9 h-9 rounded-xl bg-slate-100 flex items-center justify-center flex-shrink-0 text-slate-700">
+                            <i data-lucide="plus" class="w-5 h-5"></i>
+                        </div>
+                    </div>
+                    <div class="faq-content text-slate-600 text-sm sm:text-base leading-relaxed">
+                        <p>Untuk servis berkala standar dan ganti oli, estimasi pengerjaan berkisar antara 30 hingga 45 menit. Untuk pekerjaan lebih mendalam seperti tune up injeksi, pembersihan CVT, atau servis kelistrikan membutuhkan waktu sekitar 60–90 menit. Anda dapat menunggu di ruang tunggu ber-AC kami.</p>
+                    </div>
                 </div>
-                <div class="faq-item interactive-card animate-on-scroll bg-yamaha-gray-light rounded-2xl border border-gray-100 overflow-hidden" style="transition-delay:0.1s">
-                    <div class="faq-header flex items-center justify-between px-6 py-5 cursor-pointer hover:bg-gray-100/50 transition-colors" role="button" tabindex="0" aria-expanded="false"><h3 class="font-semibold text-sm text-yamaha-dark pr-4">Bagaimana dengan garansi servis?</h3><div class="faq-icon w-8 h-8 rounded-full bg-white flex items-center justify-center flex-shrink-0 shadow-sm"><i data-lucide="plus" class="w-4 h-4 text-yamaha-blue"></i></div></div>
-                    <div class="faq-content"><p class="text-gray-600 text-sm font-light leading-relaxed">Setiap servis yang kami lakukan bergaransi 30 hari. Jika terjadi masalah yang sama setelah servis dalam periode garansi, kami akan memperbaikinya tanpa biaya tambahan.</p></div>
+
+                <!-- 3 -->
+                <div class="faq-item animate-on-scroll" style="transition-delay:0.1s">
+                    <div class="faq-header flex items-center justify-between px-6 sm:px-8 py-5 cursor-pointer" role="button" tabindex="0" aria-expanded="false">
+                        <h3 class="font-bold text-base sm:text-lg text-slate-900 pr-4">Bagaimana ketentuan garansi servis 30 hari?</h3>
+                        <div class="faq-icon w-9 h-9 rounded-xl bg-slate-100 flex items-center justify-center flex-shrink-0 text-slate-700">
+                            <i data-lucide="plus" class="w-5 h-5"></i>
+                        </div>
+                    </div>
+                    <div class="faq-content text-slate-600 text-sm sm:text-base leading-relaxed">
+                        <p>Setiap pekerjaan servis di bengkel kami otomatis dilindungi garansi selama 30 hari sejak tanggal pengerjaan. Jika Anda merasakan kendala yang sama pada bagian yang telah diservis, bawa kembali nota servis Anda dan kami akan melakukan pemeriksaan serta perbaikan ulang tanpa dipungut biaya jasa tambahan.</p>
+                    </div>
                 </div>
-                <div class="faq-item interactive-card animate-on-scroll bg-yamaha-gray-light rounded-2xl border border-gray-100 overflow-hidden" style="transition-delay:0.25s">
-                    <div class="faq-header flex items-center justify-between px-6 py-5 cursor-pointer hover:bg-gray-100/50 transition-colors" role="button" tabindex="0" aria-expanded="false"><h3 class="font-semibold text-sm text-yamaha-dark pr-4">Apakah bisa servis motor non-Yamaha?</h3><div class="faq-icon w-8 h-8 rounded-full bg-white flex items-center justify-center flex-shrink-0 shadow-sm"><i data-lucide="plus" class="w-4 h-4 text-yamaha-blue"></i></div></div>
-                    <div class="faq-content"><p class="text-gray-600 text-sm font-light leading-relaxed">Fokus utama kami adalah motor Yamaha. Namun untuk layanan tertentu seperti cuci motor, ganti ban umum, dan Aki, kami bisa melayani motor non-Yamaha juga. Silakan konsultasikan terlebih dahulu.</p></div>
+
+                <!-- 4 -->
+                <div class="faq-item animate-on-scroll" style="transition-delay:0.15s">
+                    <div class="faq-header flex items-center justify-between px-6 sm:px-8 py-5 cursor-pointer" role="button" tabindex="0" aria-expanded="false">
+                        <h3 class="font-bold text-base sm:text-lg text-slate-900 pr-4">Metode pembayaran apa saja yang diterima di kasir?</h3>
+                        <div class="faq-icon w-9 h-9 rounded-xl bg-slate-100 flex items-center justify-center flex-shrink-0 text-slate-700">
+                            <i data-lucide="plus" class="w-5 h-5"></i>
+                        </div>
+                    </div>
+                    <div class="faq-content text-slate-600 text-sm sm:text-base leading-relaxed">
+                        <p>Kami menerima berbagai metode pembayaran non-tunai dan tunai: QRIS (GoPay, OVO, DANA, ShopeePay, LinkAja, Mobile Banking), Transfer Bank (BCA, Mandiri, BRI, BNI), Debit Card, dan Uang Tunai.</p>
+                    </div>
                 </div>
-                <div class="faq-item interactive-card animate-on-scroll bg-yamaha-gray-light rounded-2xl border border-gray-100 overflow-hidden" style="transition-delay:0.3s">
-                    <div class="faq-header flex items-center justify-between px-6 py-5 cursor-pointer hover:bg-gray-100/50 transition-colors" role="button" tabindex="0" aria-expanded="false"><h3 class="font-semibold text-sm text-yamaha-dark pr-4">Metode pembayaran apa yang diterima?</h3><div class="faq-icon w-8 h-8 rounded-full bg-white flex items-center justify-center flex-shrink-0 shadow-sm"><i data-lucide="plus" class="w-4 h-4 text-yamaha-blue"></i></div></div>
-                    <div class="faq-content"><p class="text-gray-600 text-sm font-light leading-relaxed">Kami menerima pembayaran tunai, transfer bank (BCA, Mandiri, BRI, BNI), e-wallet (GoPay, OVO, DANA, ShopeePay), dan QRIS.</p></div>
+
+                <!-- 5 -->
+                <div class="faq-item animate-on-scroll" style="transition-delay:0.2s">
+                    <div class="faq-header flex items-center justify-between px-6 sm:px-8 py-5 cursor-pointer" role="button" tabindex="0" aria-expanded="false">
+                        <h3 class="font-bold text-base sm:text-lg text-slate-900 pr-4">Apakah bisa memesan sparepart Yamaha yang jarang tersedia di pasaran?</h3>
+                        <div class="faq-icon w-9 h-9 rounded-xl bg-slate-100 flex items-center justify-center flex-shrink-0 text-slate-700">
+                            <i data-lucide="plus" class="w-5 h-5"></i>
+                        </div>
+                    </div>
+                    <div class="faq-content text-slate-600 text-sm sm:text-base leading-relaxed">
+                        <p>Bisa. Sebagai Dealer 3S resmi, kami memiliki jalur langsung pemesanan suku cadang khusus ke gudang pusat Yamaha Motor Indonesia. Silakan kirimkan nomor rangka motor dan foto komponen yang dicari melalui WhatsApp kami.</p>
+                    </div>
                 </div>
-                <div class="faq-item interactive-card animate-on-scroll bg-yamaha-gray-light rounded-2xl border border-gray-100 overflow-hidden" style="transition-delay:0.35s">
-                    <div class="faq-header flex items-center justify-between px-6 py-5 cursor-pointer hover:bg-gray-100/50 transition-colors" role="button" tabindex="0" aria-expanded="false"><h3 class="font-semibold text-sm text-yamaha-dark pr-4">Apakah ada program tukar tambah atau cicilan?</h3><div class="faq-icon w-8 h-8 rounded-full bg-white flex items-center justify-center flex-shrink-0 shadow-sm"><i data-lucide="plus" class="w-4 h-4 text-yamaha-blue"></i></div></div>
-                    <div class="faq-content"><p class="text-gray-600 text-sm font-light leading-relaxed">Untuk saat ini kami belum memiliki program tukar tambah. Namun untuk servis dengan nominal tertentu, kami menyediakan opsi cicilan 0% melalui partner kami. Silakan tanyakan ke counter kami.</p></div>
+
+                <!-- 6 -->
+                <div class="faq-item animate-on-scroll" style="transition-delay:0.25s">
+                    <div class="faq-header flex items-center justify-between px-6 sm:px-8 py-5 cursor-pointer" role="button" tabindex="0" aria-expanded="false">
+                        <h3 class="font-bold text-base sm:text-lg text-slate-900 pr-4">Apakah bengkel buka pada hari Minggu dan hari libur?</h3>
+                        <div class="faq-icon w-9 h-9 rounded-xl bg-slate-100 flex items-center justify-center flex-shrink-0 text-slate-700">
+                            <i data-lucide="plus" class="w-5 h-5"></i>
+                        </div>
+                    </div>
+                    <div class="faq-content text-slate-600 text-sm sm:text-base leading-relaxed">
+                        <p>Ya, Yamaha Prihatin Motor buka setiap hari dari hari Senin hingga Minggu mulai pukul 08:00 hingga 17:00 WIB untuk memudahkan para pemilik motor yang hanya memiliki waktu luang di akhir pekan.</p>
+                    </div>
                 </div>
             </div>
-            <div class="mt-16 text-center animate-on-scroll">
-                <p class="text-gray-500 text-sm font-light mb-6">Masih punya pertanyaan lain?</p>
+
+            <!-- Still Have Questions CTA Box -->
+            <div class="mt-16 bg-slate-900 rounded-3xl p-8 sm:p-10 text-center text-white border border-white/10 shadow-xl animate-on-scroll">
+                <h3 class="text-xl sm:text-2xl font-bold mb-3">Punya Pertanyaan Lain yang Belum Terjawab?</h3>
+                <p class="text-slate-300 text-sm max-w-lg mx-auto mb-6">
+                    Customer service kami siap membantu Anda dengan ramah dan cepat melalui chat WhatsApp resmi.
+                </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="hubungi.html" class="btn-primary text-white px-8 py-3.5 rounded-xl text-sm font-bold tracking-wide inline-flex items-center justify-center gap-2"><span class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4"></i> Hubungi Kami</span></a>
-                    <a href="https://wa.me/6281211117265" target="_blank" rel="noopener noreferrer" class="btn-interactive bg-green-500 hover:bg-green-600 text-white px-8 py-3.5 rounded-xl text-sm font-bold tracking-wide inline-flex items-center justify-center gap-2 transition-colors"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Chat WhatsApp</a>
+                    <a href="https://wa.me/6281211117265?text=Halo%20Yamaha%20Prihatin%20Motor%2C%20saya%20ingin%20bertanya%20seputar%20layanan." target="_blank" rel="noopener noreferrer" class="btn-yamaha-primary">
+                        <i data-lucide="message-circle" class="w-5 h-5"></i>
+                        <span>Tanya via WhatsApp Sekarang</span>
+                    </a>
+                    <a href="hubungi.html" class="btn-yamaha-secondary">
+                        <i data-lucide="mail" class="w-4 h-4"></i>
+                        <span>Kirim Pesan Form</span>
+                    </a>
                 </div>
             </div>
+
         </div>
     </section>
 
-    <footer class="footer-gradient text-white relative overflow-hidden">
-        <div class="yamaha-stripe h-1 w-full"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-16">
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
-                <div><div class="mb-5"><img src="Image/logorevisi.png" alt="Prihatin Motor" class="h-14 w-auto"></div><p class="text-white/50 text-sm font-light leading-relaxed">Dealer resmi Yamaha yang menyediakan layanan servis motor berkualitas tinggi.</p></div>
-                <div><h4 class="font-bold text-sm mb-5">Menu</h4><ul class="space-y-3"><li><a href="index.html" class="text-white/50 text-sm hover:text-white transition-colors">Beranda</a></li><li><a href="tentang-kami.html" class="text-white/50 text-sm hover:text-white transition-colors">Tentang Kami</a></li><li><a href="layanan.html" class="text-white/50 text-sm hover:text-white transition-colors">Layanan</a></li><li><a href="produk.html" class="text-white/50 text-sm hover:text-white transition-colors">Produk</a></li><li><a href="galeri.html" class="text-white/50 text-sm hover:text-white transition-colors">Galeri</a></li></ul></div>
-                <div><h4 class="font-bold text-sm mb-5">Layanan</h4><ul class="space-y-3"><li><a href="layanan.html" class="text-white/50 text-sm hover:text-white transition-colors">Sales</a></li><li><a href="layanan.html" class="text-white/50 text-sm hover:text-white transition-colors">Service</a></li><li><a href="layanan.html" class="text-white/50 text-sm hover:text-white transition-colors">Sparepart</a></li></ul></div>
-                <div><h4 class="font-bold text-sm mb-5">Kontak</h4><ul class="space-y-3"><li class="flex items-start gap-2 text-white/50 text-sm"><i data-lucide="map-pin" class="w-4 h-4 mt-0.5 flex-shrink-0"></i>Kabupaten Bogor, Jawa Barat, dengan alamat utama di Jl. Raya Narogong No. 10, Cileungsi.</li><li class="flex items-center gap-2 text-white/50 text-sm"><i data-lucide="phone" class="w-4 h-4 flex-shrink-0"></i>(+62) 812-1111-7265</li><li class="flex items-center gap-2 text-white/50 text-sm"><i data-lucide="mail" class="w-4 h-4 flex-shrink-0"></i>prihatinmotor96@gmail.com</li><li class="flex items-center gap-2 text-white/50 text-sm"><i data-lucide="clock" class="w-4 h-4 flex-shrink-0"></i>Senin - Minggu: 08:00 - 17:00</li></ul></div>
-            </div>
-        </div>
-        <div class="border-t border-white/10"><div class="max-w-7xl mx-auto px-4 sm:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4"><p class="text-white/40 text-xs">&copy; 2024 Yamaha Prihatin Motor. All rights reserved.</p><div class="flex items-center gap-3"><span class="text-white/40 text-xs font-semibold uppercase tracking-wider mr-1">Ikuti Kami</span><a href="https://www.instagram.com/yamaha_prihatinmotor/" target="_blank" rel="noopener noreferrer" class="footer-social-icon w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center hover:bg-yamaha-blue transition-all" aria-label="Instagram"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.98-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.198-4.354-2.618-6.782-6.98-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a><a href="https://www.facebook.com/YamahaPrihatinMotor1" target="_blank" rel="noopener noreferrer" class="footer-social-icon w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center hover:bg-yamaha-blue transition-all" aria-label="Facebook"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M22.675 0h-21.35C.6 0 0 .6 0 1.325v21.351C0 23.4.6 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.4 24 24 23.4 24 22.676V1.325C24 .6 23.4 0 22.675 0z"/></svg></a><a href="https://tiktok.com/@yamaha_prihatinmotor" target="_blank" rel="noopener noreferrer" class="footer-social-icon w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center hover:bg-yamaha-blue transition-all" aria-label="TikTok"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a><a href="https://wa.me/6281211117265" target="_blank" rel="noopener noreferrer" class="footer-social-icon w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center hover:bg-yamaha-blue transition-all" aria-label="WhatsApp"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a></div></div></div>
-    </footer>
-
+    <footer></footer>
     <button id="backToTop" aria-label="Kembali ke atas"><i data-lucide="chevron-up" class="w-5 h-5"></i></button>
-    <a id="waFloat" aria-label="Chat via WhatsApp" href="https://wa.me/6281211117265" target="_blank" rel="noopener noreferrer"><div class="wa-btn relative"><div class="wa-pulse"></div><svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div></a>
+
     <script src="script.js"></script>
 </body>
 </html>
