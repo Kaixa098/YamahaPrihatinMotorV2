@@ -280,6 +280,30 @@ if (backToTop) {
     });
 }
 
+// ===== 6b. FLOATING SOCIAL FAB TOGGLE (MOBILE, BERANDA) =====
+const socialFabToggle = document.getElementById('socialFabToggle');
+const socialFabWrap = document.querySelector('.social-fab-wrap');
+if (socialFabToggle && socialFabWrap) {
+    socialFabToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = socialFabWrap.classList.toggle('open');
+        socialFabToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    document.addEventListener('click', (e) => {
+        if (socialFabWrap.classList.contains('open') && !socialFabWrap.contains(e.target)) {
+            socialFabWrap.classList.remove('open');
+            socialFabToggle.setAttribute('aria-expanded', 'false');
+        }
+    });
+    // Auto-close saat salah satu ikon medsos ditekan
+    socialFabWrap.querySelectorAll('.social-fab-item').forEach(item => {
+        item.addEventListener('click', () => {
+            socialFabWrap.classList.remove('open');
+            socialFabToggle.setAttribute('aria-expanded', 'false');
+        });
+    });
+}
+
 // ===== 7. COUNTER ANIMATION =====
 function animateCounters(scope) {
     scope.querySelectorAll('.counter').forEach(el => {
