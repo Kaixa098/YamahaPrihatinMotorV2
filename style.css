@@ -525,7 +525,8 @@ body {
 .produk-card-image {
     position: relative;
     aspect-ratio: 4/3;
-    background: radial-gradient(circle at center, #F1F5F9 0%, #E2E8F0 100%);
+    background: radial-gradient(circle at center, #FFFFFF 0%, #F1F5F9 100%);
+    border-bottom: 1px solid var(--silver-200);
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -648,7 +649,8 @@ body {
 
 .motor-variant-card-image {
     aspect-ratio: 16/10;
-    background: radial-gradient(circle at center, #F8FAFC 0%, #E2E8F0 100%);
+    background: radial-gradient(circle at center, #FFFFFF 0%, #F1F5F9 100%);
+    border-bottom: 1px solid var(--silver-200);
     display: flex;
     align-items: center;
     justify-content: center;

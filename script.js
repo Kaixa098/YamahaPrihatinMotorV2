@@ -6,7 +6,7 @@ const currentPage = document.body.dataset.page || 'beranda';
 const OFFICIAL_WA_NUMBER = '6281211117265';
 const OFFICIAL_EMAIL = 'prihatinmotor96@gmail.com';
 const OFFICIAL_ADDRESS = 'Jl. Raya Narogong No. 10, Cileungsi, Kabupaten Bogor, Jawa Barat';
-const OFFICIAL_HOURS = 'Senin - Minggu: 08:00 - 17:00';
+const OFFICIAL_HOURS = 'Senin - Jumat: 08:00 - 19:00 WIB';
 
 // ===== 1. SHARED COMPONENT RENDERER (Single Source of Truth) =====
 function initSharedLayout() {
@@ -15,11 +15,8 @@ function initSharedLayout() {
         { href: 'tentang-kami.html', page: 'tentang', label: 'Tentang Kami' },
         { href: 'layanan.html', page: 'layanan', label: 'Layanan' },
         { href: 'produk.html', page: 'produk', label: 'Tipe Motor' },
-        { href: 'keunggulan.html', page: 'keunggulan', label: 'Keunggulan' },
-        { href: 'galeri.html', page: 'galeri', label: 'Galeri' },
-        { href: 'info.html', page: 'informasi', label: 'Info & Lokasi' },
+        { href: 'info.html', page: 'informasi', label: 'Info & Kontak' },
         { href: 'bantuan.html', page: 'faq', label: 'FAQ' },
-        { href: 'hubungi.html', page: 'kontak', label: 'Kontak' },
     ];
 
     // Check if #navbar element exists or create/fill it
@@ -32,20 +29,14 @@ function initSharedLayout() {
                 <a href="index.html" class="flex items-center gap-3 group">
                     <img src="Image/logorevisi.png" alt="Yamaha Prihatin Motor" class="h-14 sm:h-16 w-auto transition-transform group-hover:scale-105">
                 </a>
-                <div class="hidden xl:flex items-center gap-1">
+                <div class="hidden lg:flex items-center gap-2">
                     ${navItems.map(item => `
-                        <a href="${item.href}" class="nav-link ${currentPage === item.page ? 'active-link' : ''} px-3 py-2 text-xs font-semibold text-white/80 hover:text-white rounded-lg transition-colors">
+                        <a href="${item.href}" class="nav-link ${currentPage === item.page ? 'active-link' : ''} px-4 py-2 text-sm font-semibold text-white/80 hover:text-white rounded-lg transition-colors">
                             ${item.label}
                         </a>
                     `).join('')}
                 </div>
-                <div class="hidden sm:flex items-center gap-3">
-                    <a href="https://wa.me/${OFFICIAL_WA_NUMBER}?text=${encodeURIComponent('Halo Yamaha Prihatin Motor, saya ingin booking servis motor.')}" target="_blank" rel="noopener noreferrer" class="btn-yamaha-primary text-xs py-2.5 px-4 font-bold rounded-xl flex items-center gap-2">
-                        <i data-lucide="calendar-check" class="w-4 h-4"></i>
-                        <span>Booking Servis</span>
-                    </a>
-                </div>
-                <div class="flex xl:hidden items-center gap-3">
+                <div class="flex lg:hidden items-center gap-3">
                     <button id="mobileToggle" aria-label="Buka menu navigasi" aria-expanded="false" class="w-10 h-10 flex items-center justify-center text-white rounded-lg bg-white/10 hover:bg-white/20 transition-colors">
                         <i data-lucide="menu" class="w-6 h-6"></i>
                     </button>
@@ -77,10 +68,10 @@ function initSharedLayout() {
                 </a>
             `).join('')}
             <div class="mt-6 pt-6 border-t border-white/10 flex flex-col gap-3">
-                <a href="https://wa.me/${OFFICIAL_WA_NUMBER}?text=${encodeURIComponent('Halo Yamaha Prihatin Motor, saya ingin konsultasi.')}" target="_blank" rel="noopener noreferrer" class="btn-yamaha-primary py-3 w-full text-center text-sm">
+                <a href="https://wa.me/${OFFICIAL_WA_NUMBER}?text=${encodeURIComponent('Halo Yamaha Prihatin Motor, saya ingin berkonsultasi.')}" target="_blank" rel="noopener noreferrer" class="btn-yamaha-primary py-3 w-full text-center text-sm">
                     <i data-lucide="message-circle" class="w-4 h-4"></i> Chat WhatsApp
                 </a>
-                <p class="text-xs text-white/50 text-center">Buka Setiap Hari: 08:00 - 17:00 WIB</p>
+                <p class="text-xs text-white/50 text-center">Buka Senin – Jumat: 08:00 - 19:00 WIB</p>
             </div>
         </div>`;
 
@@ -98,11 +89,8 @@ function initSharedLayout() {
                         <img src="Image/logorevisi.png" alt="Yamaha Prihatin Motor" class="h-14 w-auto">
                     </div>
                     <p class="text-white/60 text-sm leading-relaxed mb-4">
-                        Dealer & Bengkel Resmi Yamaha 3S (Sales, Service, Sparepart) terpercaya di Cileungsi, Bogor sejak 1996.
+                        Dealer &amp; Bengkel Resmi Yamaha 3S (Sales, Service, Sparepart) terpercaya di Cileungsi, Bogor sejak 1996.
                     </p>
-                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-amber-400 font-semibold">
-                        <i data-lucide="award" class="w-4 h-4"></i> 30 Tahun Melayani (1996–${currentYear})
-                    </div>
                 </div>
                 <div>
                     <h4 class="font-bold text-sm text-white tracking-wider uppercase mb-5 border-l-2 border-red-500 pl-3">Jelajahi Menu</h4>
@@ -111,22 +99,22 @@ function initSharedLayout() {
                         <li><a href="tentang-kami.html" class="hover:text-red-400 transition-colors">Tentang Kami</a></li>
                         <li><a href="layanan.html" class="hover:text-red-400 transition-colors">Layanan 3S</a></li>
                         <li><a href="produk.html" class="hover:text-red-400 transition-colors">Katalog Tipe Motor</a></li>
-                        <li><a href="keunggulan.html" class="hover:text-red-400 transition-colors">Keunggulan Dealer</a></li>
-                        <li><a href="galeri.html" class="hover:text-red-400 transition-colors">Galeri Bengkel & Showroom</a></li>
+                        <li><a href="info.html" class="hover:text-red-400 transition-colors">Info &amp; Kontak</a></li>
+                        <li><a href="bantuan.html" class="hover:text-red-400 transition-colors">Tanya Jawab (FAQ)</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="font-bold text-sm text-white tracking-wider uppercase mb-5 border-l-2 border-red-500 pl-3">Layanan Kami</h4>
                     <ul class="space-y-2.5 text-sm text-white/60">
                         <li><a href="layanan.html" class="hover:text-red-400 transition-colors">Penjualan Motor Baru (Sales)</a></li>
-                        <li><a href="layanan.html" class="hover:text-red-400 transition-colors">Servis Berkala & Tune Up</a></li>
-                        <li><a href="layanan.html" class="hover:text-red-400 transition-colors">Overhaul & Turun Mesin</a></li>
+                        <li><a href="layanan.html" class="hover:text-red-400 transition-colors">Servis Berkala &amp; Tune Up</a></li>
+                        <li><a href="layanan.html" class="hover:text-red-400 transition-colors">Overhaul &amp; Turun Mesin</a></li>
                         <li><a href="layanan.html" class="hover:text-red-400 transition-colors">Yamaha Genuine Parts (YGP)</a></li>
                         <li><a href="bantuan.html" class="hover:text-red-400 transition-colors">Tanya Jawab (FAQ)</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="font-bold text-sm text-white tracking-wider uppercase mb-5 border-l-2 border-red-500 pl-3">Kontak & Lokasi</h4>
+                    <h4 class="font-bold text-sm text-white tracking-wider uppercase mb-5 border-l-2 border-red-500 pl-3">Kontak &amp; Lokasi</h4>
                     <ul class="space-y-3 text-sm text-white/60">
                         <li class="flex items-start gap-2.5">
                             <i data-lucide="map-pin" class="w-4 h-4 mt-1 text-red-500 flex-shrink-0"></i>
@@ -829,16 +817,15 @@ if (currentPage === 'produk') {
             const count = motorList.filter(m => m.category === c.slug).length;
             const coverImg = categoryCover(c.slug);
             return `
-            <a href="produk.html?kategori=${c.slug}" data-category="${c.slug}" class="category-card card-hover block rounded-2xl overflow-hidden bg-white border border-slate-200 shadow-sm transition-all duration-300">
-                <div class="relative aspect-[4/3] overflow-hidden bg-gradient-to-b from-slate-800 to-slate-950 flex items-center justify-center p-6">
-                    <img src="${coverImg}" alt="Kategori ${c.label}" loading="lazy" class="w-full h-full object-contain transition-transform duration-500 category-card-img drop-shadow-2xl">
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#0A0D14] via-transparent to-black/30 pointer-events-none"></div>
-                    <span class="absolute top-3 right-3 text-xs font-bold text-white bg-black/60 backdrop-blur px-3 py-1 rounded-full border border-white/10 shadow">${count} Model</span>
-                    <span class="absolute bottom-3 left-4 text-white font-black text-2xl tracking-tight drop-shadow-md">${c.label}</span>
+            <a href="produk.html?kategori=${c.slug}" data-category="${c.slug}" class="category-card card-hover block rounded-3xl overflow-hidden bg-white border border-slate-200 shadow-sm transition-all duration-300">
+                <div class="relative aspect-[4/3] overflow-hidden bg-gradient-to-b from-white to-slate-100 border-b border-slate-200/80 flex items-center justify-center p-6">
+                    <img src="${coverImg}" alt="Kategori ${c.label}" loading="lazy" class="w-full h-full object-contain transition-transform duration-500 category-card-img drop-shadow-md">
+                    <span class="absolute top-3 right-3 text-xs font-bold text-slate-700 bg-white/90 backdrop-blur px-3 py-1 rounded-full border border-slate-200 shadow-sm">${count} Model</span>
+                    <span class="absolute bottom-3 left-4 text-slate-900 font-black text-2xl tracking-tight drop-shadow-sm">${c.label}</span>
                 </div>
                 <div class="p-6">
                     <p class="text-slate-600 text-sm font-normal leading-relaxed mb-4">${c.tagline}</p>
-                    <span class="produk-detail-link">Lihat Seluruh Model ${c.label} <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
+                    <span class="produk-detail-link font-bold text-red-600">Lihat Seluruh Model ${c.label} <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
                 </div>
             </a>`;
         }).join('');
@@ -916,13 +903,13 @@ if (currentPage === 'produk') {
             const isWarm = m.category === 'maxi' || m.category === 'sport' || m.category === 'sport-heritage';
 
             return `
-            <div class="produk-card">
-                <div class="produk-card-image">
-                    <img src="${imgSrc}" alt="Yamaha ${m.name}" loading="lazy" class="drop-shadow-lg">
-                    <span class="produk-badge ${isWarm ? '' : 'badge-blue'}">${m.categoryLabel}</span>
-                    ${hasMultiple ? `<span class="produk-variant-count">${m.variants.length} Pilihan Varian</span>` : ''}
+            <div class="card-hover bg-white border border-slate-200 shadow-sm rounded-3xl p-6 flex flex-col">
+                <div class="aspect-[4/3] bg-gradient-to-b from-white to-slate-100 border border-slate-200/80 rounded-2xl p-4 flex items-center justify-center mb-5 relative overflow-hidden">
+                    <img src="${imgSrc}" alt="Yamaha ${m.name}" loading="lazy" class="max-h-full object-contain drop-shadow-md">
+                    <span class="badge-telemetry ${isWarm ? '' : 'badge-telemetry-blue'} absolute top-3 left-3">${m.categoryLabel}</span>
+                    ${hasMultiple ? `<span class="produk-variant-count">${m.variants.length} Varian</span>` : ''}
                 </div>
-                <div class="p-6 flex flex-col flex-1">
+                <div class="flex flex-col flex-1">
                     <div class="flex items-center justify-between gap-2 mb-2">
                         <h3 class="text-xl font-bold text-slate-900">${m.name}</h3>
                         <span class="badge-telemetry ${isWarm ? '' : 'badge-telemetry-blue'}">${m.cc}</span>
@@ -1014,9 +1001,9 @@ if (currentPage === 'motor-detail') {
                         </div>
                     </div>
                     <div class="lg:col-span-5 flex justify-center">
-                        <div class="relative bg-slate-900/80 border border-white/10 rounded-3xl p-8 backdrop-blur-xl shadow-2xl w-full max-w-md">
+                        <div class="relative bg-gradient-to-b from-white/95 to-slate-100/95 border border-white/20 rounded-3xl p-8 shadow-2xl w-full max-w-md">
                             <img src="${heroImg}" alt="Yamaha ${motor.name}" class="w-full h-auto object-contain drop-shadow-2xl">
-                            <div class="absolute bottom-4 right-4 badge-telemetry badge-telemetry-dark">
+                            <div class="absolute bottom-4 right-4 badge-telemetry">
                                 ${motor.variants.length} VARIAN RESMI
                             </div>
                         </div>
@@ -1242,33 +1229,31 @@ if (currentPage === 'faq') {
 }
 
 // ===== 16. CONTACT FORM TO WHATSAPP =====
-if (currentPage === 'kontak') {
-    const form = document.getElementById('contactForm');
-    if (form) {
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const nama = (form.querySelector('#contactNama') ? form.querySelector('#contactNama').value : '').trim();
-            const email = (form.querySelector('#contactEmail') ? form.querySelector('#contactEmail').value : '').trim();
-            const subjek = (form.querySelector('#contactSubjek') ? form.querySelector('#contactSubjek').value : '').trim();
-            const pesan = (form.querySelector('#contactPesan') ? form.querySelector('#contactPesan').value : '').trim();
+const contactFormEl = document.getElementById('contactForm');
+if (contactFormEl) {
+    contactFormEl.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const nama = (contactFormEl.querySelector('#contactNama') ? contactFormEl.querySelector('#contactNama').value : '').trim();
+        const email = (contactFormEl.querySelector('#contactEmail') ? contactFormEl.querySelector('#contactEmail').value : '').trim();
+        const subjek = (contactFormEl.querySelector('#contactSubjek') ? contactFormEl.querySelector('#contactSubjek').value : '').trim();
+        const pesan = (contactFormEl.querySelector('#contactPesan') ? contactFormEl.querySelector('#contactPesan').value : '').trim();
 
-            if (!nama || !email || !subjek || !pesan) {
-                alert('Harap lengkapi seluruh kolom formulir.');
-                return;
-            }
+        if (!nama || !email || !subjek || !pesan) {
+            alert('Harap lengkapi seluruh kolom formulir.');
+            return;
+        }
 
-            const waMessage =
-                `Halo Yamaha Prihatin Motor, saya ingin mengirim pesan melalui website resmi:\n\n` +
-                `*Nama:* ${nama}\n` +
-                `*Email:* ${email}\n` +
-                `*Subjek:* ${subjek}\n` +
-                `*Pesan:*\n${pesan}`;
+        const waMessage =
+            `Halo Yamaha Prihatin Motor, saya ingin mengirim pesan melalui website resmi:\n\n` +
+            `*Nama:* ${nama}\n` +
+            `*Email:* ${email}\n` +
+            `*Kategori Keperluan:* ${subjek}\n` +
+            `*Pesan / Keterangan:*\n${pesan}`;
 
-            const waUrl = `https://wa.me/${OFFICIAL_WA_NUMBER}?text=${encodeURIComponent(waMessage)}`;
-            window.open(waUrl, '_blank', 'noopener,noreferrer');
-            form.reset();
-        });
-    }
+        const waUrl = `https://wa.me/${OFFICIAL_WA_NUMBER}?text=${encodeURIComponent(waMessage)}`;
+        window.open(waUrl, '_blank', 'noopener,noreferrer');
+        contactFormEl.reset();
+    });
 }
 
 // ===== 17. 3D TILT EFFECT =====
