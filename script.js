@@ -343,56 +343,162 @@ document.querySelectorAll('.counter-group').forEach(group => {
     counterObserver.observe(group);
 });
 
-// ===== 8. BERANDA: CANVAS PARTICLES & TYPING EFFECT =====
+// ===== 8. BERANDA: CANVAS PARTICLES 3D & TYPING EFFECT =====
 if (currentPage === 'beranda') {
     const canvas = document.getElementById('particleCanvas');
     if (canvas) {
         const ctx = canvas.getContext('2d');
-        let particles = [];
+        const REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        // Mouse/touch parallax tracking (normalized -1..1)
+        let mouseNX = 0, mouseNY = 0;
+        if (!REDUCED) {
+            window.addEventListener('mousemove', e => {
+                mouseNX = (e.clientX / window.innerWidth  - 0.5) * 2;
+                mouseNY = (e.clientY / window.innerHeight - 0.5) * 2;
+            }, { passive: true });
+            window.addEventListener('touchmove', e => {
+                const t = e.touches[0];
+                mouseNX = (t.clientX / window.innerWidth  - 0.5) * 2;
+                mouseNY = (t.clientY / window.innerHeight - 0.5) * 2;
+            }, { passive: true });
+        }
+
+        // Canvas sizing
         function resizeCanvas() {
-            canvas.width = canvas.parentElement.offsetWidth;
+            canvas.width  = canvas.parentElement.offsetWidth;
             canvas.height = canvas.parentElement.offsetHeight;
         }
         resizeCanvas();
-        window.addEventListener('resize', resizeCanvas);
+        window.addEventListener('resize', resizeCanvas, { passive: true });
 
-        class Particle {
-            constructor() { this.reset(); }
-            reset() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 2 + 0.5;
-                this.speedX = (Math.random() - 0.5) * 0.4;
-                this.speedY = (Math.random() - 0.5) * 0.4;
-                this.opacity = Math.random() * 0.4 + 0.1;
+        // ── Pseudo-3D Particle ──
+        // Each particle has a z-depth [0..1]:
+        //   z=1 → "close" → large, bright, fast
+        //   z=0 → "far"   → tiny, dim, slow
+        const FOV  = 300;   // perspective focal length
+        const NEAR = 0.05;  // clip near
+
+        class Particle3D {
+            constructor() { this.spawn(); }
+            spawn() {
+                // z in [NEAR .. 1], skewed toward far for density at back
+                this.z    = NEAR + Math.random() * (1 - NEAR);
+                // position in "world" coords (centered)
+                this.wx   = (Math.random() - 0.5) * 2;
+                this.wy   = (Math.random() - 0.5) * 2;
+                // drift speed in world space
+                this.dvx  = (Math.random() - 0.5) * 0.0004;
+                this.dvy  = (Math.random() - 0.5) * 0.0004;
+                // depth drift (zoom-in feel — subtle)
+                this.dvz  = REDUCED ? 0 : (Math.random() * 0.0005 + 0.00015);
+                // accent: rare red/blue particles for Yamaha brand
+                const r = Math.random();
+                this.color = r < 0.04 ? 'red' : r < 0.07 ? 'blue' : 'white';
             }
             update() {
-                this.x += this.speedX;
-                this.y += this.speedY;
-                if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) this.reset();
+                this.wx += this.dvx;
+                this.wy += this.dvy;
+                this.z  += this.dvz;          // drift closer over time
+                if (this.z > 1.05) this.spawn(); // recycled far when too close
+                // wrap world x/y
+                if (this.wx >  1.1) this.wx = -1.1;
+                if (this.wx < -1.1) this.wx =  1.1;
+                if (this.wy >  1.1) this.wy = -1.1;
+                if (this.wy < -1.1) this.wy =  1.1;
+            }
+            project() {
+                const scale = FOV / (FOV + this.z * FOV); // perspective divide
+                const cx = canvas.width  / 2;
+                const cy = canvas.height / 2;
+                // parallax offset based on mouse (stronger for "closer" particles)
+                const px = mouseNX * this.z * 18;
+                const py = mouseNY * this.z * 12;
+                return {
+                    sx:   cx + this.wx * cx * scale + px,
+                    sy:   cy + this.wy * cy * scale + py,
+                    r:    Math.max(0.3, (0.5 + this.z * 2.5) * scale),
+                    // depth-based brightness: far=dim, near=bright
+                    alpha: Math.min(0.9, 0.05 + this.z * 0.55),
+                };
             }
             draw() {
+                const { sx, sy, r, alpha } = this.project();
                 ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
+                ctx.arc(sx, sy, r, 0, Math.PI * 2);
+                if (this.color === 'red') {
+                    ctx.fillStyle = `rgba(220, 38, 38, ${alpha * 0.85})`;
+                } else if (this.color === 'blue') {
+                    ctx.fillStyle = `rgba(59, 130, 246, ${alpha * 0.75})`;
+                } else {
+                    ctx.fillStyle = `rgba(255, 255, 255, ${alpha})`;
+                }
                 ctx.fill();
             }
         }
 
-        for (let i = 0; i < 35; i++) particles.push(new Particle());
-
-        let rafId;
-        function animateParticles() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            particles.forEach(p => { p.update(); p.draw(); });
-            rafId = requestAnimationFrame(animateParticles);
+        // Draw connection lines between nearby projected particles for depth feel
+        function drawConnections(projs) {
+            const maxDist = 90;
+            for (let i = 0; i < projs.length; i++) {
+                for (let j = i + 1; j < projs.length; j++) {
+                    const dx = projs[i].sx - projs[j].sx;
+                    const dy = projs[i].sy - projs[j].sy;
+                    const d  = Math.sqrt(dx * dx + dy * dy);
+                    if (d < maxDist) {
+                        const lineAlpha = (1 - d / maxDist) * 0.08;
+                        ctx.beginPath();
+                        ctx.moveTo(projs[i].sx, projs[i].sy);
+                        ctx.lineTo(projs[j].sx, projs[j].sy);
+                        ctx.strokeStyle = `rgba(255,255,255,${lineAlpha})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.stroke();
+                    }
+                }
+            }
         }
-        animateParticles();
 
+        const COUNT = REDUCED ? 0 : (window.innerWidth < 480 ? 40 : 65);
+        const particles3d = Array.from({ length: COUNT }, () => new Particle3D());
+
+        let rafId3d = null;
+        let heroVisible = true;
+
+        function animateParticles3D() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            const projs = [];
+            for (const p of particles3d) {
+                p.update();
+                const proj = p.project();
+                projs.push(proj);
+                p._proj = proj;
+            }
+            if (!REDUCED) drawConnections(projs);
+            for (const p of particles3d) p.draw();
+            if (heroVisible) rafId3d = requestAnimationFrame(animateParticles3D);
+        }
+
+        // Pause when hero scrolls out of view
+        const heroSection = canvas.closest('section');
+        if (heroSection) {
+            const visObs = new IntersectionObserver(entries => {
+                heroVisible = entries[0].isIntersecting;
+                if (heroVisible && rafId3d === null) animateParticles3D();
+            }, { threshold: 0.01 });
+            visObs.observe(heroSection);
+        }
+
+        // Pause on tab hidden
         document.addEventListener('visibilitychange', () => {
-            if (document.hidden) cancelAnimationFrame(rafId);
-            else animateParticles();
+            if (document.hidden) {
+                cancelAnimationFrame(rafId3d);
+                rafId3d = null;
+            } else if (heroVisible) {
+                animateParticles3D();
+            }
         });
+
+        if (!REDUCED) animateParticles3D();
     }
 
     const typingEl = document.getElementById('typingText');
@@ -410,7 +516,10 @@ if (currentPage === 'beranda') {
     }
 }
 
+
+
 // ===== 9. KATALOG MOTOR YAMAHA (DATA MASTER RESMI PER AGUSTUS 2026) =====
+
 const motorList = [
     // ===== 1. MAXi =====
     { 
@@ -1010,6 +1119,12 @@ if (currentPage === 'motor-detail') {
                     </div>
                 </div>
             </div>`;
+
+            // ── Titik 3: Lazy-init WebGL racing grid (hero background) ──
+            // Dynamic import — Three.js only downloads on motor-detail page
+            import('./js/hero-grid-3d.js')
+                .then(mod => mod.initHeroGrid3D(heroEl))
+                .catch(() => {}); // silent: CSS gradient fallback already in place
         }
 
         if (specsEl) {
@@ -1256,24 +1371,68 @@ if (contactFormEl) {
     });
 }
 
-// ===== 17. 3D TILT EFFECT =====
+// ===== 17. 3D TILT EFFECT — PREMIUM (w/ motor image parallax) =====
 function init3DCards() {
-    if (window.matchMedia('(hover: none)').matches) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const TILT_MAX  = 8;    // max tilt angle in degrees
+    const DEPTH_IMG = 10;   // px motor image parallax offset
+
     const cards = document.querySelectorAll('.card-hover, .interactive-card, .cert-card');
     cards.forEach(card => {
-        card.addEventListener('mousemove', e => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            const rotateX = ((y - centerY) / centerY) * -5;
-            const rotateY = ((x - centerX) / centerX) * 5;
-            card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
-        });
-        card.addEventListener('mouseleave', () => {
+        card.style.willChange = 'transform';
+        card.style.transition = 'transform 0.08s ease-out, box-shadow 0.15s ease-out';
+
+        // Find the first img inside the card for parallax (usually the motor photo)
+        const imgEl = card.querySelector('img');
+        if (imgEl) {
+            imgEl.style.willChange = 'transform';
+            imgEl.style.transition = 'transform 0.12s ease-out';
+        }
+
+        function applyTilt(nx, ny) {
+            const rx =  ny * TILT_MAX;
+            const ry = -nx * TILT_MAX;
+            card.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateZ(3px)`;
+            card.style.boxShadow = `${-nx * 8}px ${ny * 8}px 24px rgba(0,0,0,0.14), 0 2px 10px rgba(0,0,0,0.06)`;
+            if (imgEl) {
+                imgEl.style.transform = `translate(${nx * DEPTH_IMG}px, ${ny * DEPTH_IMG}px) scale(1.03)`;
+            }
+        }
+
+        function resetTilt() {
+            card.style.transition = 'transform 0.35s ease-out, box-shadow 0.35s ease-out';
             card.style.transform = '';
-        });
+            card.style.boxShadow = '';
+            if (imgEl) {
+                imgEl.style.transition = 'transform 0.35s ease-out';
+                imgEl.style.transform = '';
+            }
+            setTimeout(() => {
+                card.style.transition = 'transform 0.08s ease-out, box-shadow 0.15s ease-out';
+                if (imgEl) imgEl.style.transition = 'transform 0.12s ease-out';
+            }, 360);
+        }
+
+        // Desktop
+        card.addEventListener('mousemove', e => {
+            const r  = card.getBoundingClientRect();
+            const nx = ((e.clientX - r.left) / r.width  - 0.5) * 2;
+            const ny = ((e.clientY - r.top)  / r.height - 0.5) * 2;
+            applyTilt(nx, ny);
+        }, { passive: true });
+        card.addEventListener('mouseleave', resetTilt, { passive: true });
+
+        // Touch (mobile)
+        card.addEventListener('touchmove', e => {
+            const t  = e.touches[0];
+            const r  = card.getBoundingClientRect();
+            const nx = ((t.clientX - r.left) / r.width  - 0.5) * 2;
+            const ny = ((t.clientY - r.top)  / r.height - 0.5) * 2;
+            applyTilt(nx, ny);
+        }, { passive: true });
+        card.addEventListener('touchend',    resetTilt, { passive: true });
+        card.addEventListener('touchcancel', resetTilt, { passive: true });
     });
 }
 
